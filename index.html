@@ -125,6 +125,45 @@
             align-items: center;
             justify-content: space-between;
         }
+        .nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    height: 44px;          /* adjust as needed */
+    width: auto;
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-logo:hover .logo-img {
+    transform: scale(1.05);
+}
+
+/* Footer logo – white version on dark background */
+.footer-brand .logo-img {
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .logo-img {
+        height: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 32px;
+    }
+    .footer-brand .logo-img {
+        height: 36px;
+    }
+}
 
         .nav-logo {
             display: flex;
@@ -2103,12 +2142,8 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">
-                <div class="logo-icon">UECC</div>
-                <div class="logo-text">
-                    <span class="name">Unique Engineering</span>
-                    <span class="tagline">& Consultancy Co. Ltd.</span>
-                </div>
-            </a>
+    <img src="assets/uniquelogo.jpeg" alt="Unique Engineering & Consultancy Co. Ltd" class="logo-img">
+</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -2421,29 +2456,9 @@
     </p>
                     </div>
                 </div>
-                <div class="project-card reveal reveal-delay-3" data-category="banking">
-                    <div class="project-image">
-                        <img src="assets/unique33.jpeg" alt="National Bank of Egypt Fit-Out" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">Banking Fit‑Out</span>
-                        <h3>National Bank of Egypt (NBE) Branch</h3>
-                        <p>Complete interior fit‑out, ATM implantation, and secure banking hall renovation.</p>
-                    </div>
-                </div>
-                <div class="project-card reveal reveal-delay-1" data-category="institutional">
-                    <div class="project-image">
-                        <img src="assets/unique4.jpeg" alt="Educational Facility" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                        </div>
-                    </div>
                     <div class="project-info">
                         <span class="project-category">Commercial & Residential Development</span>
-                        <h3>ive-Storey Mixed-Use Complex – Konyo Konyo, Juba</h3>
+                        <h3>Five-Storey Mixed-Use Complex – Konyo Konyo, Juba</h3>
                         <p> A landmark five-storey commercial and residential development in Konyo Konyo, Juba, featuring modern retail spaces and quality residential accommodation. The project demonstrates UECC's expertise in delivering integrated developments that combine functionality, durability, and contemporary architectural excellence.</p>
                     </div>
                 </div>
