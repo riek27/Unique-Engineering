@@ -1,0 +1,163 @@
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Mobile menu
+function openMobileMenu() {
+    document.getElementById('mobileMenu').classList.add('active');
+    document.getElementById('mobileOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+    document.getElementById('mobileMenu').classList.remove('active');
+    document.getElementById('mobileOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Scroll reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Counter animation (for stats)
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    if (!target) return;
+    const duration = 2000, step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+            element.textContent = target + '+';
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current) + '+';
+        }
+    }, 16);
+}
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter, .stat-number[data-target]').forEach(el => counterObserver.observe(el));
+
+// Back to top
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 500);
+    });
+}
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Contact form (if present)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('.btn-submit');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent Successfully!';
+        btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+        btn.style.pointerEvents = 'none';
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+            btn.style.pointerEvents = '';
+            e.target.reset();
+        }, 3000);
+    });
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            const offset = 80;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+    });
+});
+
+// Project filters (if present)
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.project-card').forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = ''; card.style.opacity = '1'; card.style.transform = 'scale(1)';
+            } else {
+                card.style.opacity = '0'; card.style.transform = 'scale(0.9)';
+                setTimeout(() => { card.style.display = 'none'; }, 350);
+            }
+        });
+    });
+});
+
+// Testimonial slider (if present)
+const track = document.getElementById('testimonialTrack');
+if (track) {
+    let currentSlide = 0, totalSlides = document.querySelectorAll('.testimonial-card').length;
+    let autoSlideInterval;
+    function goToSlide(index) {
+        currentSlide = index;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        document.querySelectorAll('.dot').forEach((dot, i) => dot.classList.toggle('active', i === index));
+    }
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }, 5000);
+    }
+    resetAutoSlide();
+    track.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    track.addEventListener('mouseleave', resetAutoSlide);
+    window.goToSlide = goToSlide; // for dot clicks
+}
+
+// Lightbox (if present)
+const lightbox = document.getElementById('lightbox');
+if (lightbox) {
+    document.querySelectorAll('.project-card, .project-overlay-btn').forEach(el => {
+        el.addEventListener('click', function(e) {
+            const img = this.closest('.project-card')?.querySelector('.project-image img');
+            if (img) {
+                document.getElementById('lightboxImg').src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+}
+
+// Initial reveal on load
+window.addEventListener('load', () => {
+    revealElements.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+    });
+});
