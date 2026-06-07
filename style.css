@@ -472,3 +472,175 @@ footer { background: var(--navy); color: white; padding: 80px 0 0; }
     .expert-grid { grid-template-columns: 1fr; }
     .btn-service-quote { width: 100%; justify-content: center; }
 }
+
+/* ===== MOBILE MENU (already in style.css, but reinforced for safety) ===== */
+@media (max-width: 992px) {
+    .nav-links,
+    .nav-contact {
+        display: none;
+    }
+    .mobile-toggle {
+        display: block;
+    }
+}
+
+/* ===== RESPONSIVE SPLIT HEROES (Why Us & Clients) ===== */
+/* Why Us hero */
+@media (max-width: 992px) {
+    .why-hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+    .why-hero-image img {
+        height: 300px !important;
+    }
+}
+@media (max-width: 600px) {
+    .why-hero-image img {
+        height: 250px !important;
+    }
+}
+
+/* Clients hero */
+@media (max-width: 992px) {
+    .clients-hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+    .clients-hero-image img {
+        height: 300px !important;
+    }
+}
+@media (max-width: 600px) {
+    .clients-hero-image img {
+        height: 250px !important;
+    }
+}
+
+/* Projects hero (already a full‑width overlay, no grid to break, but fine‑tune) */
+@media (max-width: 768px) {
+    .services-hero-content {
+        padding: 40px 20px;
+    }
+}
+
+/* ===== STATS GRIDS (Why Us, Clients, Projects) ===== */
+@media (max-width: 992px) {
+    .why-stats-grid,
+    .client-stats-grid,
+    .impact-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+@media (max-width: 600px) {
+    .why-stats-grid,
+    .client-stats-grid,
+    .impact-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+/* ===== WHY US – KEY ADVANTAGES GRID ===== */
+@media (max-width: 768px) {
+    .why-points-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ===== WHY US – CORE VALUES GRID ===== */
+@media (max-width: 992px) {
+    .values-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+@media (max-width: 600px) {
+    .values-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ===== INDUSTRIES GRIDS (already fixed inline, reinforced) ===== */
+@media (max-width: 992px) {
+    .industries-grid,
+    .industries-grid-page {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 600px) {
+    .industries-grid,
+    .industries-grid-page {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ===== PROJECTS GRID ===== */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ===== FEATURED PROJECT PREVIEW (on Projects page) ===== */
+@media (max-width: 992px) {
+    .featured-project-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ===== CLIENT LOGO WALL (Clients page) ===== */
+@media (max-width: 1200px) {
+    .clients-grid-page .clients-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+@media (max-width: 768px) {
+    .clients-grid-page .clients-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 480px) {
+    .clients-grid-page .clients-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ===== TESTIMONIALS GRID (Why Us & Clients) ===== */
+@media (max-width: 992px) {
+    .testimonial-static,
+    .testimonial-static-cards {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ===== CERTIFICATIONS GRID ===== */
+@media (max-width: 600px) {
+    .certifications-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ===== PROCESS STEPS (flex wrap already, but ensure they don't overflow) ===== */
+.process-steps {
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ===== GENERAL SECTION PADDING FOR SMALL SCREENS ===== */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+}
+
+/* ===== HERO BADGE (for small screens) ===== */
+@media (max-width: 480px) {
+    .hero-badge {
+        font-size: 10px;
+        padding: 6px 14px;
+    }
+}
