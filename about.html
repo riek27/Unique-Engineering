@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — Unique Engineering & Consultancy Co. Ltd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation (active class on About) -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/uniquelogo.jpeg" alt="UECC Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="whyus.html">Why Us</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-contact">
+                <a href="tel:+211915667172" class="nav-phone"><i class="fas fa-phone"></i><span>+211 915 667 172</span></a>
+                <a href="https://wa.me/211925618075" class="nav-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i><span>+211 925 618 075</span></a>
+                <a href="contact.html" class="btn-quote">Get Quote</a>
+            </div>
+            <button class="mobile-toggle" onclick="openMobileMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (same as index) -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <!-- same mobile menu links as index.html -->
+    </div>
+
+    <!-- About Hero (half background image) -->
+    <section class="about-hero">
+        <div class="about-hero-grid">
+            <div class="about-hero-content reveal">
+                <h1>About Unique Engineering & Consultancy Co. Ltd</h1>
+                <p>Building excellence across East Africa since 2011. Headquartered in Juba, South Sudan, with a growing presence in Ethiopia, Kenya, Uganda, and soon Sierra Leone.</p>
+                <a href="assets/company-profile.pdf" download class="btn-download-profile" style="margin-top:24px;"><i class="fas fa-file-pdf"></i> Download Company Profile</a>
+            </div>
+            <div class="about-hero-image reveal reveal-delay-2">
+                <img src="assets/unique10.jpeg" alt="UECC Team">
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-history"></i> Our Journey</span>
+                <h2 class="section-title">Company History</h2>
+                <p class="section-subtitle">From a small consultancy to a regional engineering powerhouse.</p>
+            </div>
+            <div class="history-grid reveal">
+                <div class="history-text">
+                    <p>Unique Engineering & Consultancy Co. Ltd (UECC) was founded in November 2011 in Juba, South Sudan, with a vision to deliver world‑class engineering solutions in a post‑conflict environment. What started as a modest consultancy has grown into a multidisciplinary firm undertaking landmark projects across East Africa.</p>
+                    <p>In 2015, we expanded operations by establishing Unique Construction General Contractor (UCGC) in Ethiopia, marking our first regional office. Since then, we have successfully completed over 150 projects for banks, government institutions, NGOs, and private developers.</p>
+                    <p>Our commitment to quality, safety, and innovation has earned us long‑term partnerships with leading organisations like Eco Bank, Equity Bank, KCB, and AECOM. Today, UECC is poised to extend its footprint to Sierra Leone, continuing to shape the built environment of the region.</p>
+                </div>
+                <div class="history-image reveal reveal-delay-2">
+                    <img src="assets/unique10.jpeg" alt="UECC History" style="width:100%; border-radius:var(--radius-xl); box-shadow:var(--shadow-xl);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card reveal reveal-delay-1">
+                    <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To deliver sustainable, high‑quality engineering and construction services that exceed client expectations, create value for stakeholders, and contribute to the development of Africa’s infrastructure.</p>
+                </div>
+                <div class="mv-card reveal reveal-delay-2">
+                    <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To be the most trusted and innovative engineering firm in East and West Africa, known for integrity, technical excellence, and transformative projects that shape communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-users"></i> Leadership</span>
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle">Experienced professionals driving our success.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member-card reveal reveal-delay-1">
+                    <img src="assets/abel.jpg" alt="Abel - General Manager">
+                    <h3>Abel</h3>
+                    <div class="role">General Manager</div>
+                    <p>With over 15 years of experience in civil engineering and project management, Abel leads UECC’s strategic vision and ensures the delivery of every project with integrity and precision.</p>
+                </div>
+                <div class="expertise-list reveal reveal-delay-2">
+                    <div class="expertise-item">
+                        <h4><i class="fas fa-hard-hat"></i> Key Engineers</h4>
+                        <p>Our engineers bring decades of combined experience in structural design, road construction, and infrastructure development, ensuring every project meets international standards.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h4><i class="fas fa-drafting-compass"></i> Architects</h4>
+                        <p>Our creative architects blend functionality with aesthetics, designing innovative buildings that respect local contexts and modern trends.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h4><i class="fas fa-tasks"></i> Project Managers</h4>
+                        <p>Certified project managers oversee all phases, from planning to handover, guaranteeing on‑time, on‑budget delivery with rigorous quality control.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us (condensed) -->
+    <section class="why-us" id="why-us" style="background:white; color:var(--navy);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-star"></i> Why Us</span>
+                <h2 class="section-title">Why Choose UECC?</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal reveal-delay-1"><div class="why-icon"><i class="fas fa-users"></i></div><h4>Experienced Team</h4></div>
+                <div class="why-card reveal reveal-delay-2"><div class="why-icon"><i class="fas fa-lightbulb"></i></div><h4>Innovative Solutions</h4></div>
+                <div class="why-card reveal reveal-delay-3"><div class="why-icon"><i class="fas fa-shield-alt"></i></div><h4>Quality & Safety</h4></div>
+                <div class="why-card reveal reveal-delay-4"><div class="why-icon"><i class="fas fa-heart"></i></div><h4>Client Focus</h4></div>
+            </div>
+            <div style="text-align:center; margin-top:40px;">
+                <a href="whyus.html" class="btn-outline">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action with background image -->
+    <section class="cta-about">
+        <div class="container reveal">
+            <h2>Ready to Collaborate?</h2>
+            <p>Let’s discuss how our experienced team can bring your vision to life.</p>
+            <a href="contact.html" class="btn-white"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer (same as index) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo"><img src="assets/uniquelogo.jpeg" alt="UECC Logo" class="logo-img"></a>
+                    <p>UECC is a leading East African engineering, construction, and consultancy firm established in 2011, delivering innovative solutions across South Sudan, Ethiopia, Kenya, Uganda, and soon Sierra Leone.</p>
+                    <div class="contact-social" style="margin-top:22px;">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="whyus.html">Why Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Key Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Architectural Design</a></li>
+                        <li><a href="services.html">Bank Fit‑Out</a></li>
+                        <li><a href="services.html">Construction Management</a></li>
+                        <li><a href="services.html">Structural Engineering</a></li>
+                        <li><a href="services.html">Civil Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Nimra Talata, opposite Ministry of Mining, Juba</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+211915667172">+211 915 667 172</a></div>
+                    <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/211925618075">+211 925 618 075</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@uniqueengineerscoltd.com">info@uniqueengineerscoltd.com</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-globe-africa"></i><span>SSD · ETH · KEN · UGA · SLE (soon)</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Unique Engineering & Consultancy Co. Ltd (UECC). All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float"><a href="https://wa.me/211925618075" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>
