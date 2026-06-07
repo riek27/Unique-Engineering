@@ -46,128 +46,62 @@
             --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
             --transition-slow: 0.5s cubic-bezier(0.4,0,0.2,1);
         }
-
         * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--gray-800); line-height: 1.7; overflow-x: hidden; background: var(--white); font-weight: 400; letter-spacing: -0.01em; }
+        h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', 'Times New Roman', serif; line-height: 1.15; letter-spacing: -0.02em; }
+        ::-webkit-scrollbar { width:8px; } ::-webkit-scrollbar-track { background:var(--gray-100); border-radius:4px; } ::-webkit-scrollbar-thumb { background:var(--primary); border-radius:4px; } ::-webkit-scrollbar-thumb:hover { background:var(--primary-dark); }
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 90px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--gray-800);
-            line-height: 1.7;
-            overflow-x: hidden;
-            background: var(--white);
-            font-weight: 400;
-            letter-spacing: -0.01em;
-        }
-
-        h1,h2,h3,h4,h5,h6 {
-            font-family: 'Playfair Display', 'Times New Roman', serif;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-        }
-
-        ::-webkit-scrollbar { width:8px; }
-        ::-webkit-scrollbar-track { background:var(--gray-100); border-radius:4px; }
-        ::-webkit-scrollbar-thumb { background:var(--primary); border-radius:4px; }
-        ::-webkit-scrollbar-thumb:hover { background:var(--primary-dark); }
-
-        .navbar {
-            position: fixed; top:0; left:0; right:0; z-index:1000;
-            background: rgba(255,255,255,0.92);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom:1px solid rgba(0,0,0,0.04);
-            transition: all var(--transition);
-            padding: 14px 0;
-        }
-        .navbar.scrolled { background: rgba(255,255,255,0.97); box-shadow:var(--shadow-md); padding:10px 0; }
-
+        .navbar { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.92); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border-bottom:1px solid rgba(0,0,0,0.04); transition:all var(--transition); padding:14px 0; }
+        .navbar.scrolled { background:rgba(255,255,255,0.97); box-shadow:var(--shadow-md); padding:10px 0; }
         .nav-container { max-width:1400px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; }
         .nav-logo { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
-        .logo-img { height:44px; width:auto; display:block; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); }
-        .nav-logo:hover .logo-img { transform: scale(1.05); }
-
-        .nav-logo .logo-icon {
-            width:44px; height:44px; background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: var(--radius); display:flex; align-items:center; justify-content:center;
-            color:white; font-weight:900; font-size:17px; font-family:'Inter', sans-serif;
-            letter-spacing: -0.5px; box-shadow:0 4px 16px rgba(30,58,138,0.25);
-            transition: transform var(--transition);
-        }
+        .logo-img { height:44px; width:auto; display:block; transition:transform 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .nav-logo:hover .logo-img { transform:scale(1.05); }
+        .nav-logo .logo-icon { width:44px; height:44px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:17px; font-family:'Inter', sans-serif; letter-spacing:-0.5px; box-shadow:0 4px 16px rgba(30,58,138,0.25); transition:transform var(--transition); }
         .nav-logo:hover .logo-icon { transform:scale(1.05) rotate(-2deg); }
-
         .logo-text { display:flex; flex-direction:column; }
         .logo-text .name { font-family:'Playfair Display', serif; font-weight:700; font-size:15px; color:var(--navy); line-height:1.2; letter-spacing:-0.3px; }
         .logo-text .tagline { font-size:9px; color:var(--gray-500); text-transform:uppercase; letter-spacing:1.5px; font-weight:500; }
-
         .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
-        .nav-links a { text-decoration:none; color:var(--gray-700); font-weight:500; font-size:13.5px; transition: color var(--transition); position:relative; letter-spacing:-0.01em; }
+        .nav-links a { text-decoration:none; color:var(--gray-700); font-weight:500; font-size:13.5px; transition:color var(--transition); position:relative; letter-spacing:-0.01em; }
         .nav-links a::after { content:''; position:absolute; bottom:-6px; left:50%; width:0; height:2px; background:var(--primary); transition:all var(--transition); transform:translateX(-50%); border-radius:2px; }
-        .nav-links a:hover { color:var(--primary); }
-        .nav-links a:hover::after { width:70%; }
-
+        .nav-links a:hover { color:var(--primary); } .nav-links a:hover::after { width:70%; }
         .nav-contact { display:flex; align-items:center; gap:16px; flex-shrink:0; }
-        .nav-phone, .nav-whatsapp { display:flex; align-items:center; gap:7px; text-decoration:none; color:var(--gray-700); font-size:12.5px; font-weight:500; transition: color var(--transition); white-space:nowrap; }
+        .nav-phone, .nav-whatsapp { display:flex; align-items:center; gap:7px; text-decoration:none; color:var(--gray-700); font-size:12.5px; font-weight:500; transition:color var(--transition); white-space:nowrap; }
         .nav-phone:hover { color:var(--primary); } .nav-phone i { color:var(--primary); font-size:13px; }
         .nav-whatsapp:hover { color:#25d366; } .nav-whatsapp i { color:#25d366; font-size:15px; }
-
         .btn-quote { padding:10px 22px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; border:none; border-radius:var(--radius); font-weight:600; font-size:13px; cursor:pointer; transition:all var(--transition); text-decoration:none; box-shadow:0 4px 14px rgba(30,58,138,0.25); white-space:nowrap; letter-spacing:-0.01em; }
         .btn-quote:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(30,58,138,0.35); }
-
         .mobile-toggle { display:none; background:none; border:none; font-size:22px; color:var(--navy); cursor:pointer; padding:6px; border-radius:var(--radius-sm); transition:background var(--transition); }
         .mobile-toggle:hover { background:var(--gray-100); }
 
         .hero { position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; padding-top:80px; padding-bottom:130px; }
-        .hero-bg { position:absolute; inset:0; background: url('assets/unique10.jpeg') center/cover no-repeat; z-index:0; }
+        .hero-bg { position:absolute; inset:0; background:url('assets/unique10.jpeg') center/cover no-repeat; z-index:0; }
         .hero-overlay { position:absolute; inset:0; background:linear-gradient(160deg, rgba(11,20,36,0.88) 0%, rgba(30,58,138,0.65) 45%, rgba(11,20,36,0.82) 100%); z-index:1; }
         .hero-pattern { position:absolute; inset:0; z-index:2; opacity:0.04; background-image:radial-gradient(circle at 1.5px 1.5px, white 1px, transparent 0); background-size:36px 36px; }
         .hero-content { position:relative; z-index:3; max-width:1400px; margin:0 auto; padding:40px 40px 20px; width:100%; }
-
         .hero-badge { display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,0.08); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.15); padding:8px 20px; border-radius:50px; color:white; font-size:12.5px; font-weight:500; margin-bottom:28px; opacity:0; transform:translateY(20px); animation:fadeInUp 0.7s 0.2s forwards; letter-spacing:-0.01em; }
         .hero-badge i { color:var(--accent); font-size:13px; }
-
         .hero h1 { font-size:clamp(34px,4.5vw,60px); color:white; font-weight:800; max-width:780px; margin-bottom:22px; opacity:0; transform:translateY(28px); animation:fadeInUp 0.7s 0.4s forwards; letter-spacing:-0.03em; }
         .hero h1 span { background:linear-gradient(135deg, var(--accent-light), var(--accent), #f97316); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-
         .hero-subtitle { font-size:17px; color:rgba(255,255,255,0.82); max-width:620px; margin-bottom:38px; line-height:1.75; opacity:0; transform:translateY(28px); animation:fadeInUp 0.7s 0.55s forwards; font-weight:400; letter-spacing:-0.01em; }
-
         .hero-buttons { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:44px; opacity:0; transform:translateY(28px); animation:fadeInUp 0.7s 0.7s forwards; }
         .btn-primary { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:linear-gradient(135deg, var(--accent), #ea580c); color:#1a1a1a; border:none; border-radius:var(--radius); font-weight:700; font-size:14.5px; cursor:pointer; text-decoration:none; transition:all var(--transition); box-shadow:0 10px 28px rgba(245,158,11,0.3); letter-spacing:-0.01em; }
         .btn-primary:hover { transform:translateY(-3px); box-shadow:0 16px 36px rgba(245,158,11,0.4); }
         .btn-secondary { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:rgba(255,255,255,0.06); backdrop-filter:blur(10px); border:2px solid rgba(255,255,255,0.25); color:white; border-radius:var(--radius); font-weight:600; font-size:14.5px; cursor:pointer; text-decoration:none; transition:all var(--transition); letter-spacing:-0.01em; }
         .btn-secondary:hover { background:rgba(255,255,255,0.14); transform:translateY(-3px); border-color:rgba(255,255,255,0.4); }
-
+        .btn-outline-white { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:transparent; color:white; border:2px solid rgba(255,255,255,0.45); border-radius:var(--radius); font-weight:600; font-size:14.5px; cursor:pointer; text-decoration:none; transition:all var(--transition); letter-spacing:-0.01em; }
+        .btn-outline-white:hover { background:rgba(255,255,255,0.1); transform:translateY(-3px); border-color:rgba(255,255,255,0.7); }
         .hero-trust { display:flex; gap:26px; flex-wrap:wrap; margin-bottom:70px; opacity:0; transform:translateY(28px); animation:fadeInUp 0.7s 0.85s forwards; }
         .trust-item { display:flex; align-items:center; gap:8px; color:rgba(255,255,255,0.88); font-size:13px; font-weight:500; letter-spacing:-0.01em; }
         .trust-item i { color:var(--accent); font-size:15px; }
-
         .hero-stats { position:absolute; bottom:0; left:0; right:0; z-index:4; background:rgba(255,255,255,0.07); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-top:1px solid rgba(255,255,255,0.12); }
         .hero-stats-inner { max-width:1400px; margin:0 auto; padding:26px 40px; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
         .stat-item { text-align:center; color:white; }
         .stat-number { font-size:34px; font-weight:800; font-family:'Playfair Display', serif; display:block; line-height:1; letter-spacing:-0.02em; }
         .stat-label { font-size:11.5px; opacity:0.75; text-transform:uppercase; letter-spacing:1.2px; margin-top:5px; font-weight:500; }
-
         @keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
-
-        .client-logos { padding:60px 0; background:white; overflow:hidden; }
-        .client-logos .container { max-width:1400px; margin:0 auto; padding:0 24px; }
-        .client-logos-header { text-align:center; margin-bottom:36px; }
-        .client-logos-header .section-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(30,58,138,0.07); color:var(--primary); padding:6px 16px; border-radius:50px; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:1.2px; margin-bottom:10px; }
-        .client-logos-title { font-size:clamp(26px,3.5vw,36px); color:var(--navy); font-weight:800; font-family:'Playfair Display', serif; letter-spacing:-0.02em; }
-
-        .logo-scroll-container { width:100%; overflow:hidden; mask-image:linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%); -webkit-mask-image:linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%); }
-        .logo-track { display:flex; width:max-content; animation:scrollLogos 30s linear infinite; }
-        .logo-set { display:flex; gap:48px; align-items:center; padding:10px 0; }
-        .logo-set img { height:70px; width:auto; object-fit:contain; filter:grayscale(30%); opacity:0.85; transition:all 0.3s ease; flex-shrink:0; }
-        .logo-set img:hover { filter:grayscale(0%); opacity:1; }
-
-        @keyframes scrollLogos { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
 
         section { padding:100px 0; }
         .container { max-width:1400px; margin:0 auto; padding:0 24px; }
@@ -191,11 +125,9 @@
         .about-feature { display:flex; align-items:center; gap:11px; }
         .about-feature-icon { width:38px; height:38px; background:rgba(30,58,138,0.08); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; color:var(--primary); flex-shrink:0; font-size:14px; }
         .about-feature span { font-weight:600; color:var(--navy); font-size:13.5px; letter-spacing:-0.01em; }
-
         .btn-download-profile { display:inline-flex; align-items:center; gap:10px; margin-top:24px; padding:14px 28px; background:var(--primary); color:white; border-radius:var(--radius); font-weight:600; font-size:14px; text-decoration:none; transition:all var(--transition); box-shadow:0 4px 16px rgba(30,58,138,0.2); }
         .btn-download-profile i { font-size:18px; }
         .btn-download-profile:hover { background:var(--primary-dark); transform:translateY(-2px); box-shadow:0 10px 24px rgba(30,58,138,0.3); }
-
         .about-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:56px; padding-top:56px; border-top:1px solid var(--gray-200); }
         .about-stat { text-align:center; padding:28px 18px; background:white; border-radius:var(--radius-md); box-shadow:var(--shadow-sm); transition:all var(--transition); border:1px solid transparent; }
         .about-stat:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--gray-100); }
@@ -221,8 +153,7 @@
         .why-us { background:linear-gradient(160deg, var(--navy) 0%, var(--primary-dark) 100%); color:white; position:relative; overflow:hidden; }
         .why-us::before { content:''; position:absolute; inset:0; opacity:0.04; background-image:radial-gradient(circle at 1.5px 1.5px, white 1px, transparent 0); background-size:28px 28px; }
         .why-us .section-badge { background:rgba(255,255,255,0.08); color:var(--accent-light); }
-        .why-us .section-title { color:white; }
-        .why-us .section-subtitle { color:rgba(255,255,255,0.65); }
+        .why-us .section-title { color:white; } .why-us .section-subtitle { color:rgba(255,255,255,0.65); }
         .why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; position:relative; z-index:1; }
         .why-card { background:rgba(255,255,255,0.04); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-lg); padding:28px 22px; text-align:center; transition:all var(--transition-slow); }
         .why-card:hover { background:rgba(255,255,255,0.09); transform:translateY(-6px); border-color:rgba(255,255,255,0.18); box-shadow:0 16px 40px rgba(0,0,0,0.2); }
@@ -282,8 +213,6 @@
         .cta-buttons { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
         .btn-white { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:white; color:var(--primary); border:none; border-radius:var(--radius); font-weight:700; font-size:14.5px; cursor:pointer; text-decoration:none; transition:all var(--transition); letter-spacing:-0.01em; }
         .btn-white:hover { transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,0.18); }
-        .btn-outline-white { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:transparent; color:white; border:2px solid rgba(255,255,255,0.45); border-radius:var(--radius); font-weight:600; font-size:14.5px; cursor:pointer; text-decoration:none; transition:all var(--transition); letter-spacing:-0.01em; }
-        .btn-outline-white:hover { background:rgba(255,255,255,0.1); transform:translateY(-3px); border-color:rgba(255,255,255,0.7); }
 
         .contact { background:var(--gray-50); }
         .contact-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:44px; }
@@ -314,13 +243,11 @@
         footer { background:var(--navy); color:white; padding:80px 0 0; }
         .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:44px; padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,0.08); }
         .footer-brand .logo-img { height:40px; filter: brightness(0) invert(1); }
-        .footer-brand .logo-text .name { color:white; }
-        .footer-brand .logo-text .tagline { color:rgba(255,255,255,0.5); }
+        .footer-brand .logo-text .name { color:white; } .footer-brand .logo-text .tagline { color:rgba(255,255,255,0.5); }
         .footer-brand p { color:rgba(255,255,255,0.6); margin-top:18px; font-size:13.5px; line-height:1.75; letter-spacing:-0.01em; }
         .footer-col h4 { font-size:15px; font-family:'Inter', sans-serif; font-weight:700; margin-bottom:18px; position:relative; padding-bottom:10px; letter-spacing:-0.01em; }
         .footer-col h4::after { content:''; position:absolute; bottom:0; left:0; width:28px; height:2px; background:var(--accent); border-radius:2px; }
-        .footer-links { list-style:none; }
-        .footer-links li { margin-bottom:10px; }
+        .footer-links { list-style:none; } .footer-links li { margin-bottom:10px; }
         .footer-links a { color:rgba(255,255,255,0.6); text-decoration:none; font-size:13.5px; transition:all var(--transition); display:inline-flex; align-items:center; gap:7px; letter-spacing:-0.01em; }
         .footer-links a:hover { color:var(--accent-light); padding-left:4px; }
         .footer-contact-item { display:flex; gap:10px; margin-bottom:14px; color:rgba(255,255,255,0.6); font-size:13.5px; letter-spacing:-0.01em; }
@@ -335,12 +262,10 @@
         @keyframes pulse { 0%,100% { box-shadow:0 10px 30px rgba(37,211,102,0.35); } 50% { box-shadow:0 10px 40px rgba(37,211,102,0.55),0 0 0 14px rgba(37,211,102,0.08); } }
 
         .back-to-top { position:fixed; bottom:28px; left:28px; z-index:999; width:44px; height:44px; background:var(--primary); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; cursor:pointer; opacity:0; visibility:hidden; transition:all var(--transition); border:none; box-shadow:0 4px 14px rgba(30,58,138,0.25); font-size:15px; }
-        .back-to-top.visible { opacity:1; visibility:visible; }
-        .back-to-top:hover { transform:translateY(-3px); background:var(--primary-dark); }
+        .back-to-top.visible { opacity:1; visibility:visible; } .back-to-top:hover { transform:translateY(-3px); background:var(--primary-dark); }
 
         .lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.94); z-index:10000; display:none; align-items:center; justify-content:center; padding:40px; }
-        .lightbox.active { display:flex; }
-        .lightbox img { max-width:90%; max-height:90vh; border-radius:var(--radius); }
+        .lightbox.active { display:flex; } .lightbox img { max-width:90%; max-height:90vh; border-radius:var(--radius); }
         .lightbox-close { position:absolute; top:20px; right:28px; width:44px; height:44px; background:rgba(255,255,255,0.08); border:none; border-radius:50%; color:white; font-size:22px; cursor:pointer; transition:all var(--transition); }
         .lightbox-close:hover { background:rgba(255,255,255,0.18); }
 
@@ -352,24 +277,37 @@
         .mobile-menu.active { right:0; }
         .mobile-menu-close { position:absolute; top:18px; right:18px; width:38px; height:38px; background:var(--gray-100); border:none; border-radius:var(--radius-sm); font-size:18px; cursor:pointer; transition:background var(--transition); }
         .mobile-menu-close:hover { background:var(--gray-200); }
-        .mobile-menu-links { list-style:none; }
-        .mobile-menu-links li { margin-bottom:4px; }
+        .mobile-menu-links { list-style:none; } .mobile-menu-links li { margin-bottom:4px; }
         .mobile-menu-links a { display:block; padding:13px 0; color:var(--gray-700); text-decoration:none; font-weight:500; font-size:15px; border-bottom:1px solid var(--gray-100); letter-spacing:-0.01em; transition:color var(--transition); }
         .mobile-menu-links a:hover { color:var(--primary); }
         .mobile-menu-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:10000; opacity:0; visibility:hidden; transition:all var(--transition); }
         .mobile-menu-overlay.active { opacity:1; visibility:visible; }
 
+        /* Our Clients Section */
+        .clients { background:white; }
+        .clients-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+        .client-card { background:var(--gray-50); border-radius:var(--radius-lg); padding:36px 20px; text-align:center; transition:all var(--transition); border:1px solid var(--gray-100); box-shadow:var(--shadow-sm); }
+        .client-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); background:white; border-color:var(--primary-light); }
+        .client-logo { width:64px; height:64px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 18px; font-size:24px; color:var(--primary); border:2px solid var(--gray-200); transition:all var(--transition); }
+        .client-card:hover .client-logo { border-color:var(--primary); background:var(--primary); color:white; }
+        .client-card h4 { font-size:16px; color:var(--navy); font-weight:700; font-family:'Inter', sans-serif; letter-spacing:-0.01em; }
+        .client-cta { text-align:center; margin-top:40px; }
+        .btn-clients-action { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; background:var(--primary); color:white; border-radius:var(--radius); font-weight:600; font-size:14px; text-decoration:none; transition:all var(--transition); box-shadow:0 4px 14px rgba(30,58,138,0.2); }
+        .btn-clients-action:hover { background:var(--primary-dark); transform:translateY(-2px); box-shadow:0 10px 22px rgba(30,58,138,0.3); }
+
         @media (max-width:1200px) {
             .services-grid { grid-template-columns:repeat(2,1fr); } .why-grid { grid-template-columns:repeat(2,1fr); }
             .process-grid { grid-template-columns:repeat(3,1fr); } .process-grid::before { display:none; }
             .footer-grid { grid-template-columns:repeat(2,1fr); } .projects-grid { grid-template-columns:repeat(2,1fr); }
+            .clients-grid { grid-template-columns:repeat(3,1fr); }
         }
         @media (max-width:992px) {
             .nav-links, .nav-contact { display:none; } .mobile-toggle { display:block; }
             .about-grid { grid-template-columns:1fr; } .contact-grid { grid-template-columns:1fr; }
             .hero-stats-inner { grid-template-columns:repeat(2,1fr); }
             .hero { padding-bottom:130px; } .hero-stats { position:absolute; bottom:0; }
-            .about-image img { height:380px; } .logo-set img { height:50px; }
+            .about-image img { height:380px; }
+            .clients-grid { grid-template-columns:repeat(2,1fr); }
         }
         @media (max-width:768px) {
             section { padding:60px 0; }
@@ -384,6 +322,7 @@
             .process-grid { grid-template-columns:1fr; gap:24px; }
             .form-row { grid-template-columns:1fr; } .footer-grid { grid-template-columns:1fr; gap:32px; }
             .about-features { grid-template-columns:1fr; } .why-grid { grid-template-columns:1fr; }
+            .clients-grid { grid-template-columns:1fr; }
             .cta-content h2 { font-size:24px; } .cta-content p { font-size:14px; }
             .cta-buttons { flex-direction:column; align-items:center; } .cta-buttons a { width:100%; justify-content:center; }
             .about-content h2 { font-size:26px; } .section-title { font-size:26px; }
@@ -392,11 +331,11 @@
             .process-number { width:72px; height:72px; font-size:24px; } .testimonial-card { padding:32px 22px; } .testimonial-text { font-size:15px; }
             .whatsapp-float { bottom:18px; right:16px; } .whatsapp-float a { width:50px; height:50px; font-size:22px; }
             .back-to-top { bottom:18px; left:16px; width:38px; height:38px; }
-            .logo-set { gap:30px; } .logo-set img { height:44px; }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">
@@ -408,6 +347,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#why-us">Why Us</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#clients">Clients</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-contact">
@@ -419,6 +359,7 @@
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
     <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" onclick="closeMobileMenu()"><i class="fas fa-times"></i></button>
@@ -428,6 +369,7 @@
             <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
             <li><a href="#why-us" onclick="closeMobileMenu()">Why Us</a></li>
             <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
+            <li><a href="#clients" onclick="closeMobileMenu()">Clients</a></li>
             <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
             <li><a href="tel:+211915667172"><i class="fas fa-phone"></i> +211 915 667 172</a></li>
             <li><a href="https://wa.me/211925618075" target="_blank"><i class="fab fa-whatsapp"></i> +211 925 618 075</a></li>
@@ -435,6 +377,7 @@
         <a href="#contact" class="btn-quote" style="display:block;text-align:center;margin-top:16px;" onclick="closeMobileMenu()">Get a Free Quote</a>
     </div>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-bg"></div><div class="hero-overlay"></div><div class="hero-pattern"></div>
         <div class="hero-content">
@@ -444,6 +387,7 @@
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
                 <a href="tel:+211915667172" class="btn-secondary"><i class="fas fa-phone-alt"></i> Call Us Now</a>
+                <a href="#clients" class="btn-outline-white"><i class="fas fa-users"></i> See Our Clients</a>
             </div>
             <div class="hero-trust">
                 <div class="trust-item"><i class="fas fa-check-circle"></i> Licensed & Registered</div>
@@ -460,35 +404,7 @@
         </div></div>
     </section>
 
-    <section class="client-logos">
-        <div class="container">
-            <div class="client-logos-header reveal">
-                <span class="section-badge"><i class="fas fa-handshake"></i> Trusted Partners</span>
-                <h2 class="client-logos-title">Our Valued Clients</h2>
-            </div>
-            <div class="logo-scroll-container">
-                <div class="logo-track" id="logoTrack">
-                    <div class="logo-set">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+1" alt="Client 1">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+2" alt="Client 2">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+3" alt="Client 3">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+4" alt="Client 4">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+5" alt="Client 5">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+6" alt="Client 6">
-                    </div>
-                    <div class="logo-set">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+1" alt="Client 1">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+2" alt="Client 2">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+3" alt="Client 3">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+4" alt="Client 4">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+5" alt="Client 5">
-                        <img src="https://via.placeholder.com/150x70.png?text=Client+6" alt="Client 6">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
@@ -520,13 +436,10 @@
         </div>
     </section>
 
+    <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-badge"><i class="fas fa-cogs"></i> What We Offer</span>
-                <h2 class="section-title">Our Professional Services</h2>
-                <p class="section-subtitle">Comprehensive engineering, construction, and consultancy solutions tailored to public and private sector clients.</p>
-            </div>
+            <div class="section-header reveal"><span class="section-badge"><i class="fas fa-cogs"></i> What We Offer</span><h2 class="section-title">Our Professional Services</h2><p class="section-subtitle">Comprehensive engineering, construction, and consultancy solutions tailored to public and private sector clients.</p></div>
             <div class="services-grid">
                 <div class="service-card reveal reveal-delay-1"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3>Engineering Consultancy</h3><p>Professional advisory, feasibility studies, and project planning for optimal outcomes.</p></div>
                 <div class="service-card reveal reveal-delay-2"><div class="service-icon"><i class="fas fa-drafting-compass"></i></div><h3>Architectural & Interior Design</h3><p>Creative 3D building designs, interior fit‑outs, and functional spaces for residential, commercial, and banking environments.</p></div>
@@ -537,20 +450,14 @@
                 <div class="service-card reveal reveal-delay-3"><div class="service-icon"><i class="fas fa-university"></i></div><h3>Bank Fit‑Out Specialisation</h3><p>End‑to‑end banking interiors, ATM implantation, and secure renovations for leading financial institutions.</p></div>
                 <div class="service-card reveal reveal-delay-4"><div class="service-icon"><i class="fas fa-hammer"></i></div><h3>Building Construction & Turnkey Projects</h3><p>Residential, commercial, and institutional buildings delivered with excellence and modern techniques.</p></div>
             </div>
-            <div class="service-cta reveal">
-                <p>Need a custom solution? Let's discuss your project requirements today.</p>
-                <a href="#contact" class="btn-outline"><i class="fas fa-comments"></i> Request a Consultation</a>
-            </div>
+            <div class="service-cta reveal"><p>Need a custom solution? Let's discuss your project requirements today.</p><a href="#contact" class="btn-outline"><i class="fas fa-comments"></i> Request a Consultation</a></div>
         </div>
     </section>
 
+    <!-- Why Us Section -->
     <section class="why-us" id="why-us">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-badge"><i class="fas fa-star"></i> Why Us</span>
-                <h2 class="section-title">Why Clients Choose UECC</h2>
-                <p class="section-subtitle">A decade‑plus of trust, regional capacity, and specialised expertise in engineering and construction.</p>
-            </div>
+            <div class="section-header reveal"><span class="section-badge"><i class="fas fa-star"></i> Why Us</span><h2 class="section-title">Why Clients Choose UECC</h2><p class="section-subtitle">A decade‑plus of trust, regional capacity, and specialised expertise in engineering and construction.</p></div>
             <div class="why-grid">
                 <div class="why-card reveal reveal-delay-1"><div class="why-icon"><i class="fas fa-users"></i></div><h4>Experienced Multidisciplinary Team</h4></div>
                 <div class="why-card reveal reveal-delay-2"><div class="why-icon"><i class="fas fa-lightbulb"></i></div><h4>Innovative & Sustainable Solutions</h4></div>
@@ -564,13 +471,10 @@
         </div>
     </section>
 
+    <!-- Projects Section (Shortened) -->
     <section class="projects" id="projects">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-badge"><i class="fas fa-briefcase"></i> Our Portfolio</span>
-                <h2 class="section-title">Our Projects</h2>
-                <p class="section-subtitle">A selection of engineering, construction, and fit‑out projects completed by our dedicated team.</p>
-            </div>
+            <div class="section-header reveal"><span class="section-badge"><i class="fas fa-briefcase"></i> Our Portfolio</span><h2 class="section-title">Our Projects</h2><p class="section-subtitle">A selection of engineering, construction, and fit‑out projects completed by our dedicated team.</p></div>
             <div class="project-filters reveal">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
                 <button class="filter-btn" data-filter="commercial">Commercial</button>
@@ -580,60 +484,56 @@
                 <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
             </div>
             <div class="projects-grid">
-                <div class="project-card reveal reveal-delay-1" data-category="commercial">
-                    <div class="project-image"><img src="assets/unique1.jpeg" alt="Six-Storey Commercial Complex" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
-                    <div class="project-info"><span class="project-category">Commercial Buildings</span><h3>Six‑Storey Commercial Complex – Amarat, Juba</h3><p>A modern six‑storey commercial complex with premium office spaces and contemporary design.</p></div>
-                </div>
-                <div class="project-card reveal reveal-delay-2" data-category="residential">
-                    <div class="project-image"><img src="assets/unique2.jpeg" alt="Three-Storey Residential Building" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
-                    <div class="project-info"><span class="project-category">Residential Projects</span><h3>Three‑Storey Residential Building – Thong Ping, Juba</h3><p>Modern three‑storey residence offering comfortable living spaces and durable finishes.</p></div>
-                </div>
-                <div class="project-card reveal reveal-delay-3" data-category="commercial">
-                    <div class="project-image"><img src="assets/unique3.jpeg" alt="Four-Storey Shopping Complex" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
-                    <div class="project-info"><span class="project-category">Commercial Development</span><h3>Four‑Storey Shopping Complex – Custom Market, Juba</h3><p>Retail spaces and business outlets in a modern four‑storey shopping complex.</p></div>
-                </div>
-                <div class="project-card reveal reveal-delay-1" data-category="commercial">
-                    <div class="project-image"><img src="assets/unique4.jpeg" alt="Five-Storey Mixed-Use Complex" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
-                    <div class="project-info"><span class="project-category">Commercial & Residential</span><h3>Five‑Storey Mixed-Use Complex – Konyo Konyo, Juba</h3><p>Integrated development with retail and residential spaces in Konyo Konyo.</p></div>
-                </div>
-                <div class="project-card reveal reveal-delay-2" data-category="commercial">
-                    <div class="project-image"><img src="assets/unique5.jpeg" alt="Eight-Storey Commercial Building" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
-                    <div class="project-info"><span class="project-category">Commercial Development</span><h3>Eight‑Storey Commercial Building – Konyo Konyo, Juba</h3><p>Large‑scale commercial development accommodating retail, office, and business operations.</p></div>
-                </div>
-                <div class="project-card reveal reveal-delay-3" data-category="commercial">
-                    <div class="project-image"><img src="assets/unique6.jpeg" alt="Five-Storey Corporate Office" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
-                    <div class="project-info"><span class="project-category">Corporate Office</span><h3>Five‑Storey Corporate Office – Mia Saba Road, Juba</h3><p>Modern corporate office building meeting the demand for business facilities in Juba.</p></div>
-                </div>
-                <div class="project-card reveal reveal-delay-1" data-category="residential">
-                    <div class="project-image"><img src="assets/unique7.jpeg" alt="Six-Storey Apartment Building" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
-                    <div class="project-info"><span class="project-category">Residential Development</span><h3>Six‑Storey Apartment Building – Hai Cinema, Juba</h3><p>Contemporary six‑storey apartment with spacious urban living.</p></div>
-                </div>
-                <div class="project-card reveal reveal-delay-2" data-category="banking">
-                    <div class="project-image"><img src="assets/unique8.jpeg" alt="National Bank of Egypt Branch" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
-                    <div class="project-info"><span class="project-category">Banking & Commercial</span><h3>National Bank of Egypt (NBE) Branch Development</h3><p>Complete structural works and bank fit‑out for a secure, high‑quality banking facility.</p></div>
-                </div>
-                <div class="project-card reveal reveal-delay-3" data-category="residential">
-                    <div class="project-image"><img src="assets/unique9.jpeg" alt="Three-Storey Residential Nairobi" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
-                    <div class="project-info"><span class="project-category">Residential Development</span><h3>Three‑Storey Residential Building – Nairobi, Kenya</h3><p>Durable and sustainable residential project with contemporary Kenyan architecture.</p></div>
-                </div>
-                <div class="project-card reveal reveal-delay-1" data-category="residential">
-                    <div class="project-image"><img src="assets/unique91.png" alt="Nyakuron Residential Development" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
-                    <div class="project-info"><span class="project-category">Residential Development</span><h3>Three‑Storey Residential – Nyakuron, Juba</h3><p>Prestigious residential development with modern design and comfort in Nyakuron 1st Class.</p></div>
-                </div>
+                <div class="project-card reveal reveal-delay-1" data-category="commercial"><div class="project-image"><img src="assets/unique1.jpeg" alt="Six-Storey Commercial Complex" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div><div class="project-info"><span class="project-category">Commercial Buildings</span><h3>Six‑Storey Commercial Complex – Amarat, Juba</h3><p>Modern commercial complex with premium office spaces.</p></div></div>
+                <div class="project-card reveal reveal-delay-2" data-category="residential"><div class="project-image"><img src="assets/unique2.jpeg" alt="Three-Storey Residential Building" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div><div class="project-info"><span class="project-category">Residential Projects</span><h3>Three‑Storey Residential Building – Thong Ping, Juba</h3><p>Modern residence with durable finishes.</p></div></div>
+                <div class="project-card reveal reveal-delay-3" data-category="commercial"><div class="project-image"><img src="assets/unique3.jpeg" alt="Four-Storey Shopping Complex" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div><div class="project-info"><span class="project-category">Commercial Development</span><h3>Four‑Storey Shopping Complex – Custom Market, Juba</h3><p>Retail spaces and business outlets.</p></div></div>
+                <div class="project-card reveal reveal-delay-1" data-category="commercial"><div class="project-image"><img src="assets/unique4.jpeg" alt="Five-Storey Mixed-Use Complex" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div><div class="project-info"><span class="project-category">Commercial & Residential</span><h3>Five‑Storey Mixed-Use Complex – Konyo Konyo, Juba</h3><p>Integrated development with retail and residential.</p></div></div>
+                <div class="project-card reveal reveal-delay-2" data-category="commercial"><div class="project-image"><img src="assets/unique5.jpeg" alt="Eight-Storey Commercial Building" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div><div class="project-info"><span class="project-category">Commercial Development</span><h3>Eight‑Storey Commercial Building – Konyo Konyo, Juba</h3><p>Large‑scale commercial and office operations.</p></div></div>
+                <div class="project-card reveal reveal-delay-3" data-category="commercial"><div class="project-image"><img src="assets/unique6.jpeg" alt="Five-Storey Corporate Office" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div><div class="project-info"><span class="project-category">Corporate Office</span><h3>Five‑Storey Corporate Office – Mia Saba Road, Juba</h3><p>Modern corporate office building.</p></div></div>
+                <div class="project-card reveal reveal-delay-1" data-category="residential"><div class="project-image"><img src="assets/unique7.jpeg" alt="Six-Storey Apartment Building" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div><div class="project-info"><span class="project-category">Residential Development</span><h3>Six‑Storey Apartment Building – Hai Cinema, Juba</h3><p>Contemporary six‑storey urban living.</p></div></div>
+                <div class="project-card reveal reveal-delay-2" data-category="banking"><div class="project-image"><img src="assets/unique8.jpeg" alt="National Bank of Egypt Branch" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div><div class="project-info"><span class="project-category">Banking & Commercial</span><h3>National Bank of Egypt (NBE) Branch</h3><p>Secure banking facility with complete fit‑out.</p></div></div>
+                <div class="project-card reveal reveal-delay-3" data-category="residential"><div class="project-image"><img src="assets/unique9.jpeg" alt="Three-Storey Residential Nairobi" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div><div class="project-info"><span class="project-category">Residential Development</span><h3>Three‑Storey Residential – Nairobi, Kenya</h3><p>Durable sustainable Kenyan residence.</p></div></div>
+                <div class="project-card reveal reveal-delay-1" data-category="residential"><div class="project-image"><img src="assets/unique91.png" alt="Nyakuron Residential Development" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div><div class="project-info"><span class="project-category">Residential Development</span><h3>Three‑Storey Residential – Nyakuron, Juba</h3><p>Prestigious development in Nyakuron 1st Class.</p></div></div>
             </div>
-            <div class="projects-cta reveal">
-                <a href="#contact" class="btn-view-all">Discuss Your Project <i class="fas fa-arrow-right"></i></a>
+            <div class="projects-cta reveal"><a href="#contact" class="btn-view-all">Discuss Your Project <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+    </section>
+
+    <!-- Our Clients Section -->
+    <section class="clients" id="clients">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-handshake"></i> Trusted Partners</span>
+                <h2 class="section-title">Our Clients</h2>
+                <p class="section-subtitle">We are proud to have worked with a diverse range of leading organizations across East Africa.</p>
+            </div>
+            <div class="clients-grid">
+                <div class="client-card reveal reveal-delay-1"><div class="client-logo"><i class="fas fa-building"></i></div><h4>Eco Bank</h4></div>
+                <div class="client-card reveal reveal-delay-2"><div class="client-logo"><i class="fas fa-university"></i></div><h4>Equity Bank</h4></div>
+                <div class="client-card reveal reveal-delay-3"><div class="client-logo"><i class="fas fa-chart-line"></i></div><h4>ICAP</h4></div>
+                <div class="client-card reveal reveal-delay-4"><div class="client-logo"><i class="fas fa-hard-hat"></i></div><h4>AECOM</h4></div>
+                <div class="client-card reveal reveal-delay-1"><div class="client-logo"><i class="fas fa-briefcase"></i></div><h4>Wisdom Investment Group</h4></div>
+                <div class="client-card reveal reveal-delay-2"><div class="client-logo"><i class="fas fa-tint"></i></div><h4>West Yat</h4></div>
+                <div class="client-card reveal reveal-delay-3"><div class="client-logo"><i class="fas fa-oil-can"></i></div><h4>Nile Drilling</h4></div>
+                <div class="client-card reveal reveal-delay-4"><div class="client-logo"><i class="fas fa-print"></i></div><h4>Universal Printer Company Ltd</h4></div>
+                <div class="client-card reveal reveal-delay-1"><div class="client-logo"><i class="fas fa-tools"></i></div><h4>HATAY for Construction</h4></div>
+                <div class="client-card reveal reveal-delay-2"><div class="client-logo"><i class="fas fa-eagle"></i></div><h4>Eagle Enterprise</h4></div>
+                <div class="client-card reveal reveal-delay-3"><div class="client-logo"><i class="fas fa-shield-alt"></i></div><h4>UAP</h4></div>
+                <div class="client-card reveal reveal-delay-4"><div class="client-logo"><i class="fas fa-tv"></i></div><h4>LG</h4></div>
+                <div class="client-card reveal reveal-delay-1"><div class="client-logo"><i class="fas fa-tractor"></i></div><h4>DPOC</h4></div>
+                <div class="client-card reveal reveal-delay-2"><div class="client-logo"><i class="fas fa-landmark"></i></div><h4>KCB Bank</h4></div>
+                <div class="client-card reveal reveal-delay-3"><div class="client-logo"><i class="fas fa-globe-africa"></i></div><h4>Egyptian Bank</h4></div>
+            </div>
+            <div class="client-cta reveal">
+                <a href="#contact" class="btn-clients-action"><i class="fas fa-users"></i> Become Our Next Client</a>
             </div>
         </div>
     </section>
 
+    <!-- Process Section -->
     <section class="process" id="process">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-badge"><i class="fas fa-tasks"></i> How We Work</span>
-                <h2 class="section-title">Our Working Process</h2>
-                <p class="section-subtitle">A systematic approach to delivering excellence in every project we undertake.</p>
-            </div>
+            <div class="section-header reveal"><span class="section-badge"><i class="fas fa-tasks"></i> How We Work</span><h2 class="section-title">Our Working Process</h2><p class="section-subtitle">A systematic approach to delivering excellence in every project we undertake.</p></div>
             <div class="process-grid">
                 <div class="process-step reveal reveal-delay-1"><div class="process-number">01</div><h4>Consultation & Requirement Analysis</h4></div>
                 <div class="process-step reveal reveal-delay-2"><div class="process-number">02</div><h4>Planning & Design</h4></div>
@@ -644,13 +544,10 @@
         </div>
     </section>
 
+    <!-- Testimonials -->
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-badge"><i class="fas fa-quote-left"></i> Testimonials</span>
-                <h2 class="section-title">What Our Clients Say</h2>
-                <p class="section-subtitle">Hear from the people who have experienced our commitment to excellence.</p>
-            </div>
+            <div class="section-header reveal"><span class="section-badge"><i class="fas fa-quote-left"></i> Testimonials</span><h2 class="section-title">What Our Clients Say</h2><p class="section-subtitle">Hear from the people who have experienced our commitment to excellence.</p></div>
             <div class="testimonial-slider reveal">
                 <div class="testimonial-track" id="testimonialTrack">
                     <div class="testimonial-card"><div class="testimonial-quote">"</div><p class="testimonial-text">UECC delivered our bank branch fit‑out on time and within budget. Their understanding of banking security and design requirements was outstanding.</p><div class="testimonial-author"><div class="testimonial-avatar">JM</div><div class="testimonial-author-info"><h5>James Malual</h5><span>Banking Executive, Juba</span></div></div></div>
@@ -666,6 +563,7 @@
         </div>
     </section>
 
+    <!-- CTA Banner -->
     <section class="cta-banner">
         <div class="container">
             <div class="cta-content reveal">
@@ -679,13 +577,10 @@
         </div>
     </section>
 
+    <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-badge"><i class="fas fa-envelope"></i> Get In Touch</span>
-                <h2 class="section-title">Contact Us</h2>
-                <p class="section-subtitle">Ready to start your project? Reach out to us today and let's build something great together.</p>
-            </div>
+            <div class="section-header reveal"><span class="section-badge"><i class="fas fa-envelope"></i> Get In Touch</span><h2 class="section-title">Contact Us</h2><p class="section-subtitle">Ready to start your project? Reach out to us today and let's build something great together.</p></div>
             <div class="contact-grid">
                 <div class="contact-info reveal">
                     <h3>Let's Talk</h3>
@@ -721,6 +616,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -742,6 +638,7 @@
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
                         <li><a href="#why-us"><i class="fas fa-chevron-right"></i> Why Us</a></li>
                         <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="#clients"><i class="fas fa-chevron-right"></i> Clients</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
@@ -764,28 +661,17 @@
                     <div class="footer-contact-item"><i class="fas fa-globe-africa"></i><span>SSD · ETH · KEN · UGA · SLE (soon)</span></div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Unique Engineering & Consultancy Co. Ltd (UECC). All Rights Reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Unique Engineering & Consultancy Co. Ltd (UECC). All Rights Reserved.</p></div>
         </div>
     </footer>
 
-    <div class="whatsapp-float">
-        <a href="https://wa.me/211925618075" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
-
+    <div class="whatsapp-float"><a href="https://wa.me/211925618075" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
-
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
-        <img src="" alt="Project" id="lightboxImg">
-    </div>
+    <div class="lightbox" id="lightbox"><button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button><img src="" alt="Project" id="lightboxImg"></div>
 
     <script>
         const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
 
         function openMobileMenu() {
             document.getElementById('mobileMenu').classList.add('active');
@@ -901,7 +787,3 @@
     </script>
 </body>
 </html>
-
-
-
-
