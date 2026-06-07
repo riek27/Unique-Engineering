@@ -112,7 +112,57 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', 'Times New Roman', serif; l
 /* ===== CLIENT LOGO SCROLL ===== */
 .client-logos { padding: 60px 0; background: white; overflow: hidden; }
 .logo-scroll-container { width: 100%; overflow: hidden; mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%); }
-.logo-track { display: flex; width: max-content; animation: scrollLogos 30s linear infinite; }
+/* ===== SMOOTH INFINITE CLIENT LOGO SCROLL ===== */
+.logo-scroll-container {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+.logo-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+.logo-set {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+}
+.logo-set img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(30%);
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+.logo-set img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Smooth infinite animation */
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Apply animation via JavaScript to avoid any CSS reflow issues */
+.logo-track.animated {
+    animation: scrollLogos 20s linear infinite;
+}
+
+/* Pause animation on hover so users can click links */
+.logo-track.animated:hover {
+    animation-play-state: paused;
+}
 .logo-set { display: flex; gap: 48px; align-items: center; padding: 10px 0; }
 .logo-set img { height: 70px; width: auto; object-fit: contain; filter: grayscale(30%); opacity: 0.85; transition: all 0.3s ease; flex-shrink: 0; }
 .logo-set img:hover { filter: grayscale(0%); opacity: 1; }
@@ -643,55 +693,4 @@ footer { background: var(--navy); color: white; padding: 80px 0 0; }
         font-size: 10px;
         padding: 6px 14px;
     }
-}
-/* ===== SMOOTH INFINITE CLIENT LOGO SCROLL ===== */
-.logo-scroll-container {
-    width: 100%;
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
-}
-.logo-track {
-    display: flex;
-    width: max-content;
-    will-change: transform;
-}
-.logo-set {
-    display: flex;
-    gap: 48px;
-    align-items: center;
-    padding: 10px 0;
-    flex-shrink: 0;
-}
-.logo-set img {
-    height: 70px;
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(30%);
-    opacity: 0.85;
-    transition: all 0.3s ease;
-}
-.logo-set img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-/* Smooth infinite animation */
-@keyframes scrollLogos {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* Apply animation via JavaScript to avoid any CSS reflow issues */
-.logo-track.animated {
-    animation: scrollLogos 20s linear infinite;
-}
-
-/* Pause animation on hover so users can click links */
-.logo-track.animated:hover {
-    animation-play-state: paused;
 }
