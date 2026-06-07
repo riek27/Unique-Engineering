@@ -4,14 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Projects — Unique Engineering & Consultancy Co. Ltd</title>
-    <meta name="description" content="Explore UECC's portfolio of commercial, residential, banking, and institutional projects across South Sudan, Kenya, Ethiopia, and Uganda.">
+    <meta name="description" content="Explore UECC's portfolio of commercial, residential, banking, and institutional projects across East Africa.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Additional styles for new sections – no conflicts */
+        /* Enhanced Featured Project styling */
+        .featured-project {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        .featured-project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .featured-image {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+            transition: transform 0.3s ease;
+        }
+        .featured-image:hover {
+            transform: scale(1.02);
+        }
+        .featured-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+        .featured-content h2 {
+            font-size: 36px;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+        .featured-content .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .featured-content .meta-item {
+            background: rgba(30,58,138,0.07);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .featured-content p {
+            color: var(--gray-600);
+            font-size: 16px;
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, var(--accent), #ea580c);
+            color: #1a1a1a;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 700;
+            font-size: 14.5px;
+            text-decoration: none;
+            transition: all var(--transition);
+            box-shadow: 0 10px 28px rgba(245,158,11,0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 36px rgba(245,158,11,0.4);
+        }
+
+        /* Additional grid adjustments */
         .impact-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -41,69 +112,22 @@
             font-weight: 500;
         }
 
-        .success-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            list-style: none;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .success-list li {
-            background: white;
-            padding: 14px 20px;
-            border-radius: var(--radius-sm);
-            border-left: 4px solid var(--primary);
-            font-weight: 500;
-            box-shadow: var(--shadow-xs);
-        }
-
-        .brochure-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-        .brochure-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: transform var(--transition);
-            text-align: center;
-        }
-        .brochure-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-        .brochure-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            background: var(--gray-100);
-        }
-        .brochure-card .caption {
-            padding: 16px;
-            font-weight: 600;
-            color: var(--navy);
-        }
-        .brochure-card a {
-            display: inline-block;
-            margin-bottom: 16px;
-            padding: 8px 20px;
-            background: var(--primary);
-            color: white;
-            border-radius: var(--radius-sm);
-            text-decoration: none;
-            font-size: 13px;
-            transition: var(--transition);
-        }
-        .brochure-card a:hover { background: var(--primary-dark); }
-
+        /* Responsive fixes */
         @media (max-width: 992px) {
-            .impact-grid { grid-template-columns: repeat(3, 1fr); }
-            .success-list { grid-template-columns: 1fr; }
-            .brochure-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-project-grid {
+                grid-template-columns: 1fr;
+            }
+            .featured-image img {
+                height: 350px;
+            }
+            .impact-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
         @media (max-width: 600px) {
-            .impact-grid { grid-template-columns: 1fr 1fr; }
-            .brochure-grid { grid-template-columns: 1fr; }
+            .impact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
@@ -162,7 +186,7 @@
     </section>
 
     <!-- ===== Featured Project ===== -->
-    <section class="featured-project" style="margin-top:0; padding-top:80px;">
+    <section class="featured-project">
         <div class="container">
             <div class="featured-project-grid">
                 <div class="featured-image reveal">
@@ -200,7 +224,7 @@
                 <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
             </div>
             <div class="projects-grid">
-                <!-- Project cards (same as before) -->
+                <!-- Project cards (identical to earlier version) -->
                 <div class="project-card reveal reveal-delay-1" data-category="commercial">
                     <div class="project-image"><img src="assets/unique1.jpeg" alt="Six-Storey Commercial Complex" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
                     <div class="project-info"><span class="project-category">Commercial Buildings</span><h3>Six‑Storey Commercial Complex – Amarat, Juba</h3><p>Modern commercial complex with premium office spaces.</p></div>
@@ -245,13 +269,13 @@
         </div>
     </section>
 
-    <!-- ===== Project Gallery (large images) ===== -->
+    <!-- ===== Project Gallery ===== -->
     <section class="project-gallery" style="padding: 100px 0; background: var(--gray-50);">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-badge"><i class="fas fa-images"></i> Visual Showcase</span>
                 <h2 class="section-title">Project Gallery</h2>
-                <p class="section-subtitle">A closer look at some of our completed engineering, construction, and fit‑out projects across East Africa.</p>
+                <p class="section-subtitle">A closer look at some of our completed projects across East Africa.</p>
             </div>
             <div class="projects-grid reveal" style="grid-template-columns: repeat(3,1fr); gap:24px;">
                 <div class="project-card"><div class="project-image"><img src="assets/unique1.jpeg" alt="Project 1"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div></div>
