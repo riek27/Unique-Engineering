@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services — Unique Engineering & Consultancy Co. Ltd</title>
+    <meta name="description" content="Comprehensive engineering and construction services by UECC: architectural design, bank fit‑outs, project management, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/uniquelogo.jpeg" alt="Unique Engineering & Consultancy Co. Ltd" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="whyus.html">Why Us</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-contact">
+                <a href="tel:+211915667172" class="nav-phone"><i class="fas fa-phone"></i><span>+211 915 667 172</span></a>
+                <a href="https://wa.me/211925618075" class="nav-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i><span>+211 925 618 075</span></a>
+                <a href="contact.html" class="btn-quote">Get Quote</a>
+            </div>
+            <button class="mobile-toggle" onclick="openMobileMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="closeMobileMenu()"><i class="fas fa-times"></i></button>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+            <li><a href="whyus.html" onclick="closeMobileMenu()">Why Us</a></li>
+            <li><a href="projects.html" onclick="closeMobileMenu()">Projects</a></li>
+            <li><a href="clients.html" onclick="closeMobileMenu()">Clients</a></li>
+            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+            <li><a href="tel:+211915667172"><i class="fas fa-phone"></i> +211 915 667 172</a></li>
+            <li><a href="https://wa.me/211925618075" target="_blank"><i class="fab fa-whatsapp"></i> +211 925 618 075</a></li>
+        </ul>
+        <a href="contact.html" class="btn-quote" style="display:block;text-align:center;margin-top:16px;" onclick="closeMobileMenu()">Get a Free Quote</a>
+    </div>
+
+    <!-- Hero Section (smaller, with background image) -->
+    <section class="services-hero">
+        <div class="services-hero-overlay"></div>
+        <div class="container services-hero-content">
+            <div class="hero-badge"><i class="fas fa-cogs"></i> What We Do</div>
+            <h1>Our Professional Services</h1>
+            <p>End‑to‑end engineering, construction, and consultancy solutions tailored to your needs.</p>
+        </div>
+    </section>
+
+    <!-- Services Cards with Get Quote Buttons -->
+    <section class="services-detail">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-list-check"></i> Complete Solutions</span>
+                <h2 class="section-title">Comprehensive Services</h2>
+                <p class="section-subtitle">From concept to completion, we offer a full range of services to bring your vision to life.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Engineering Consultancy</h3>
+                    <p>Professional advisory, feasibility studies, and project planning for optimal outcomes.</p>
+                    <a href="contact.html" class="btn-service-quote">Get Quote <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card reveal reveal-delay-2">
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Architectural & Interior Design</h3>
+                    <p>Creative 3D building designs, interior fit‑outs, and functional spaces for residential, commercial, and banking environments.</p>
+                    <a href="contact.html" class="btn-service-quote">Get Quote <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3>Construction Management</h3>
+                    <p>Turnkey project delivery, construction supervision, and on‑site coordination from concept to handover.</p>
+                    <a href="contact.html" class="btn-service-quote">Get Quote <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card reveal reveal-delay-4">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3>Structural & Civil Engineering</h3>
+                    <p>Safe structural design, road rehabilitation, drainage, and infrastructure development.</p>
+                    <a href="contact.html" class="btn-service-quote">Get Quote <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 5 -->
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <h3>Project Supervision</h3>
+                    <p>Quality control, schedule monitoring, and compliance enforcement on all construction sites.</p>
+                    <a href="contact.html" class="btn-service-quote">Get Quote <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 6 -->
+                <div class="service-card reveal reveal-delay-2">
+                    <div class="service-icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Quantity Surveying & Cost Estimation</h3>
+                    <p>Accurate budgeting, material take‑offs, and financial management for cost‑effective delivery.</p>
+                    <a href="contact.html" class="btn-service-quote">Get Quote <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 7 -->
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-icon"><i class="fas fa-university"></i></div>
+                    <h3>Bank Fit‑Out Specialisation</h3>
+                    <p>End‑to‑end banking interiors, ATM implantation, and secure renovations for leading financial institutions.</p>
+                    <a href="contact.html" class="btn-service-quote">Get Quote <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 8 -->
+                <div class="service-card reveal reveal-delay-4">
+                    <div class="service-icon"><i class="fas fa-hammer"></i></div>
+                    <h3>Building Construction & Turnkey Projects</h3>
+                    <p>Residential, commercial, and institutional buildings delivered with excellence and modern techniques.</p>
+                    <a href="contact.html" class="btn-service-quote">Get Quote <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experts in the Field Section -->
+    <section class="experts-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-medal"></i> Our Edge</span>
+                <h2 class="section-title">Experts in the Field</h2>
+                <p class="section-subtitle">Decades of combined experience and specialised skills that set us apart.</p>
+            </div>
+            <div class="expert-grid">
+                <div class="expert-card reveal reveal-delay-1">
+                    <div class="expert-icon"><i class="fas fa-landmark"></i></div>
+                    <h4>Banking & Financial Fit‑Outs</h4>
+                    <p>Deep expertise in secure, compliant, and modern banking environments for major regional banks.</p>
+                </div>
+                <div class="expert-card reveal reveal-delay-2">
+                    <div class="expert-icon"><i class="fas fa-city"></i></div>
+                    <h4>Commercial & Mixed‑Use Developments</h4>
+                    <p>Proven track record in delivering large‑scale commercial complexes and integrated residential projects.</p>
+                </div>
+                <div class="expert-card reveal reveal-delay-3">
+                    <div class="expert-icon"><i class="fas fa-road"></i></div>
+                    <h4>Infrastructure & Civil Works</h4>
+                    <p>Expertise in road rehabilitation, drainage systems, and essential public infrastructure.</p>
+                </div>
+                <div class="expert-card reveal reveal-delay-4">
+                    <div class="expert-icon"><i class="fas fa-building-shield"></i></div>
+                    <h4>Design & Build Turnkey Solutions</h4>
+                    <p>Seamless integration of architectural vision and engineering reality, from concept to keys.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action with Background Image (Hero Background) -->
+    <section class="cta-image-banner">
+        <div class="cta-image-overlay"></div>
+        <div class="container cta-image-content reveal">
+            <h2>Ready to Start Your Next Project?</h2>
+            <p>Partner with Unique Engineering & Consultancy Co. Ltd and bring your vision to life with professional engineering, construction, and consultancy expertise.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-white"><i class="fas fa-paper-plane"></i> Get Quote</a>
+                <a href="tel:+211915667172" class="btn-outline-white"><i class="fas fa-phone-alt"></i> Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo"><img src="assets/uniquelogo.jpeg" alt="UECC Logo" class="logo-img"></a>
+                    <p>UECC is a leading East African engineering, construction, and consultancy firm established in 2011, delivering innovative and sustainable solutions across South Sudan, Ethiopia, Kenya, Uganda, and soon Sierra Leone.</p>
+                    <div class="contact-social" style="margin-top:22px;">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="whyus.html">Why Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Key Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Architectural Design</a></li>
+                        <li><a href="services.html">Bank Fit‑Out</a></li>
+                        <li><a href="services.html">Construction Management</a></li>
+                        <li><a href="services.html">Structural Engineering</a></li>
+                        <li><a href="services.html">Civil Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Nimra Talata, opposite Ministry of Mining, Juba</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+211915667172">+211 915 667 172</a></div>
+                    <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/211925618075">+211 925 618 075</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@uniqueengineerscoltd.com">info@uniqueengineerscoltd.com</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-globe-africa"></i><span>SSD · ETH · KEN · UGA · SLE (soon)</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Unique Engineering & Consultancy Co. Ltd (UECC). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float"><a href="https://wa.me/211925618075" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
