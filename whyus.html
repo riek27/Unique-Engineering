@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose Us — Unique Engineering & Consultancy Co. Ltd</title>
+    <meta name="description" content="Discover why clients trust UECC for engineering, construction, and consultancy. Expertise, quality, and reliability built into every project.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific enhancements (all other styles come from style.css) */
+        .why-us-hero {
+            background: linear-gradient(160deg, var(--navy) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 120px 0 80px;
+            margin-top: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .why-us-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('assets/unique10.jpeg') center/cover no-repeat;
+            opacity: 0.08;
+            z-index: 0;
+        }
+        .why-us-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .why-us-hero h1 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .why-us-hero .hero-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: rgba(255,255,255,0.9);
+        }
+        .why-points-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+        .why-point-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition);
+            border: 1px solid var(--gray-100);
+        }
+        .why-point-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+        .why-point-card .point-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 8px 20px rgba(30,58,138,0.2);
+        }
+        .why-point-card h3 {
+            font-size: 18px;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        .why-point-card p {
+            color: var(--gray-600);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .team-banner {
+            position: relative;
+            background: url('assets/unique10.jpeg') center/cover no-repeat;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        .team-banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(11,20,36,0.88) 0%, rgba(30,58,138,0.75) 100%);
+        }
+        .team-banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .team-banner-content h2 {
+            font-size: clamp(28px, 3.5vw, 42px);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .team-banner-content p {
+            font-size: 17px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+        @media (max-width: 1200px) {
+            .why-points-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .why-points-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/uniquelogo.jpeg" alt="Unique Engineering & Consultancy Co. Ltd" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="whyus.html" class="active">Why Us</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-contact">
+                <a href="tel:+211915667172" class="nav-phone"><i class="fas fa-phone"></i><span>+211 915 667 172</span></a>
+                <a href="https://wa.me/211925618075" class="nav-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i><span>+211 925 618 075</span></a>
+                <a href="contact.html" class="btn-quote">Get Quote</a>
+            </div>
+            <button class="mobile-toggle" onclick="openMobileMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="closeMobileMenu()"><i class="fas fa-times"></i></button>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+            <li><a href="whyus.html" onclick="closeMobileMenu()">Why Us</a></li>
+            <li><a href="projects.html" onclick="closeMobileMenu()">Projects</a></li>
+            <li><a href="clients.html" onclick="closeMobileMenu()">Clients</a></li>
+            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+            <li><a href="tel:+211915667172"><i class="fas fa-phone"></i> +211 915 667 172</a></li>
+            <li><a href="https://wa.me/211925618075" target="_blank"><i class="fab fa-whatsapp"></i> +211 925 618 075</a></li>
+        </ul>
+        <a href="contact.html" class="btn-quote" style="display:block;text-align:center;margin-top:16px;" onclick="closeMobileMenu()">Get a Free Quote</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="why-us-hero">
+        <div class="container">
+            <h1>Why Homeowners & Businesses Trust Us</h1>
+            <p class="hero-subtitle">We combine expertise, quality craftsmanship, and reliable service to deliver projects that exceed expectations.</p>
+            <div class="hero-buttons" style="justify-content: center; margin-top: 30px;">
+                <a href="contact.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
+                <a href="tel:+211915667172" class="btn-secondary"><i class="fas fa-phone-alt"></i> Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Points -->
+    <section class="why-points">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-star"></i> The UECC Difference</span>
+                <h2 class="section-title">Building Trust Through Quality, Reliability, and Results</h2>
+                <p class="section-subtitle">Every project is completed with attention to detail, professional execution, and a commitment to customer satisfaction.</p>
+            </div>
+            <div class="why-points-grid">
+                <div class="why-point-card reveal reveal-delay-1">
+                    <div class="point-icon"><i class="fas fa-users"></i></div>
+                    <h3>Experienced Professionals</h3>
+                    <p>Our skilled team brings years of industry experience, delivering high-quality workmanship on every project.</p>
+                </div>
+                <div class="why-point-card reveal reveal-delay-2">
+                    <div class="point-icon"><i class="fas fa-hammer"></i></div>
+                    <h3>Quality Craftsmanship</h3>
+                    <p>We take pride in every detail, using proven techniques and quality materials to ensure lasting results.</p>
+                </div>
+                <div class="why-point-card reveal reveal-delay-3">
+                    <div class="point-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Licensed & Insured</h3>
+                    <p>Your project is protected by a fully licensed and insured team committed to professional standards.</p>
+                </div>
+                <div class="why-point-card reveal reveal-delay-4">
+                    <div class="point-icon"><i class="fas fa-clock"></i></div>
+                    <h3>On-Time Project Delivery</h3>
+                    <p>We respect your schedule and work efficiently to complete projects on time and within budget.</p>
+                </div>
+                <div class="why-point-card reveal reveal-delay-1">
+                    <div class="point-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Transparent Communication</h3>
+                    <p>From consultation to completion, we keep you informed every step of the way with clear and honest communication.</p>
+                </div>
+                <div class="why-point-card reveal reveal-delay-2">
+                    <div class="point-icon"><i class="fas fa-tag"></i></div>
+                    <h3>Competitive Pricing</h3>
+                    <p>Receive exceptional value with fair, transparent pricing and no hidden costs.</p>
+                </div>
+                <div class="why-point-card reveal reveal-delay-3">
+                    <div class="point-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Customer-Focused Service</h3>
+                    <p>Your satisfaction is our priority. We work closely with you to ensure the final result matches your vision.</p>
+                </div>
+                <div class="why-point-card reveal reveal-delay-4">
+                    <div class="point-icon"><i class="fas fa-file-invoice"></i></div>
+                    <h3>Free Estimates</h3>
+                    <p>Get expert advice and a detailed project estimate before making any commitment.</p>
+                </div>
+                <div class="why-point-card reveal reveal-delay-1">
+                    <div class="point-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3>Safety First Approach</h3>
+                    <p>We follow strict safety standards to protect our team, clients, and project sites.</p>
+                </div>
+                <div class="why-point-card reveal reveal-delay-2">
+                    <div class="point-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Proven Track Record</h3>
+                    <p>A growing portfolio of successful projects demonstrates our commitment to quality and reliability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Image & CTA -->
+    <section class="team-banner">
+        <div class="team-banner-overlay"></div>
+        <div class="team-banner-content reveal">
+            <h2>Our Dedicated Team</h2>
+            <p>From engineers to project managers, our professionals are committed to turning your vision into reality.</p>
+            <div class="cta-buttons">
+                <a href="about.html#team" class="btn-white"><i class="fas fa-users"></i> Meet Our Team</a>
+                <a href="contact.html" class="btn-outline-white"><i class="fas fa-paper-plane"></i> Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo"><img src="assets/uniquelogo.jpeg" alt="UECC Logo" class="logo-img"></a>
+                    <p>UECC is a leading East African engineering, construction, and consultancy firm established in 2011, delivering innovative and sustainable solutions across South Sudan, Ethiopia, Kenya, Uganda, and soon Sierra Leone.</p>
+                    <div class="contact-social" style="margin-top:22px;">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="whyus.html">Why Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Key Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Architectural Design</a></li>
+                        <li><a href="services.html">Bank Fit‑Out</a></li>
+                        <li><a href="services.html">Construction Management</a></li>
+                        <li><a href="services.html">Structural Engineering</a></li>
+                        <li><a href="services.html">Civil Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Nimra Talata, opposite Ministry of Mining, Juba</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+211915667172">+211 915 667 172</a></div>
+                    <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/211925618075">+211 925 618 075</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@uniqueengineerscoltd.com">info@uniqueengineerscoltd.com</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-globe-africa"></i><span>SSD · ETH · KEN · UGA · SLE (soon)</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Unique Engineering & Consultancy Co. Ltd (UECC). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float"><a href="https://wa.me/211925618075" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
