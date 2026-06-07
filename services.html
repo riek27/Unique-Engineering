@@ -4,12 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services — Unique Engineering & Consultancy Co. Ltd</title>
-    <meta name="description" content="Comprehensive engineering and construction services by UECC: architectural design, bank fit‑outs, project management, and more.">
+    <meta name="description" content="Comprehensive engineering, construction, and consultancy services by UECC. Industries, process, and expertise.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for new sections (no conflicts with style.css) */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .industry-item {
+            background: var(--gray-50);
+            padding: 24px;
+            border-radius: var(--radius);
+            text-align: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .industry-item:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .industry-item i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .trust-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            list-style: none;
+        }
+        .trust-list li {
+            background: white;
+            padding: 14px 20px;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--primary);
+            font-weight: 500;
+            box-shadow: var(--shadow-xs);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .process-step {
+            text-align: center;
+            max-width: 160px;
+        }
+        .process-step .step-number {
+            width: 72px;
+            height: 72px;
+            background: white;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .process-step:hover .step-number {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.08);
+        }
+        .process-step h4 {
+            font-size: 16px;
+            color: var(--navy);
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+
+        .featured-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .featured-project-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: white;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .featured-project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .featured-project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .featured-project-card .info {
+            padding: 18px;
+        }
+        .featured-project-card h5 {
+            font-size: 15px;
+            color: var(--navy);
+        }
+        .featured-project-card p {
+            font-size: 13px;
+            color: var(--gray-600);
+            margin-top: 6px;
+        }
+
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-top: 30px;
+        }
+        .region-card {
+            text-align: center;
+            background: var(--gray-50);
+            padding: 20px 12px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+        .region-card:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .region-card .flag {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+        .region-card h5 {
+            font-size: 15px;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            margin-bottom: 16px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 18px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--gray-50);
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 15px;
+            color: var(--navy);
+        }
+        .faq-answer {
+            padding: 0 24px 18px;
+            display: none;
+            color: var(--gray-600);
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 992px) {
+            .industries-grid, .featured-projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .trust-list { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .industries-grid, .featured-projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
@@ -55,7 +239,7 @@
         <a href="contact.html" class="btn-quote" style="display:block;text-align:center;margin-top:16px;" onclick="closeMobileMenu()">Get a Free Quote</a>
     </div>
 
-    <!-- Hero Section (smaller, with background image) -->
+    <!-- Hero Section -->
     <section class="services-hero">
         <div class="services-hero-overlay"></div>
         <div class="container services-hero-content">
@@ -65,7 +249,7 @@
         </div>
     </section>
 
-    <!-- Services Cards with Get Quote Buttons -->
+    <!-- Services Cards -->
     <section class="services-detail">
         <div class="container">
             <div class="section-header reveal">
@@ -134,48 +318,180 @@
         </div>
     </section>
 
-    <!-- Experts in the Field Section -->
-    <section class="experts-section">
+    <!-- Industries We Serve -->
+    <section class="industries" style="padding: 100px 0; background: var(--gray-50);">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-badge"><i class="fas fa-medal"></i> Our Edge</span>
-                <h2 class="section-title">Experts in the Field</h2>
-                <p class="section-subtitle">Decades of combined experience and specialised skills that set us apart.</p>
+                <span class="section-badge"><i class="fas fa-industry"></i> Expertise</span>
+                <h2 class="section-title">Industries We Serve</h2>
             </div>
-            <div class="expert-grid">
-                <div class="expert-card reveal reveal-delay-1">
-                    <div class="expert-icon"><i class="fas fa-landmark"></i></div>
-                    <h4>Banking & Financial Fit‑Outs</h4>
-                    <p>Deep expertise in secure, compliant, and modern banking environments for major regional banks.</p>
+            <div class="industries-grid reveal">
+                <div class="industry-item"><i class="fas fa-university"></i> Banking & Financial</div>
+                <div class="industry-item"><i class="fas fa-building"></i> Commercial Buildings</div>
+                <div class="industry-item"><i class="fas fa-hard-hat"></i> Government Infrastructure</div>
+                <div class="industry-item"><i class="fas fa-home"></i> Residential Developments</div>
+                <div class="industry-item"><i class="fas fa-warehouse"></i> Industrial Facilities</div>
+                <div class="industry-item"><i class="fas fa-graduation-cap"></i> Educational Institutions</div>
+                <div class="industry-item"><i class="fas fa-hospital"></i> Healthcare Facilities</div>
+                <div class="industry-item"><i class="fas fa-globe-africa"></i> NGOs & International Orgs</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Clients Trust Our Services -->
+    <section class="trust-services" style="padding: 100px 0;">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-thumbs-up"></i> Our Promise</span>
+                <h2 class="section-title">Why Clients Trust Our Services</h2>
+            </div>
+            <ul class="trust-list reveal">
+                <li><i class="fas fa-check-circle" style="color:var(--primary); margin-right:8px;"></i> 15+ Years of Industry Experience</li>
+                <li><i class="fas fa-check-circle" style="color:var(--primary); margin-right:8px;"></i> 150+ Successfully Completed Projects</li>
+                <li><i class="fas fa-check-circle" style="color:var(--primary); margin-right:8px;"></i> Multi-Country Operations</li>
+                <li><i class="fas fa-check-circle" style="color:var(--primary); margin-right:8px;"></i> Experienced Engineers & Architects</li>
+                <li><i class="fas fa-check-circle" style="color:var(--primary); margin-right:8px;"></i> Strict Quality Assurance</li>
+                <li><i class="fas fa-check-circle" style="color:var(--primary); margin-right:8px;"></i> Commitment to Safety Standards</li>
+                <li><i class="fas fa-check-circle" style="color:var(--primary); margin-right:8px;"></i> On-Time Project Delivery</li>
+                <li><i class="fas fa-check-circle" style="color:var(--primary); margin-right:8px;"></i> Competitive Pricing</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Our Service Process -->
+    <section class="process" style="padding: 100px 0; background: var(--gray-50);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-tasks"></i> How We Work</span>
+                <h2 class="section-title">Our Service Process</h2>
+            </div>
+            <div class="process-steps reveal">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Consultation & Requirements</h4>
                 </div>
-                <div class="expert-card reveal reveal-delay-2">
-                    <div class="expert-icon"><i class="fas fa-city"></i></div>
-                    <h4>Commercial & Mixed‑Use Developments</h4>
-                    <p>Proven track record in delivering large‑scale commercial complexes and integrated residential projects.</p>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Planning & Design</h4>
                 </div>
-                <div class="expert-card reveal reveal-delay-3">
-                    <div class="expert-icon"><i class="fas fa-road"></i></div>
-                    <h4>Infrastructure & Civil Works</h4>
-                    <p>Expertise in road rehabilitation, drainage systems, and essential public infrastructure.</p>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Cost Estimation & Budgeting</h4>
                 </div>
-                <div class="expert-card reveal reveal-delay-4">
-                    <div class="expert-icon"><i class="fas fa-building-shield"></i></div>
-                    <h4>Design & Build Turnkey Solutions</h4>
-                    <p>Seamless integration of architectural vision and engineering reality, from concept to keys.</p>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Project Execution</h4>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>Quality Control & Inspection</h4>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h4>Final Handover & Support</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action with Background Image (Hero Background) -->
+    <!-- Featured Projects Preview -->
+    <section class="featured-projects" style="padding: 100px 0;">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-briefcase"></i> Our Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="featured-projects-grid reveal">
+                <div class="featured-project-card">
+                    <img src="assets/unique1.jpeg" alt="Commercial Bank Fit-Out">
+                    <div class="info"><h5>Commercial Bank Fit-Out</h5><p>Juba, South Sudan</p></div>
+                </div>
+                <div class="featured-project-card">
+                    <img src="assets/unique5.jpeg" alt="Road Rehabilitation">
+                    <div class="info"><h5>Road Rehabilitation</h5><p>Ethiopia</p></div>
+                </div>
+                <div class="featured-project-card">
+                    <img src="assets/unique6.jpeg" alt="Office Complex">
+                    <div class="info"><h5>Office Complex Construction</h5><p>Kenya</p></div>
+                </div>
+                <div class="featured-project-card">
+                    <img src="assets/unique9.jpeg" alt="Infrastructure Development">
+                    <div class="info"><h5>Infrastructure Development</h5><p>Uganda</p></div>
+                </div>
+            </div>
+            <div class="client-cta reveal" style="margin-top:40px;">
+                <a href="projects.html" class="btn-clients-action"><i class="fas fa-arrow-right"></i> View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Coverage Area -->
+    <section class="regions" style="padding: 100px 0; background: var(--gray-50);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-globe-africa"></i> Coverage</span>
+                <h2 class="section-title">Where We Operate</h2>
+            </div>
+            <div class="regions-grid reveal">
+                <div class="region-card"><div class="flag">🇸🇸</div><h5>South Sudan</h5></div>
+                <div class="region-card"><div class="flag">🇪🇹</div><h5>Ethiopia</h5></div>
+                <div class="region-card"><div class="flag">🇰🇪</div><h5>Kenya</h5></div>
+                <div class="region-card"><div class="flag">🇺🇬</div><h5>Uganda</h5></div>
+                <div class="region-card"><div class="flag">🇸🇱</div><h5>Sierra Leone (Soon)</h5></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Safety Commitment -->
+    <section class="quality-safety" style="padding: 100px 0;">
+        <div class="container" style="max-width: 800px; text-align:center;">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-shield-alt"></i> Our Standards</span>
+                <h2 class="section-title">Quality & Safety</h2>
+            </div>
+            <p class="reveal" style="font-size:17px; color:var(--gray-600); line-height:1.8;">
+                At UECC, quality and safety are integrated into every stage of our projects. We follow rigorous engineering standards, implement strict quality control procedures, and maintain safe working environments to ensure exceptional results for our clients.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="faqs" style="padding: 100px 0; background: var(--gray-50);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-question-circle"></i> Help Center</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">How do I request a quote? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Contact our team through our website, phone, or email. We'll provide a detailed estimate after understanding your needs.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">Do you handle projects outside South Sudan? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Yes. We currently operate in South Sudan, Ethiopia, Kenya, and Uganda, with expansion planned into Sierra Leone.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">Do you provide turnkey solutions? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Yes. We manage projects from concept and design through construction and final handover.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">Can UECC manage large-scale commercial projects? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Absolutely. Our team has extensive experience delivering commercial, banking, and infrastructure projects.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
     <section class="cta-image-banner">
         <div class="cta-image-overlay"></div>
         <div class="container cta-image-content reveal">
-            <h2>Ready to Start Your Next Project?</h2>
-            <p>Partner with Unique Engineering & Consultancy Co. Ltd and bring your vision to life with professional engineering, construction, and consultancy expertise.</p>
+            <h2>Transform Your Vision Into Reality</h2>
+            <p>Whether you need engineering consultancy, architectural design, project management, or full-scale construction services, UECC has the expertise to deliver outstanding results.</p>
             <div class="cta-buttons">
-                <a href="contact.html" class="btn-white"><i class="fas fa-paper-plane"></i> Get Quote</a>
-                <a href="tel:+211915667172" class="btn-outline-white"><i class="fas fa-phone-alt"></i> Call Now</a>
+                <a href="contact.html" class="btn-white"><i class="fas fa-file-alt"></i> Request a Proposal</a>
+                <a href="contact.html" class="btn-outline-white"><i class="fas fa-calendar-check"></i> Schedule a Consultation</a>
             </div>
         </div>
     </section>
@@ -235,5 +551,12 @@
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
+    <script>
+        // FAQ toggle
+        function toggleFAQ(btn) {
+            const item = btn.parentElement;
+            item.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
