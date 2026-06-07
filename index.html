@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unique Engineering & Consultancy Co. Ltd (UECC) — Juba, South Sudan</title>
-    <meta name="description" content="UECC is a leading East African engineering, construction, and consultancy firm established in 2011. We specialize in architectural design, civil & structural engineering, bank fit-outs, and project management across South Sudan, Ethiopia, Kenya, and Uganda.">
+    <meta name="description" content="UECC is a leading East African engineering, construction, and consultancy firm established in 2011. We specialize in architectural design, civil & structural engineering, bank fit-outs, and project management across South Sudan, Ethiopia, Kenya, Uganda, and soon Sierra Leone.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -30,28 +30,24 @@
             --gray-700: #374151;
             --gray-800: #1f2937;
             --gray-900: #111827;
-            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            --shadow-2xl: 0 32px 64px -16px rgba(0, 0, 0, 0.2);
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.07),0 2px 4px -2px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08),0 4px 6px -4px rgba(0,0,0,0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.08),0 8px 10px -6px rgba(0,0,0,0.05);
+            --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.15);
+            --shadow-2xl: 0 32px 64px -16px rgba(0,0,0,0.2);
             --radius-sm: 8px;
             --radius: 12px;
             --radius-md: 16px;
             --radius-lg: 20px;
             --radius-xl: 24px;
             --radius-2xl: 32px;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+            --transition-slow: 0.5s cubic-bezier(0.4,0,0.2,1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin:0; padding:0; box-sizing:border-box; }
 
         html {
             scroll-behavior: smooth;
@@ -70,2112 +66,367 @@
             letter-spacing: -0.01em;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h1,h2,h3,h4,h5,h6 {
             font-family: 'Playfair Display', 'Times New Roman', serif;
             line-height: 1.15;
             letter-spacing: -0.02em;
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--gray-100);
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-dark);
-        }
+        ::-webkit-scrollbar { width:8px; }
+        ::-webkit-scrollbar-track { background:var(--gray-100); border-radius:4px; }
+        ::-webkit-scrollbar-thumb { background:var(--primary); border-radius:4px; }
+        ::-webkit-scrollbar-thumb:hover { background:var(--primary-dark); }
 
-        /* Navigation */
         .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.92);
+            position: fixed; top:0; left:0; right:0; z-index:1000;
+            background: rgba(255,255,255,0.92);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            border-bottom:1px solid rgba(0,0,0,0.04);
             transition: all var(--transition);
             padding: 14px 0;
         }
+        .navbar.scrolled { background: rgba(255,255,255,0.97); box-shadow:var(--shadow-md); padding:10px 0; }
 
-        .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.97);
-            box-shadow: var(--shadow-md);
-            padding: 10px 0;
-        }
+        .nav-container { max-width:1400px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; }
+        .nav-logo { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
+        .logo-img { height:44px; width:auto; display:block; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .nav-logo:hover .logo-img { transform: scale(1.05); }
 
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .nav-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    flex-shrink: 0;
-}
-
-.logo-img {
-    height: 44px;          /* adjust as needed */
-    width: auto;
-    display: block;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-logo:hover .logo-img {
-    transform: scale(1.05);
-}
-
-/* Footer logo – white version on dark background */
-.footer-brand .logo-img {
-    height: 40px;
-    filter: brightness(0) invert(1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .logo-img {
-        height: 36px;
-    }
-}
-
-@media (max-width: 768px) {
-    .logo-img {
-        height: 32px;
-    }
-    .footer-brand .logo-img {
-        height: 36px;
-    }
-}
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-
-        .logo-icon {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: var(--radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 900;
-            font-size: 17px;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: -0.5px;
-            box-shadow: 0 4px 16px rgba(30, 58, 138, 0.25);
+        .nav-logo .logo-icon {
+            width:44px; height:44px; background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: var(--radius); display:flex; align-items:center; justify-content:center;
+            color:white; font-weight:900; font-size:17px; font-family:'Inter', sans-serif;
+            letter-spacing: -0.5px; box-shadow:0 4px 16px rgba(30,58,138,0.25);
             transition: transform var(--transition);
         }
-
-        .nav-logo:hover .logo-icon {
-            transform: scale(1.05) rotate(-2deg);
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-text .name {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 15px;
-            color: var(--navy);
-            line-height: 1.2;
-            letter-spacing: -0.3px;
-        }
-
-        .logo-text .tagline {
-            font-size: 9px;
-            color: var(--gray-500);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 500;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--gray-700);
-            font-weight: 500;
-            font-size: 13.5px;
-            transition: color var(--transition);
-            position: relative;
-            letter-spacing: -0.01em;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: all var(--transition);
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        .nav-links a:hover::after {
-            width: 70%;
-        }
-
-        .nav-contact {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-shrink: 0;
-        }
-
-        .nav-phone,
-        .nav-whatsapp {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            text-decoration: none;
-            color: var(--gray-700);
-            font-size: 12.5px;
-            font-weight: 500;
-            transition: color var(--transition);
-            white-space: nowrap;
-        }
-
-        .nav-phone:hover {
-            color: var(--primary);
-        }
-        .nav-phone i {
-            color: var(--primary);
-            font-size: 13px;
-        }
-        .nav-whatsapp:hover {
-            color: #25d366;
-        }
-        .nav-whatsapp i {
-            color: #25d366;
-            font-size: 15px;
-        }
-
-        .btn-quote {
-            padding: 10px 22px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            border: none;
-            border-radius: var(--radius);
-            font-weight: 600;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all var(--transition);
-            text-decoration: none;
-            box-shadow: 0 4px 14px rgba(30, 58, 138, 0.25);
-            white-space: nowrap;
-            letter-spacing: -0.01em;
-        }
-
-        .btn-quote:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(30, 58, 138, 0.35);
-        }
-
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 22px;
-            color: var(--navy);
-            cursor: pointer;
-            padding: 6px;
-            border-radius: var(--radius-sm);
-            transition: background var(--transition);
-        }
-        .mobile-toggle:hover {
-            background: var(--gray-100);
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            padding-top: 80px;
-            padding-bottom: 130px;
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background: url('assets/unique10.jpeg') center/cover no-repeat;
-            z-index: 0;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(160deg, rgba(11, 20, 36, 0.88) 0%, rgba(30, 58, 138, 0.65) 45%, rgba(11, 20, 36, 0.82) 100%);
-            z-index: 1;
-        }
-
-        .hero-pattern {
-            position: absolute;
-            inset: 0;
-            z-index: 2;
-            opacity: 0.04;
-            background-image: radial-gradient(circle at 1.5px 1.5px, white 1px, transparent 0);
-            background-size: 36px 36px;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 40px 20px;
-            width: 100%;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 8px 20px;
-            border-radius: 50px;
-            color: white;
-            font-size: 12.5px;
-            font-weight: 500;
-            margin-bottom: 28px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.7s 0.2s forwards;
-            letter-spacing: -0.01em;
-        }
-
-        .hero-badge i {
-            color: var(--accent);
-            font-size: 13px;
-        }
-
-        .hero h1 {
-            font-size: clamp(34px, 4.5vw, 60px);
-            color: white;
-            font-weight: 800;
-            max-width: 780px;
-            margin-bottom: 22px;
-            opacity: 0;
-            transform: translateY(28px);
-            animation: fadeInUp 0.7s 0.4s forwards;
-            letter-spacing: -0.03em;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, var(--accent-light), var(--accent), #f97316);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 17px;
-            color: rgba(255, 255, 255, 0.82);
-            max-width: 620px;
-            margin-bottom: 38px;
-            line-height: 1.75;
-            opacity: 0;
-            transform: translateY(28px);
-            animation: fadeInUp 0.7s 0.55s forwards;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            margin-bottom: 44px;
-            opacity: 0;
-            transform: translateY(28px);
-            animation: fadeInUp 0.7s 0.7s forwards;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, var(--accent), #ea580c);
-            color: #1a1a1a;
-            border: none;
-            border-radius: var(--radius);
-            font-weight: 700;
-            font-size: 14.5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all var(--transition);
-            box-shadow: 0 10px 28px rgba(245, 158, 11, 0.3);
-            letter-spacing: -0.01em;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 36px rgba(245, 158, 11, 0.4);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 30px;
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.25);
-            color: white;
-            border-radius: var(--radius);
-            font-weight: 600;
-            font-size: 14.5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all var(--transition);
-            letter-spacing: -0.01em;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.14);
-            transform: translateY(-3px);
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .hero-trust {
-            display: flex;
-            gap: 26px;
-            flex-wrap: wrap;
-            margin-bottom: 70px;
-            opacity: 0;
-            transform: translateY(28px);
-            animation: fadeInUp 0.7s 0.85s forwards;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255, 255, 255, 0.88);
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-        }
-
-        .trust-item i {
-            color: var(--accent);
-            font-size: 15px;
-        }
-
-        .hero-stats {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 4;
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-        }
-
-        .hero-stats-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 26px 40px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .stat-item {
-            text-align: center;
-            color: white;
-        }
-
-        .stat-number {
-            font-size: 34px;
-            font-weight: 800;
-            font-family: 'Playfair Display', serif;
-            display: block;
-            line-height: 1;
-            letter-spacing: -0.02em;
-        }
-
-        .stat-label {
-            font-size: 11.5px;
-            opacity: 0.75;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            margin-top: 5px;
-            font-weight: 500;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Section Styles */
-        section {
-            padding: 100px 0;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(30, 58, 138, 0.07);
-            color: var(--primary);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            margin-bottom: 16px;
-        }
-
-        .section-title {
-            font-size: clamp(28px, 3.5vw, 42px);
-            color: var(--navy);
-            margin-bottom: 14px;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-        }
-
-        .section-subtitle {
-            font-size: 16px;
-            color: var(--gray-600);
-            max-width: 580px;
-            margin: 0 auto;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-        }
-
-        /* About Section */
-        .about {
-            background: var(--gray-50);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.6s ease;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.03);
-        }
-
-        .about-image-accent {
-            position: absolute;
-            bottom: -24px;
-            right: -24px;
-            width: 180px;
-            height: 180px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: var(--radius-lg);
-            z-index: -1;
-        }
-
-        .about-experience {
-            position: absolute;
-            bottom: 28px;
-            left: 28px;
-            background: white;
-            padding: 18px 26px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .about-experience .number {
-            font-size: 40px;
-            font-weight: 800;
-            color: var(--primary);
-            font-family: 'Playfair Display', serif;
-            line-height: 1;
-            letter-spacing: -0.02em;
-        }
-
-        .about-experience .text {
-            font-size: 12px;
-            color: var(--gray-600);
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-
-        .about-content h2 {
-            font-size: 34px;
-            color: var(--navy);
-            margin-bottom: 22px;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-        }
-
-        .about-content p {
-            color: var(--gray-600);
-            margin-bottom: 14px;
-            font-size: 15px;
-            line-height: 1.75;
-            letter-spacing: -0.01em;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin-top: 28px;
-        }
-
-        .about-feature {
-            display: flex;
-            align-items: center;
-            gap: 11px;
-        }
-
-        .about-feature-icon {
-            width: 38px;
-            height: 38px;
-            background: rgba(30, 58, 138, 0.08);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            flex-shrink: 0;
-            font-size: 14px;
-        }
-
-        .about-feature span {
-            font-weight: 600;
-            color: var(--navy);
-            font-size: 13.5px;
-            letter-spacing: -0.01em;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-top: 56px;
-            padding-top: 56px;
-            border-top: 1px solid var(--gray-200);
-        }
-
-        .about-stat {
-            text-align: center;
-            padding: 28px 18px;
-            background: white;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition);
-            border: 1px solid transparent;
-        }
-
-        .about-stat:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--gray-100);
-        }
-
-        .about-stat-number {
-            font-size: 44px;
-            font-weight: 800;
-            color: var(--primary);
-            font-family: 'Playfair Display', serif;
-            display: block;
-            line-height: 1;
-            letter-spacing: -0.02em;
-        }
-
-        .about-stat-label {
-            font-size: 13px;
-            color: var(--gray-600);
-            font-weight: 500;
-            margin-top: 8px;
-            letter-spacing: -0.01em;
-        }
-
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 36px 28px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--gray-100);
-            transition: all var(--transition-slow);
-            position: relative;
-            overflow: hidden;
-            cursor: default;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            transform: scaleX(0);
-            transition: transform var(--transition-slow);
-            border-radius: 0 0 3px 3px;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: transparent;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-icon {
-            width: 62px;
-            height: 62px;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.08), rgba(59, 130, 246, 0.06));
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 22px;
-            transition: all var(--transition-slow);
-        }
-
-        .service-icon i {
-            font-size: 25px;
-            color: var(--primary);
-            transition: all var(--transition-slow);
-        }
-
-        .service-card:hover .service-icon {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            box-shadow: 0 8px 24px rgba(30, 58, 138, 0.25);
-        }
-
-        .service-card:hover .service-icon i {
-            color: white;
-        }
-
-        .service-card h3 {
-            font-size: 18px;
-            color: var(--navy);
-            margin-bottom: 10px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .service-card p {
-            color: var(--gray-600);
-            font-size: 13.5px;
-            line-height: 1.65;
-            letter-spacing: -0.01em;
-        }
-
-        .service-cta {
-            text-align: center;
-            margin-top: 48px;
-            padding: 40px 30px;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.03), rgba(59, 130, 246, 0.02));
-            border-radius: var(--radius-xl);
-            border: 1px dashed rgba(30, 58, 138, 0.15);
-        }
-
-        .service-cta p {
-            font-size: 16px;
-            color: var(--gray-700);
-            margin-bottom: 18px;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-        }
-
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 13px 28px;
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: var(--radius);
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all var(--transition);
-            letter-spacing: -0.01em;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(30, 58, 138, 0.2);
-        }
-
-        /* Why Choose Us */
-        .why-us {
-            background: linear-gradient(160deg, var(--navy) 0%, var(--primary-dark) 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .why-us::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            opacity: 0.04;
-            background-image: radial-gradient(circle at 1.5px 1.5px, white 1px, transparent 0);
-            background-size: 28px 28px;
-        }
-
-        .why-us .section-badge {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--accent-light);
-        }
-        .why-us .section-title {
-            color: white;
-        }
-        .why-us .section-subtitle {
-            color: rgba(255, 255, 255, 0.65);
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .why-card {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: var(--radius-lg);
-            padding: 28px 22px;
-            text-align: center;
-            transition: all var(--transition-slow);
-        }
-
-        .why-card:hover {
-            background: rgba(255, 255, 255, 0.09);
-            transform: translateY(-6px);
-            border-color: rgba(255, 255, 255, 0.18);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .why-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--accent), #ea580c);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 18px;
-            box-shadow: 0 10px 28px rgba(245, 158, 11, 0.25);
-        }
-
-        .why-icon i {
-            font-size: 22px;
-            color: #1a1a1a;
-        }
-
-        .why-card h4 {
-            font-size: 15px;
-            font-weight: 700;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: -0.01em;
-        }
-
-        /* Projects Section */
-        .projects {
-            background: var(--gray-50);
-        }
-
-        .project-filters {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .filter-btn {
-            padding: 9px 22px;
-            background: white;
-            border: 1.5px solid var(--gray-200);
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all var(--transition);
-            color: var(--gray-700);
-            letter-spacing: -0.01em;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            box-shadow: 0 4px 14px rgba(30, 58, 138, 0.2);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .project-card {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            background: white;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-slow);
-            cursor: pointer;
-            border: 1px solid var(--gray-100);
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .project-image {
-            position: relative;
-            overflow: hidden;
-            height: 250px;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.08);
-        }
-
-        .project-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(11, 20, 36, 0.85) 0%, transparent 55%);
-            display: flex;
-            align-items: flex-end;
-            padding: 22px;
-            opacity: 0;
-            transition: opacity var(--transition-slow);
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        .project-overlay-btn {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            margin-left: auto;
-            transition: transform var(--transition);
-        }
-
-        .project-overlay-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .project-info {
-            padding: 22px;
-        }
-
-        .project-category {
-            display: inline-block;
-            background: rgba(30, 58, 138, 0.07);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 600;
-            margin-bottom: 9px;
-            letter-spacing: 0.3px;
-        }
-
-        .project-info h3 {
-            font-size: 17px;
-            color: var(--navy);
-            margin-bottom: 7px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .project-info p {
-            color: var(--gray-600);
-            font-size: 13px;
-            line-height: 1.55;
-            letter-spacing: -0.01em;
-        }
-
-        .projects-cta {
-            text-align: center;
-            margin-top: 44px;
-        }
-
-        .btn-view-all {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 32px;
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: var(--radius);
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all var(--transition);
-            letter-spacing: -0.01em;
-        }
-
-        .btn-view-all:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(30, 58, 138, 0.22);
-        }
-
-        .btn-view-all i {
-            transition: transform var(--transition);
-        }
-        .btn-view-all:hover i {
-            transform: translateX(4px);
-        }
-
-        /* Process Section */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-            position: relative;
-        }
-
-        .process-grid::before {
-            content: '';
-            position: absolute;
-            top: 48px;
-            left: 12%;
-            right: 12%;
-            height: 2px;
-            background: linear-gradient(to right, var(--primary), var(--primary-light), var(--primary));
-            z-index: 0;
-            border-radius: 2px;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .process-number {
-            width: 96px;
-            height: 96px;
-            background: white;
-            border: 3px solid var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 18px;
-            font-size: 30px;
-            font-weight: 800;
-            color: var(--primary);
-            font-family: 'Playfair Display', serif;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-slow);
-        }
-
-        .process-step:hover .process-number {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            transform: scale(1.08);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .process-step h4 {
-            font-size: 15px;
-            color: var(--navy);
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background: var(--gray-50);
-        }
-
-        .testimonial-slider {
-            max-width: 850px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .testimonial-card {
-            min-width: 100%;
-            padding: 48px 44px;
-            background: white;
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-lg);
-            text-align: center;
-        }
-
-        .testimonial-quote {
-            font-size: 52px;
-            color: var(--primary);
-            opacity: 0.15;
-            font-family: 'Playfair Display', serif;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .testimonial-text {
-            font-size: 17px;
-            color: var(--gray-700);
-            line-height: 1.75;
-            font-style: italic;
-            margin-bottom: 28px;
-            letter-spacing: -0.01em;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-        }
-
-        .testimonial-avatar {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-            font-weight: 700;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .testimonial-author-info h5 {
-            font-size: 15px;
-            color: var(--navy);
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-        }
-
-        .testimonial-author-info span {
-            font-size: 12.5px;
-            color: var(--gray-500);
-            letter-spacing: -0.01em;
-        }
-
-        .testimonial-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 28px;
-        }
-
-        .dot {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: var(--gray-300);
-            cursor: pointer;
-            transition: all var(--transition);
-            border: none;
-            padding: 0;
-        }
-
-        .dot.active {
-            background: var(--primary);
-            width: 30px;
-            border-radius: 6px;
-        }
-
-        /* CTA Banner */
-        .cta-banner {
-            background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-banner::before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            right: -8%;
-            width: 450px;
-            height: 450px;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 50%;
-        }
-
-        .cta-banner::after {
-            content: '';
-            position: absolute;
-            bottom: -25%;
-            left: -4%;
-            width: 280px;
-            height: 280px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 50%;
-        }
-
-        .cta-content {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            color: white;
-        }
-
-        .cta-content h2 {
-            font-size: clamp(26px, 3.5vw, 40px);
-            margin-bottom: 14px;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-        }
-
-        .cta-content p {
-            font-size: 17px;
-            opacity: 0.88;
-            max-width: 560px;
-            margin: 0 auto 28px;
-            letter-spacing: -0.01em;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-white {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 30px;
-            background: white;
-            color: var(--primary);
-            border: none;
-            border-radius: var(--radius);
-            font-weight: 700;
-            font-size: 14.5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all var(--transition);
-            letter-spacing: -0.01em;
-        }
-
-        .btn-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-        }
-
-        .btn-outline-white {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 30px;
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.45);
-            border-radius: var(--radius);
-            font-weight: 600;
-            font-size: 14.5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all var(--transition);
-            letter-spacing: -0.01em;
-        }
-
-        .btn-outline-white:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-            border-color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--gray-50);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 44px;
-        }
-
-        .contact-info {
-            background: linear-gradient(160deg, var(--navy), var(--primary-dark));
-            border-radius: var(--radius-xl);
-            padding: 48px 38px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-info::before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            right: -25%;
-            width: 280px;
-            height: 280px;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 50%;
-        }
-
-        .contact-info h3 {
-            font-size: 26px;
-            margin-bottom: 14px;
-            position: relative;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-
-        .contact-info>p {
-            opacity: 0.75;
-            margin-bottom: 36px;
-            position: relative;
-            font-size: 14px;
-            letter-spacing: -0.01em;
-        }
-
-        .contact-item {
-            display: flex;
-            gap: 14px;
-            margin-bottom: 24px;
-            position: relative;
-        }
-
-        .contact-item-icon {
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: var(--radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .contact-item-icon i {
-            color: var(--accent);
-            font-size: 16px;
-        }
-
-        .contact-item-text h5 {
-            font-size: 11px;
-            opacity: 0.65;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            margin-bottom: 3px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-        }
-
-        .contact-item-text p,
-        .contact-item-text a {
-            font-size: 14px;
-            font-weight: 600;
-            color: white;
-            text-decoration: none;
-            letter-spacing: -0.01em;
-            transition: color var(--transition);
-        }
-        .contact-item-text a:hover {
-            color: var(--accent-light);
-        }
-
-        .contact-social {
-            display: flex;
-            gap: 10px;
-            margin-top: 36px;
-            position: relative;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all var(--transition);
-            font-size: 15px;
-        }
-
-        .social-link:hover {
-            background: var(--accent);
-            color: #1a1a1a;
-            transform: translateY(-3px);
-        }
-
-        .contact-form-wrapper {
-            background: white;
-            border-radius: var(--radius-xl);
-            padding: 44px 38px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .contact-form-wrapper h3 {
-            font-size: 22px;
-            color: var(--navy);
-            margin-bottom: 28px;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            margin-bottom: 18px;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--gray-700);
-            margin-bottom: 7px;
-            letter-spacing: -0.01em;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 13px 16px;
-            border: 2px solid var(--gray-200);
-            border-radius: var(--radius);
-            font-size: 14px;
-            font-family: 'Inter', sans-serif;
-            transition: all var(--transition);
-            background: var(--gray-50);
-            letter-spacing: -0.01em;
-            color: var(--gray-800);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            background: white;
-            box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.08);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .btn-submit {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            border: none;
-            border-radius: var(--radius);
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all var(--transition);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            letter-spacing: -0.01em;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(30, 58, 138, 0.28);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--navy);
-            color: white;
-            padding: 80px 0 0;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 44px;
-            padding-bottom: 56px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .footer-brand .logo-text .name {
-            color: white;
-        }
-        .footer-brand .logo-text .tagline {
-            color: rgba(255, 255, 255, 0.5);
-        }
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 18px;
-            font-size: 13.5px;
-            line-height: 1.75;
-            letter-spacing: -0.01em;
-        }
-
-        .footer-col h4 {
-            font-size: 15px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            margin-bottom: 18px;
-            position: relative;
-            padding-bottom: 10px;
-            letter-spacing: -0.01em;
-        }
-
-        .footer-col h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 28px;
-            height: 2px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            font-size: 13.5px;
-            transition: all var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            letter-spacing: -0.01em;
-        }
-        .footer-links a:hover {
-            color: var(--accent-light);
-            padding-left: 4px;
-        }
-
-        .footer-contact-item {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 14px;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 13.5px;
-            letter-spacing: -0.01em;
-        }
-        .footer-contact-item i {
-            color: var(--accent);
-            margin-top: 3px;
-            width: 14px;
-            font-size: 13px;
-        }
-        .footer-contact-item a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            transition: color var(--transition);
-        }
-        .footer-contact-item a:hover {
-            color: var(--accent-light);
-        }
-
-        .footer-bottom {
-            padding: 22px 0;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 13px;
-            letter-spacing: -0.01em;
-        }
-
-        /* Floating WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            z-index: 999;
-        }
-
-        .whatsapp-float a {
-            width: 58px;
-            height: 58px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 26px;
-            text-decoration: none;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
-            animation: pulse 2.2s infinite;
-            transition: transform var(--transition);
-        }
-
-        .whatsapp-float a:hover {
-            transform: scale(1.1);
-        }
-
-        @keyframes pulse {
-            0%,
-            100% {
-                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
-            }
-            50% {
-                box-shadow: 0 10px 40px rgba(37, 211, 102, 0.55), 0 0 0 14px rgba(37, 211, 102, 0.08);
-            }
-        }
-
-        /* Back to Top */
-        .back-to-top {
-            position: fixed;
-            bottom: 28px;
-            left: 28px;
-            z-index: 999;
-            width: 44px;
-            height: 44px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all var(--transition);
-            border: none;
-            box-shadow: 0 4px 14px rgba(30, 58, 138, 0.25);
-            font-size: 15px;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        .back-to-top:hover {
-            transform: translateY(-3px);
-            background: var(--primary-dark);
-        }
-
-        /* Lightbox */
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.94);
-            z-index: 10000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-        }
-        .lightbox.active {
-            display: flex;
-        }
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-            border-radius: var(--radius);
-        }
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 28px;
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.08);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 22px;
-            cursor: pointer;
-            transition: all var(--transition);
-        }
-        .lightbox-close:hover {
-            background: rgba(255, 255, 255, 0.18);
-        }
-
-        /* Scroll Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(36px);
-            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-delay-1 {
-            transition-delay: 0.08s;
-        }
-        .reveal-delay-2 {
-            transition-delay: 0.16s;
-        }
-        .reveal-delay-3 {
-            transition-delay: 0.24s;
-        }
-        .reveal-delay-4 {
-            transition-delay: 0.32s;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 300px;
-            height: 100vh;
-            background: white;
-            z-index: 10001;
-            padding: 70px 26px 26px;
-            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-2xl);
-        }
-        .mobile-menu.active {
-            right: 0;
-        }
-        .mobile-menu-close {
-            position: absolute;
-            top: 18px;
-            right: 18px;
-            width: 38px;
-            height: 38px;
-            background: var(--gray-100);
-            border: none;
-            border-radius: var(--radius-sm);
-            font-size: 18px;
-            cursor: pointer;
-            transition: background var(--transition);
-        }
-        .mobile-menu-close:hover {
-            background: var(--gray-200);
-        }
-        .mobile-menu-links {
-            list-style: none;
-        }
-        .mobile-menu-links li {
-            margin-bottom: 4px;
-        }
-        .mobile-menu-links a {
-            display: block;
-            padding: 13px 0;
-            color: var(--gray-700);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            border-bottom: 1px solid var(--gray-100);
-            letter-spacing: -0.01em;
-            transition: color var(--transition);
-        }
-        .mobile-menu-links a:hover {
-            color: var(--primary);
-        }
-        .mobile-menu-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 10000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all var(--transition);
-        }
-        .mobile-menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .why-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .process-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .process-grid::before {
-                display: none;
-            }
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 992px) {
-            .nav-links,
-            .nav-contact {
-                display: none;
-            }
-            .mobile-toggle {
-                display: block;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-stats-inner {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .hero {
-                padding-bottom: 130px;
-            }
-            .hero-stats {
-                position: absolute;
-                bottom: 0;
-            }
-            .about-image img {
-                height: 380px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 60px 0;
-            }
-            .hero {
-                min-height: auto;
-                padding: 120px 0 140px;
-            }
-            .hero-content {
-                padding: 20px 16px 10px;
-            }
-            .hero h1 {
-                font-size: 28px;
-            }
-            .hero-subtitle {
-                font-size: 14px;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .hero-buttons a {
-                width: 100%;
-                justify-content: center;
-                font-size: 13px;
-                padding: 14px 20px;
-            }
-            .hero-trust {
-                gap: 12px;
-                margin-bottom: 50px;
-            }
-            .trust-item {
-                font-size: 11px;
-            }
-            .hero-stats-inner {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 14px;
-                padding: 18px 16px;
-            }
-            .stat-number {
-                font-size: 26px;
-            }
-            .stat-label {
-                font-size: 10px;
-                letter-spacing: 0.8px;
-            }
-            .about-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .process-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-            .about-features {
-                grid-template-columns: 1fr;
-            }
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-            .cta-content h2 {
-                font-size: 24px;
-            }
-            .cta-content p {
-                font-size: 14px;
-            }
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .cta-buttons a {
-                width: 100%;
-                justify-content: center;
-            }
-            .about-content h2 {
-                font-size: 26px;
-            }
-            .section-title {
-                font-size: 26px;
-            }
-            .contact-info {
-                padding: 36px 24px;
-            }
-            .contact-form-wrapper {
-                padding: 32px 20px;
-            }
-            .project-filters {
-                gap: 6px;
-            }
-            .filter-btn {
-                padding: 7px 14px;
-                font-size: 11px;
-            }
-            .service-card {
-                padding: 28px 20px;
-            }
-            .process-number {
-                width: 72px;
-                height: 72px;
-                font-size: 24px;
-            }
-            .testimonial-card {
-                padding: 32px 22px;
-            }
-            .testimonial-text {
-                font-size: 15px;
-            }
-            .whatsapp-float {
-                bottom: 18px;
-                right: 16px;
-            }
-            .whatsapp-float a {
-                width: 50px;
-                height: 50px;
-                font-size: 22px;
-            }
-            .back-to-top {
-                bottom: 18px;
-                left: 16px;
-                width: 38px;
-                height: 38px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 100px 0 150px;
-            }
-            .hero h1 {
-                font-size: 24px;
-            }
-            .hero-badge {
-                font-size: 10px;
-                padding: 6px 14px;
-            }
-            .hero-stats-inner {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-                padding: 14px 12px;
-            }
-            .stat-number {
-                font-size: 22px;
-            }
-            .stat-label {
-                font-size: 9px;
-                letter-spacing: 0.5px;
-            }
-            .about-stat-number {
-                font-size: 34px;
-            }
-            .service-cta {
-                padding: 28px 16px;
-            }
-            .btn-view-all {
-                width: 100%;
-                justify-content: center;
-            }
-            .hero-trust {
-                margin-bottom: 40px;
-            }
+        .nav-logo:hover .logo-icon { transform:scale(1.05) rotate(-2deg); }
+
+        .logo-text { display:flex; flex-direction:column; }
+        .logo-text .name { font-family:'Playfair Display', serif; font-weight:700; font-size:15px; color:var(--navy); line-height:1.2; letter-spacing:-0.3px; }
+        .logo-text .tagline { font-size:9px; color:var(--gray-500); text-transform:uppercase; letter-spacing:1.5px; font-weight:500; }
+
+        .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
+        .nav-links a { text-decoration:none; color:var(--gray-700); font-weight:500; font-size:13.5px; transition: color var(--transition); position:relative; letter-spacing:-0.01em; }
+        .nav-links a::after { content:''; position:absolute; bottom:-6px; left:50%; width:0; height:2px; background:var(--primary); transition:all var(--transition); transform:translateX(-50%); border-radius:2px; }
+        .nav-links a:hover { color:var(--primary); }
+        .nav-links a:hover::after { width:70%; }
+
+        .nav-contact { display:flex; align-items:center; gap:16px; flex-shrink:0; }
+        .nav-phone, .nav-whatsapp { display:flex; align-items:center; gap:7px; text-decoration:none; color:var(--gray-700); font-size:12.5px; font-weight:500; transition: color var(--transition); white-space:nowrap; }
+        .nav-phone:hover { color:var(--primary); } .nav-phone i { color:var(--primary); font-size:13px; }
+        .nav-whatsapp:hover { color:#25d366; } .nav-whatsapp i { color:#25d366; font-size:15px; }
+
+        .btn-quote { padding:10px 22px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; border:none; border-radius:var(--radius); font-weight:600; font-size:13px; cursor:pointer; transition:all var(--transition); text-decoration:none; box-shadow:0 4px 14px rgba(30,58,138,0.25); white-space:nowrap; letter-spacing:-0.01em; }
+        .btn-quote:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(30,58,138,0.35); }
+
+        .mobile-toggle { display:none; background:none; border:none; font-size:22px; color:var(--navy); cursor:pointer; padding:6px; border-radius:var(--radius-sm); transition:background var(--transition); }
+        .mobile-toggle:hover { background:var(--gray-100); }
+
+        .hero { position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; padding-top:80px; padding-bottom:130px; }
+        .hero-bg { position:absolute; inset:0; background: url('assets/unique10.jpeg') center/cover no-repeat; z-index:0; }
+        .hero-overlay { position:absolute; inset:0; background:linear-gradient(160deg, rgba(11,20,36,0.88) 0%, rgba(30,58,138,0.65) 45%, rgba(11,20,36,0.82) 100%); z-index:1; }
+        .hero-pattern { position:absolute; inset:0; z-index:2; opacity:0.04; background-image:radial-gradient(circle at 1.5px 1.5px, white 1px, transparent 0); background-size:36px 36px; }
+        .hero-content { position:relative; z-index:3; max-width:1400px; margin:0 auto; padding:40px 40px 20px; width:100%; }
+
+        .hero-badge { display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,0.08); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.15); padding:8px 20px; border-radius:50px; color:white; font-size:12.5px; font-weight:500; margin-bottom:28px; opacity:0; transform:translateY(20px); animation:fadeInUp 0.7s 0.2s forwards; letter-spacing:-0.01em; }
+        .hero-badge i { color:var(--accent); font-size:13px; }
+
+        .hero h1 { font-size:clamp(34px,4.5vw,60px); color:white; font-weight:800; max-width:780px; margin-bottom:22px; opacity:0; transform:translateY(28px); animation:fadeInUp 0.7s 0.4s forwards; letter-spacing:-0.03em; }
+        .hero h1 span { background:linear-gradient(135deg, var(--accent-light), var(--accent), #f97316); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+        .hero-subtitle { font-size:17px; color:rgba(255,255,255,0.82); max-width:620px; margin-bottom:38px; line-height:1.75; opacity:0; transform:translateY(28px); animation:fadeInUp 0.7s 0.55s forwards; font-weight:400; letter-spacing:-0.01em; }
+
+        .hero-buttons { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:44px; opacity:0; transform:translateY(28px); animation:fadeInUp 0.7s 0.7s forwards; }
+        .btn-primary { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:linear-gradient(135deg, var(--accent), #ea580c); color:#1a1a1a; border:none; border-radius:var(--radius); font-weight:700; font-size:14.5px; cursor:pointer; text-decoration:none; transition:all var(--transition); box-shadow:0 10px 28px rgba(245,158,11,0.3); letter-spacing:-0.01em; }
+        .btn-primary:hover { transform:translateY(-3px); box-shadow:0 16px 36px rgba(245,158,11,0.4); }
+        .btn-secondary { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:rgba(255,255,255,0.06); backdrop-filter:blur(10px); border:2px solid rgba(255,255,255,0.25); color:white; border-radius:var(--radius); font-weight:600; font-size:14.5px; cursor:pointer; text-decoration:none; transition:all var(--transition); letter-spacing:-0.01em; }
+        .btn-secondary:hover { background:rgba(255,255,255,0.14); transform:translateY(-3px); border-color:rgba(255,255,255,0.4); }
+
+        .hero-trust { display:flex; gap:26px; flex-wrap:wrap; margin-bottom:70px; opacity:0; transform:translateY(28px); animation:fadeInUp 0.7s 0.85s forwards; }
+        .trust-item { display:flex; align-items:center; gap:8px; color:rgba(255,255,255,0.88); font-size:13px; font-weight:500; letter-spacing:-0.01em; }
+        .trust-item i { color:var(--accent); font-size:15px; }
+
+        .hero-stats { position:absolute; bottom:0; left:0; right:0; z-index:4; background:rgba(255,255,255,0.07); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-top:1px solid rgba(255,255,255,0.12); }
+        .hero-stats-inner { max-width:1400px; margin:0 auto; padding:26px 40px; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+        .stat-item { text-align:center; color:white; }
+        .stat-number { font-size:34px; font-weight:800; font-family:'Playfair Display', serif; display:block; line-height:1; letter-spacing:-0.02em; }
+        .stat-label { font-size:11.5px; opacity:0.75; text-transform:uppercase; letter-spacing:1.2px; margin-top:5px; font-weight:500; }
+
+        @keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
+
+        .client-logos { padding:60px 0; background:white; overflow:hidden; }
+        .client-logos .container { max-width:1400px; margin:0 auto; padding:0 24px; }
+        .client-logos-header { text-align:center; margin-bottom:36px; }
+        .client-logos-header .section-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(30,58,138,0.07); color:var(--primary); padding:6px 16px; border-radius:50px; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:1.2px; margin-bottom:10px; }
+        .client-logos-title { font-size:clamp(26px,3.5vw,36px); color:var(--navy); font-weight:800; font-family:'Playfair Display', serif; letter-spacing:-0.02em; }
+
+        .logo-scroll-container { width:100%; overflow:hidden; mask-image:linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%); -webkit-mask-image:linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%); }
+        .logo-track { display:flex; width:max-content; animation:scrollLogos 30s linear infinite; }
+        .logo-set { display:flex; gap:48px; align-items:center; padding:10px 0; }
+        .logo-set img { height:70px; width:auto; object-fit:contain; filter:grayscale(30%); opacity:0.85; transition:all 0.3s ease; flex-shrink:0; }
+        .logo-set img:hover { filter:grayscale(0%); opacity:1; }
+
+        @keyframes scrollLogos { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+
+        section { padding:100px 0; }
+        .container { max-width:1400px; margin:0 auto; padding:0 24px; }
+        .section-header { text-align:center; margin-bottom:60px; }
+        .section-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(30,58,138,0.07); color:var(--primary); padding:6px 16px; border-radius:50px; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:1.2px; margin-bottom:16px; }
+        .section-title { font-size:clamp(28px,3.5vw,42px); color:var(--navy); margin-bottom:14px; font-weight:800; letter-spacing:-0.03em; }
+        .section-subtitle { font-size:16px; color:var(--gray-600); max-width:580px; margin:0 auto; font-weight:400; letter-spacing:-0.01em; }
+
+        .about { background:var(--gray-50); }
+        .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+        .about-image { position:relative; border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-2xl); }
+        .about-image img { width:100%; height:500px; object-fit:cover; display:block; transition:transform 0.6s ease; }
+        .about-image:hover img { transform:scale(1.03); }
+        .about-image-accent { position:absolute; bottom:-24px; right:-24px; width:180px; height:180px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius:var(--radius-lg); z-index:-1; }
+        .about-experience { position:absolute; bottom:28px; left:28px; background:white; padding:18px 26px; border-radius:var(--radius-md); box-shadow:var(--shadow-xl); }
+        .about-experience .number { font-size:40px; font-weight:800; color:var(--primary); font-family:'Playfair Display', serif; line-height:1; letter-spacing:-0.02em; }
+        .about-experience .text { font-size:12px; color:var(--gray-600); font-weight:500; letter-spacing:0.3px; }
+        .about-content h2 { font-size:34px; color:var(--navy); margin-bottom:22px; font-weight:800; letter-spacing:-0.03em; }
+        .about-content p { color:var(--gray-600); margin-bottom:14px; font-size:15px; line-height:1.75; letter-spacing:-0.01em; }
+        .about-features { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:28px; }
+        .about-feature { display:flex; align-items:center; gap:11px; }
+        .about-feature-icon { width:38px; height:38px; background:rgba(30,58,138,0.08); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; color:var(--primary); flex-shrink:0; font-size:14px; }
+        .about-feature span { font-weight:600; color:var(--navy); font-size:13.5px; letter-spacing:-0.01em; }
+
+        .btn-download-profile { display:inline-flex; align-items:center; gap:10px; margin-top:24px; padding:14px 28px; background:var(--primary); color:white; border-radius:var(--radius); font-weight:600; font-size:14px; text-decoration:none; transition:all var(--transition); box-shadow:0 4px 16px rgba(30,58,138,0.2); }
+        .btn-download-profile i { font-size:18px; }
+        .btn-download-profile:hover { background:var(--primary-dark); transform:translateY(-2px); box-shadow:0 10px 24px rgba(30,58,138,0.3); }
+
+        .about-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:56px; padding-top:56px; border-top:1px solid var(--gray-200); }
+        .about-stat { text-align:center; padding:28px 18px; background:white; border-radius:var(--radius-md); box-shadow:var(--shadow-sm); transition:all var(--transition); border:1px solid transparent; }
+        .about-stat:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--gray-100); }
+        .about-stat-number { font-size:44px; font-weight:800; color:var(--primary); font-family:'Playfair Display', serif; display:block; line-height:1; letter-spacing:-0.02em; }
+        .about-stat-label { font-size:13px; color:var(--gray-600); font-weight:500; margin-top:8px; letter-spacing:-0.01em; }
+
+        .services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+        .service-card { background:white; border-radius:var(--radius-lg); padding:36px 28px; box-shadow:var(--shadow-sm); border:1px solid var(--gray-100); transition:all var(--transition-slow); position:relative; overflow:hidden; cursor:default; }
+        .service-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(135deg, var(--primary), var(--primary-light)); transform:scaleX(0); transition:transform var(--transition-slow); border-radius:0 0 3px 3px; }
+        .service-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-xl); border-color:transparent; }
+        .service-card:hover::before { transform:scaleX(1); }
+        .service-icon { width:62px; height:62px; background:linear-gradient(135deg, rgba(30,58,138,0.08), rgba(59,130,246,0.06)); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; margin-bottom:22px; transition:all var(--transition-slow); }
+        .service-icon i { font-size:25px; color:var(--primary); transition:all var(--transition-slow); }
+        .service-card:hover .service-icon { background:linear-gradient(135deg, var(--primary), var(--primary-dark)); box-shadow:0 8px 24px rgba(30,58,138,0.25); }
+        .service-card:hover .service-icon i { color:white; }
+        .service-card h3 { font-size:18px; color:var(--navy); margin-bottom:10px; font-family:'Inter', sans-serif; font-weight:700; letter-spacing:-0.02em; }
+        .service-card p { color:var(--gray-600); font-size:13.5px; line-height:1.65; letter-spacing:-0.01em; }
+        .service-cta { text-align:center; margin-top:48px; padding:40px 30px; background:linear-gradient(135deg, rgba(30,58,138,0.03), rgba(59,130,246,0.02)); border-radius:var(--radius-xl); border:1px dashed rgba(30,58,138,0.15); }
+        .service-cta p { font-size:16px; color:var(--gray-700); margin-bottom:18px; font-weight:500; letter-spacing:-0.01em; }
+        .btn-outline { display:inline-flex; align-items:center; gap:9px; padding:13px 28px; background:transparent; color:var(--primary); border:2px solid var(--primary); border-radius:var(--radius); font-weight:600; font-size:14px; cursor:pointer; text-decoration:none; transition:all var(--transition); letter-spacing:-0.01em; }
+        .btn-outline:hover { background:var(--primary); color:white; transform:translateY(-2px); box-shadow:0 8px 24px rgba(30,58,138,0.2); }
+
+        .why-us { background:linear-gradient(160deg, var(--navy) 0%, var(--primary-dark) 100%); color:white; position:relative; overflow:hidden; }
+        .why-us::before { content:''; position:absolute; inset:0; opacity:0.04; background-image:radial-gradient(circle at 1.5px 1.5px, white 1px, transparent 0); background-size:28px 28px; }
+        .why-us .section-badge { background:rgba(255,255,255,0.08); color:var(--accent-light); }
+        .why-us .section-title { color:white; }
+        .why-us .section-subtitle { color:rgba(255,255,255,0.65); }
+        .why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; position:relative; z-index:1; }
+        .why-card { background:rgba(255,255,255,0.04); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-lg); padding:28px 22px; text-align:center; transition:all var(--transition-slow); }
+        .why-card:hover { background:rgba(255,255,255,0.09); transform:translateY(-6px); border-color:rgba(255,255,255,0.18); box-shadow:0 16px 40px rgba(0,0,0,0.2); }
+        .why-icon { width:56px; height:56px; background:linear-gradient(135deg, var(--accent), #ea580c); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; margin:0 auto 18px; box-shadow:0 10px 28px rgba(245,158,11,0.25); }
+        .why-icon i { font-size:22px; color:#1a1a1a; }
+        .why-card h4 { font-size:15px; font-weight:700; font-family:'Inter', sans-serif; letter-spacing:-0.01em; }
+
+        .projects { background:var(--gray-50); }
+        .project-filters { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:40px; }
+        .filter-btn { padding:9px 22px; background:white; border:1.5px solid var(--gray-200); border-radius:50px; font-weight:500; font-size:13px; cursor:pointer; transition:all var(--transition); color:var(--gray-700); letter-spacing:-0.01em; }
+        .filter-btn.active, .filter-btn:hover { background:var(--primary); color:white; border-color:var(--primary); box-shadow:0 4px 14px rgba(30,58,138,0.2); }
+        .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+        .project-card { border-radius:var(--radius-lg); overflow:hidden; background:white; box-shadow:var(--shadow-sm); transition:all var(--transition-slow); cursor:pointer; border:1px solid var(--gray-100); }
+        .project-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-xl); }
+        .project-image { position:relative; overflow:hidden; height:250px; }
+        .project-image img { width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease; }
+        .project-card:hover .project-image img { transform:scale(1.08); }
+        .project-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(11,20,36,0.85) 0%, transparent 55%); display:flex; align-items:flex-end; padding:22px; opacity:0; transition:opacity var(--transition-slow); }
+        .project-card:hover .project-overlay { opacity:1; }
+        .project-overlay-btn { width:40px; height:40px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary); margin-left:auto; transition:transform var(--transition); }
+        .project-overlay-btn:hover { transform:scale(1.1); }
+        .project-info { padding:22px; }
+        .project-category { display:inline-block; background:rgba(30,58,138,0.07); color:var(--primary); padding:4px 12px; border-radius:50px; font-size:11px; font-weight:600; margin-bottom:9px; letter-spacing:0.3px; }
+        .project-info h3 { font-size:17px; color:var(--navy); margin-bottom:7px; font-family:'Inter', sans-serif; font-weight:700; letter-spacing:-0.02em; }
+        .project-info p { color:var(--gray-600); font-size:13px; line-height:1.55; letter-spacing:-0.01em; }
+        .projects-cta { text-align:center; margin-top:44px; }
+        .btn-view-all { display:inline-flex; align-items:center; gap:10px; padding:14px 32px; background:white; color:var(--primary); border:2px solid var(--primary); border-radius:var(--radius); font-weight:600; font-size:14px; cursor:pointer; text-decoration:none; transition:all var(--transition); letter-spacing:-0.01em; }
+        .btn-view-all:hover { background:var(--primary); color:white; transform:translateY(-2px); box-shadow:0 10px 28px rgba(30,58,138,0.22); }
+
+        .process-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; position:relative; }
+        .process-grid::before { content:''; position:absolute; top:48px; left:12%; right:12%; height:2px; background:linear-gradient(to right, var(--primary), var(--primary-light), var(--primary)); z-index:0; border-radius:2px; }
+        .process-step { text-align:center; position:relative; z-index:1; }
+        .process-number { width:96px; height:96px; background:white; border:3px solid var(--primary); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 18px; font-size:30px; font-weight:800; color:var(--primary); font-family:'Playfair Display', serif; box-shadow:var(--shadow-lg); transition:all var(--transition-slow); }
+        .process-step:hover .process-number { background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; transform:scale(1.08); box-shadow:var(--shadow-xl); }
+        .process-step h4 { font-size:15px; color:var(--navy); font-family:'Inter', sans-serif; font-weight:700; letter-spacing:-0.01em; }
+
+        .testimonials { background:var(--gray-50); }
+        .testimonial-slider { max-width:850px; margin:0 auto; position:relative; overflow:hidden; }
+        .testimonial-track { display:flex; transition:transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+        .testimonial-card { min-width:100%; padding:48px 44px; background:white; border-radius:var(--radius-xl); box-shadow:var(--shadow-lg); text-align:center; }
+        .testimonial-quote { font-size:52px; color:var(--primary); opacity:0.15; font-family:'Playfair Display', serif; line-height:1; margin-bottom:8px; }
+        .testimonial-text { font-size:17px; color:var(--gray-700); line-height:1.75; font-style:italic; margin-bottom:28px; letter-spacing:-0.01em; }
+        .testimonial-author { display:flex; align-items:center; justify-content:center; gap:14px; }
+        .testimonial-avatar { width:52px; height:52px; border-radius:50%; background:linear-gradient(135deg, var(--primary), var(--primary-light)); display:flex; align-items:center; justify-content:center; color:white; font-size:18px; font-weight:700; font-family:'Inter', sans-serif; }
+        .testimonial-author-info h5 { font-size:15px; color:var(--navy); font-family:'Inter', sans-serif; font-weight:700; letter-spacing:-0.01em; }
+        .testimonial-author-info span { font-size:12.5px; color:var(--gray-500); letter-spacing:-0.01em; }
+        .testimonial-dots { display:flex; justify-content:center; gap:8px; margin-top:28px; }
+        .dot { width:11px; height:11px; border-radius:50%; background:var(--gray-300); cursor:pointer; transition:all var(--transition); border:none; padding:0; }
+        .dot.active { background:var(--primary); width:30px; border-radius:6px; }
+
+        .cta-banner { background:linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%); padding:80px 0; position:relative; overflow:hidden; }
+        .cta-banner::before { content:''; position:absolute; top:-40%; right:-8%; width:450px; height:450px; background:rgba(255,255,255,0.04); border-radius:50%; }
+        .cta-banner::after { content:''; position:absolute; bottom:-25%; left:-4%; width:280px; height:280px; background:rgba(255,255,255,0.03); border-radius:50%; }
+        .cta-content { text-align:center; position:relative; z-index:1; color:white; }
+        .cta-content h2 { font-size:clamp(26px,3.5vw,40px); margin-bottom:14px; font-weight:800; letter-spacing:-0.03em; }
+        .cta-content p { font-size:17px; opacity:0.88; max-width:560px; margin:0 auto 28px; letter-spacing:-0.01em; }
+        .cta-buttons { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+        .btn-white { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:white; color:var(--primary); border:none; border-radius:var(--radius); font-weight:700; font-size:14.5px; cursor:pointer; text-decoration:none; transition:all var(--transition); letter-spacing:-0.01em; }
+        .btn-white:hover { transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,0.18); }
+        .btn-outline-white { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:transparent; color:white; border:2px solid rgba(255,255,255,0.45); border-radius:var(--radius); font-weight:600; font-size:14.5px; cursor:pointer; text-decoration:none; transition:all var(--transition); letter-spacing:-0.01em; }
+        .btn-outline-white:hover { background:rgba(255,255,255,0.1); transform:translateY(-3px); border-color:rgba(255,255,255,0.7); }
+
+        .contact { background:var(--gray-50); }
+        .contact-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:44px; }
+        .contact-info { background:linear-gradient(160deg, var(--navy), var(--primary-dark)); border-radius:var(--radius-xl); padding:48px 38px; color:white; position:relative; overflow:hidden; }
+        .contact-info::before { content:''; position:absolute; top:-40%; right:-25%; width:280px; height:280px; background:rgba(255,255,255,0.04); border-radius:50%; }
+        .contact-info h3 { font-size:26px; margin-bottom:14px; position:relative; font-weight:800; letter-spacing:-0.02em; }
+        .contact-info>p { opacity:0.75; margin-bottom:36px; position:relative; font-size:14px; letter-spacing:-0.01em; }
+        .contact-item { display:flex; gap:14px; margin-bottom:24px; position:relative; }
+        .contact-item-icon { width:44px; height:44px; background:rgba(255,255,255,0.08); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .contact-item-icon i { color:var(--accent); font-size:16px; }
+        .contact-item-text h5 { font-size:11px; opacity:0.65; text-transform:uppercase; letter-spacing:1.2px; margin-bottom:3px; font-family:'Inter', sans-serif; font-weight:500; }
+        .contact-item-text p, .contact-item-text a { font-size:14px; font-weight:600; color:white; text-decoration:none; letter-spacing:-0.01em; transition:color var(--transition); }
+        .contact-item-text a:hover { color:var(--accent-light); }
+        .contact-social { display:flex; gap:10px; margin-top:36px; position:relative; }
+        .social-link { width:40px; height:40px; background:rgba(255,255,255,0.08); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; color:white; text-decoration:none; transition:all var(--transition); font-size:15px; }
+        .social-link:hover { background:var(--accent); color:#1a1a1a; transform:translateY(-3px); }
+        .contact-form-wrapper { background:white; border-radius:var(--radius-xl); padding:44px 38px; box-shadow:var(--shadow-lg); }
+        .contact-form-wrapper h3 { font-size:22px; color:var(--navy); margin-bottom:28px; font-weight:800; letter-spacing:-0.02em; }
+        .form-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
+        .form-group { margin-bottom:18px; }
+        .form-group label { display:block; font-size:13px; font-weight:600; color:var(--gray-700); margin-bottom:7px; letter-spacing:-0.01em; }
+        .form-group input, .form-group select, .form-group textarea { width:100%; padding:13px 16px; border:2px solid var(--gray-200); border-radius:var(--radius); font-size:14px; font-family:'Inter', sans-serif; transition:all var(--transition); background:var(--gray-50); letter-spacing:-0.01em; color:var(--gray-800); }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline:none; border-color:var(--primary); background:white; box-shadow:0 0 0 4px rgba(30,58,138,0.08); }
+        .form-group textarea { resize:vertical; min-height:120px; }
+        .btn-submit { width:100%; padding:15px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; border:none; border-radius:var(--radius); font-size:15px; font-weight:600; cursor:pointer; transition:all var(--transition); display:inline-flex; align-items:center; justify-content:center; gap:10px; letter-spacing:-0.01em; }
+        .btn-submit:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(30,58,138,0.28); }
+
+        footer { background:var(--navy); color:white; padding:80px 0 0; }
+        .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:44px; padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,0.08); }
+        .footer-brand .logo-img { height:40px; filter: brightness(0) invert(1); }
+        .footer-brand .logo-text .name { color:white; }
+        .footer-brand .logo-text .tagline { color:rgba(255,255,255,0.5); }
+        .footer-brand p { color:rgba(255,255,255,0.6); margin-top:18px; font-size:13.5px; line-height:1.75; letter-spacing:-0.01em; }
+        .footer-col h4 { font-size:15px; font-family:'Inter', sans-serif; font-weight:700; margin-bottom:18px; position:relative; padding-bottom:10px; letter-spacing:-0.01em; }
+        .footer-col h4::after { content:''; position:absolute; bottom:0; left:0; width:28px; height:2px; background:var(--accent); border-radius:2px; }
+        .footer-links { list-style:none; }
+        .footer-links li { margin-bottom:10px; }
+        .footer-links a { color:rgba(255,255,255,0.6); text-decoration:none; font-size:13.5px; transition:all var(--transition); display:inline-flex; align-items:center; gap:7px; letter-spacing:-0.01em; }
+        .footer-links a:hover { color:var(--accent-light); padding-left:4px; }
+        .footer-contact-item { display:flex; gap:10px; margin-bottom:14px; color:rgba(255,255,255,0.6); font-size:13.5px; letter-spacing:-0.01em; }
+        .footer-contact-item i { color:var(--accent); margin-top:3px; width:14px; font-size:13px; }
+        .footer-contact-item a { color:rgba(255,255,255,0.6); text-decoration:none; transition:color var(--transition); }
+        .footer-contact-item a:hover { color:var(--accent-light); }
+        .footer-bottom { padding:22px 0; text-align:center; color:rgba(255,255,255,0.4); font-size:13px; letter-spacing:-0.01em; }
+
+        .whatsapp-float { position:fixed; bottom:28px; right:28px; z-index:999; }
+        .whatsapp-float a { width:58px; height:58px; background:#25d366; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:26px; text-decoration:none; box-shadow:0 10px 30px rgba(37,211,102,0.35); animation:pulse 2.2s infinite; transition:transform var(--transition); }
+        .whatsapp-float a:hover { transform:scale(1.1); }
+        @keyframes pulse { 0%,100% { box-shadow:0 10px 30px rgba(37,211,102,0.35); } 50% { box-shadow:0 10px 40px rgba(37,211,102,0.55),0 0 0 14px rgba(37,211,102,0.08); } }
+
+        .back-to-top { position:fixed; bottom:28px; left:28px; z-index:999; width:44px; height:44px; background:var(--primary); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; cursor:pointer; opacity:0; visibility:hidden; transition:all var(--transition); border:none; box-shadow:0 4px 14px rgba(30,58,138,0.25); font-size:15px; }
+        .back-to-top.visible { opacity:1; visibility:visible; }
+        .back-to-top:hover { transform:translateY(-3px); background:var(--primary-dark); }
+
+        .lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.94); z-index:10000; display:none; align-items:center; justify-content:center; padding:40px; }
+        .lightbox.active { display:flex; }
+        .lightbox img { max-width:90%; max-height:90vh; border-radius:var(--radius); }
+        .lightbox-close { position:absolute; top:20px; right:28px; width:44px; height:44px; background:rgba(255,255,255,0.08); border:none; border-radius:50%; color:white; font-size:22px; cursor:pointer; transition:all var(--transition); }
+        .lightbox-close:hover { background:rgba(255,255,255,0.18); }
+
+        .reveal { opacity:0; transform:translateY(36px); transition:all 0.7s cubic-bezier(0.4,0,0.2,1); }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+        .reveal-delay-1 { transition-delay:0.08s; } .reveal-delay-2 { transition-delay:0.16s; } .reveal-delay-3 { transition-delay:0.24s; } .reveal-delay-4 { transition-delay:0.32s; }
+
+        .mobile-menu { position:fixed; top:0; right:-100%; width:300px; height:100vh; background:white; z-index:10001; padding:70px 26px 26px; transition:right 0.4s cubic-bezier(0.4,0,0.2,1); box-shadow:var(--shadow-2xl); }
+        .mobile-menu.active { right:0; }
+        .mobile-menu-close { position:absolute; top:18px; right:18px; width:38px; height:38px; background:var(--gray-100); border:none; border-radius:var(--radius-sm); font-size:18px; cursor:pointer; transition:background var(--transition); }
+        .mobile-menu-close:hover { background:var(--gray-200); }
+        .mobile-menu-links { list-style:none; }
+        .mobile-menu-links li { margin-bottom:4px; }
+        .mobile-menu-links a { display:block; padding:13px 0; color:var(--gray-700); text-decoration:none; font-weight:500; font-size:15px; border-bottom:1px solid var(--gray-100); letter-spacing:-0.01em; transition:color var(--transition); }
+        .mobile-menu-links a:hover { color:var(--primary); }
+        .mobile-menu-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:10000; opacity:0; visibility:hidden; transition:all var(--transition); }
+        .mobile-menu-overlay.active { opacity:1; visibility:visible; }
+
+        @media (max-width:1200px) {
+            .services-grid { grid-template-columns:repeat(2,1fr); } .why-grid { grid-template-columns:repeat(2,1fr); }
+            .process-grid { grid-template-columns:repeat(3,1fr); } .process-grid::before { display:none; }
+            .footer-grid { grid-template-columns:repeat(2,1fr); } .projects-grid { grid-template-columns:repeat(2,1fr); }
+        }
+        @media (max-width:992px) {
+            .nav-links, .nav-contact { display:none; } .mobile-toggle { display:block; }
+            .about-grid { grid-template-columns:1fr; } .contact-grid { grid-template-columns:1fr; }
+            .hero-stats-inner { grid-template-columns:repeat(2,1fr); }
+            .hero { padding-bottom:130px; } .hero-stats { position:absolute; bottom:0; }
+            .about-image img { height:380px; } .logo-set img { height:50px; }
+        }
+        @media (max-width:768px) {
+            section { padding:60px 0; }
+            .hero { min-height:auto; padding:120px 0 140px; }
+            .hero-content { padding:20px 16px 10px; } .hero h1 { font-size:28px; } .hero-subtitle { font-size:14px; }
+            .hero-buttons { flex-direction:column; gap:10px; } .hero-buttons a { width:100%; justify-content:center; font-size:13px; padding:14px 20px; }
+            .hero-trust { gap:12px; margin-bottom:50px; } .trust-item { font-size:11px; }
+            .hero-stats-inner { grid-template-columns:repeat(2,1fr); gap:14px; padding:18px 16px; }
+            .stat-number { font-size:26px; } .stat-label { font-size:10px; letter-spacing:0.8px; }
+            .about-stats { grid-template-columns:repeat(2,1fr); }
+            .services-grid { grid-template-columns:1fr; } .projects-grid { grid-template-columns:1fr; }
+            .process-grid { grid-template-columns:1fr; gap:24px; }
+            .form-row { grid-template-columns:1fr; } .footer-grid { grid-template-columns:1fr; gap:32px; }
+            .about-features { grid-template-columns:1fr; } .why-grid { grid-template-columns:1fr; }
+            .cta-content h2 { font-size:24px; } .cta-content p { font-size:14px; }
+            .cta-buttons { flex-direction:column; align-items:center; } .cta-buttons a { width:100%; justify-content:center; }
+            .about-content h2 { font-size:26px; } .section-title { font-size:26px; }
+            .contact-info { padding:36px 24px; } .contact-form-wrapper { padding:32px 20px; }
+            .filter-btn { padding:7px 14px; font-size:11px; } .service-card { padding:28px 20px; }
+            .process-number { width:72px; height:72px; font-size:24px; } .testimonial-card { padding:32px 22px; } .testimonial-text { font-size:15px; }
+            .whatsapp-float { bottom:18px; right:16px; } .whatsapp-float a { width:50px; height:50px; font-size:22px; }
+            .back-to-top { bottom:18px; left:16px; width:38px; height:38px; }
+            .logo-set { gap:30px; } .logo-set img { height:44px; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">
-    <img src="assets/uniquelogo.jpeg" alt="Unique Engineering & Consultancy Co. Ltd" class="logo-img">
-</a>
+                <img src="assets/uniquelogo.jpeg" alt="Unique Engineering & Consultancy Co. Ltd" class="logo-img">
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-contact">
-                <a href="tel:+211915667172" class="nav-phone">
-                    <i class="fas fa-phone"></i>
-                    <span>+211 915 667 172</span>
-                </a>
-                <a href="https://wa.me/211925618075" class="nav-whatsapp" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>+211 925 618 075</span>
-                </a>
+                <a href="tel:+211915667172" class="nav-phone"><i class="fas fa-phone"></i><span>+211 915 667 172</span></a>
+                <a href="https://wa.me/211925618075" class="nav-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i><span>+211 925 618 075</span></a>
                 <a href="#contact" class="btn-quote">Get Quote</a>
             </div>
-            <button class="mobile-toggle" onclick="openMobileMenu()" aria-label="Open menu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="mobile-toggle" onclick="openMobileMenu()"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
     <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu"><i class="fas fa-times"></i></button>
+        <button class="mobile-menu-close" onclick="closeMobileMenu()"><i class="fas fa-times"></i></button>
         <ul class="mobile-menu-links">
             <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
             <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
             <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+            <li><a href="#why-us" onclick="closeMobileMenu()">Why Us</a></li>
             <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
             <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
             <li><a href="tel:+211915667172"><i class="fas fa-phone"></i> +211 915 667 172</a></li>
@@ -2184,27 +435,15 @@
         <a href="#contact" class="btn-quote" style="display:block;text-align:center;margin-top:16px;" onclick="closeMobileMenu()">Get a Free Quote</a>
     </div>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-pattern"></div>
+        <div class="hero-bg"></div><div class="hero-overlay"></div><div class="hero-pattern"></div>
         <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-award"></i>
-                Established 2011 — Leading Engineering Firm in East Africa
-            </div>
+            <div class="hero-badge"><i class="fas fa-award"></i> Established 2011 — Leading Engineering Firm in East & West Africa</div>
             <h1>Building South Sudan & East Africa's Future Through <span>Engineering & Construction Excellence</span></h1>
-            <p class="hero-subtitle">Unique Engineering & Consultancy Co. Ltd (UECC) delivers innovative architectural, civil engineering, construction, and bank fit‑out solutions across South Sudan, Ethiopia, Kenya, and Uganda.</p>
+            <p class="hero-subtitle">Unique Engineering & Consultancy Co. Ltd (UECC) delivers innovative architectural, civil engineering, construction, and bank fit‑out solutions across South Sudan, Ethiopia, Kenya, Uganda, and soon Sierra Leone.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">
-                    <i class="fas fa-paper-plane"></i>
-                    Get a Free Quote
-                </a>
-                <a href="tel:+211915667172" class="btn-secondary">
-                    <i class="fas fa-phone-alt"></i>
-                    Call Us Now
-                </a>
+                <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
+                <a href="tel:+211915667172" class="btn-secondary"><i class="fas fa-phone-alt"></i> Call Us Now</a>
             </div>
             <div class="hero-trust">
                 <div class="trust-item"><i class="fas fa-check-circle"></i> Licensed & Registered</div>
@@ -2213,88 +452,74 @@
                 <div class="trust-item"><i class="fas fa-check-circle"></i> Quality & Safety First</div>
             </div>
         </div>
-        <div class="hero-stats">
-            <div class="hero-stats-inner">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="15">0</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="150">0</span>
-                    <span class="stat-label">Projects Completed</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="80">0</span>
-                    <span class="stat-label">Happy Clients</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Client Support</span>
+        <div class="hero-stats"><div class="hero-stats-inner">
+            <div class="stat-item"><span class="stat-number" data-target="15">0</span><span class="stat-label">Years Experience</span></div>
+            <div class="stat-item"><span class="stat-number" data-target="150">0</span><span class="stat-label">Projects Completed</span></div>
+            <div class="stat-item"><span class="stat-number" data-target="80">0</span><span class="stat-label">Happy Clients</span></div>
+            <div class="stat-item"><span class="stat-number">24/7</span><span class="stat-label">Client Support</span></div>
+        </div></div>
+    </section>
+
+    <section class="client-logos">
+        <div class="container">
+            <div class="client-logos-header reveal">
+                <span class="section-badge"><i class="fas fa-handshake"></i> Trusted Partners</span>
+                <h2 class="client-logos-title">Our Valued Clients</h2>
+            </div>
+            <div class="logo-scroll-container">
+                <div class="logo-track" id="logoTrack">
+                    <div class="logo-set">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+1" alt="Client 1">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+2" alt="Client 2">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+3" alt="Client 3">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+4" alt="Client 4">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+5" alt="Client 5">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+6" alt="Client 6">
+                    </div>
+                    <div class="logo-set">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+1" alt="Client 1">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+2" alt="Client 2">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+3" alt="Client 3">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+4" alt="Client 4">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+5" alt="Client 5">
+                        <img src="https://via.placeholder.com/150x70.png?text=Client+6" alt="Client 6">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image reveal">
                     <img src="assets/unique10.jpeg" alt="Unique Engineering Team" loading="lazy">
                     <div class="about-image-accent"></div>
-                    <div class="about-experience">
-                        <div class="number">15+</div>
-                        <div class="text">Years of<br>Excellence</div>
-                    </div>
+                    <div class="about-experience"><div class="number">15+</div><div class="text">Years of<br>Excellence</div></div>
                 </div>
                 <div class="about-content reveal reveal-delay-2">
                     <span class="section-badge"><i class="fas fa-building"></i> About Our Company</span>
                     <h2>Unique Engineering & Consultancy Co. Ltd (UECC)</h2>
-                    <p>Founded in November 2011 and registered in Juba, South Sudan, UECC is a privately owned engineering, construction, and consultancy firm with a growing regional presence across East Africa, including sister company <strong>Unique Construction General Contractor (UCGC)</strong> in Ethiopia.</p>
+                    <p>Founded in November 2011 and registered in Juba, South Sudan (headquarters), UECC is a privately owned engineering, construction, and consultancy firm with a growing regional presence across East Africa, including sister company <strong>Unique Construction General Contractor (UCGC)</strong> in Ethiopia. We are expanding to Sierra Leone soon.</p>
                     <p>We provide complete solutions in architectural design, structural & civil engineering, construction management, project supervision, supply of construction materials, and specialized bank fit‑outs for major financial institutions.</p>
-                    <p>Our multidisciplinary team of engineers, architects, quantity surveyors, and project managers is committed to turning ideas into sustainable, high‑quality projects that meet international standards while addressing local needs.</p>
                     <div class="about-features">
-                        <div class="about-feature">
-                            <div class="about-feature-icon"><i class="fas fa-check"></i></div>
-                            <span>Registered & Licensed in South Sudan</span>
-                        </div>
-                        <div class="about-feature">
-                            <div class="about-feature-icon"><i class="fas fa-check"></i></div>
-                            <span>Bank Fit‑Out Specialists</span>
-                        </div>
-                        <div class="about-feature">
-                            <div class="about-feature-icon"><i class="fas fa-check"></i></div>
-                            <span>Operations in 4 Countries</span>
-                        </div>
-                        <div class="about-feature">
-                            <div class="about-feature-icon"><i class="fas fa-check"></i></div>
-                            <span>Quality, Safety & Client Focus</span>
-                        </div>
+                        <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-check"></i></div><span>Registered & Licensed in South Sudan</span></div>
+                        <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-check"></i></div><span>Bank Fit‑Out Specialists</span></div>
+                        <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-check"></i></div><span>Operations in 4+ Countries</span></div>
+                        <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-check"></i></div><span>Quality, Safety & Client Focus</span></div>
                     </div>
+                    <a href="assets/company-profile.pdf" download class="btn-download-profile"><i class="fas fa-file-pdf"></i> Download Company Profile</a>
                 </div>
             </div>
             <div class="about-stats reveal">
-                <div class="about-stat">
-                    <span class="about-stat-number counter" data-target="15">0</span>
-                    <div class="about-stat-label">Years Experience</div>
-                </div>
-                <div class="about-stat">
-                    <span class="about-stat-number counter" data-target="150">0</span>
-                    <div class="about-stat-label">Projects Completed</div>
-                </div>
-                <div class="about-stat">
-                    <span class="about-stat-number counter" data-target="80">0</span>
-                    <div class="about-stat-label">Happy Clients</div>
-                </div>
-                <div class="about-stat">
-                    <span class="about-stat-number">4</span>
-                    <div class="about-stat-label">Countries of Operation</div>
-                </div>
+                <div class="about-stat"><span class="about-stat-number counter" data-target="15">0</span><div class="about-stat-label">Years Experience</div></div>
+                <div class="about-stat"><span class="about-stat-number counter" data-target="150">0</span><div class="about-stat-label">Projects Completed</div></div>
+                <div class="about-stat"><span class="about-stat-number counter" data-target="80">0</span><div class="about-stat-label">Happy Clients</div></div>
+                <div class="about-stat"><span class="about-stat-number">5</span><div class="about-stat-label">Countries (Soon)</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-header reveal">
@@ -2303,58 +528,22 @@
                 <p class="section-subtitle">Comprehensive engineering, construction, and consultancy solutions tailored to public and private sector clients.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card reveal reveal-delay-1">
-                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Engineering Consultancy</h3>
-                    <p>Professional advisory, feasibility studies, and project planning for optimal outcomes.</p>
-                </div>
-                <div class="service-card reveal reveal-delay-2">
-                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
-                    <h3>Architectural & Interior Design</h3>
-                    <p>Creative 3D building designs, interior fit‑outs, and functional spaces for residential, commercial, and banking environments.</p>
-                </div>
-                <div class="service-card reveal reveal-delay-3">
-                    <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
-                    <h3>Construction Management</h3>
-                    <p>Turnkey project delivery, construction supervision, and on‑site coordination from concept to handover.</p>
-                </div>
-                <div class="service-card reveal reveal-delay-4">
-                    <div class="service-icon"><i class="fas fa-building"></i></div>
-                    <h3>Structural & Civil Engineering</h3>
-                    <p>Safe structural design, road rehabilitation, drainage, and infrastructure development.</p>
-                </div>
-                <div class="service-card reveal reveal-delay-1">
-                    <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
-                    <h3>Project Supervision</h3>
-                    <p>Quality control, schedule monitoring, and compliance enforcement on all construction sites.</p>
-                </div>
-                <div class="service-card reveal reveal-delay-2">
-                    <div class="service-icon"><i class="fas fa-calculator"></i></div>
-                    <h3>Quantity Surveying & Cost Estimation</h3>
-                    <p>Accurate budgeting, material take‑offs, and financial management for cost‑effective delivery.</p>
-                </div>
-                <div class="service-card reveal reveal-delay-3">
-                    <div class="service-icon"><i class="fas fa-university"></i></div>
-                    <h3>Bank Fit‑Out Specialisation</h3>
-                    <p>End‑to‑end banking interiors, ATM implantation, and secure renovations for leading financial institutions.</p>
-                </div>
-                <div class="service-card reveal reveal-delay-4">
-                    <div class="service-icon"><i class="fas fa-hammer"></i></div>
-                    <h3>Building Construction & Turnkey Projects</h3>
-                    <p>Residential, commercial, and institutional buildings delivered with excellence and modern techniques.</p>
-                </div>
+                <div class="service-card reveal reveal-delay-1"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3>Engineering Consultancy</h3><p>Professional advisory, feasibility studies, and project planning for optimal outcomes.</p></div>
+                <div class="service-card reveal reveal-delay-2"><div class="service-icon"><i class="fas fa-drafting-compass"></i></div><h3>Architectural & Interior Design</h3><p>Creative 3D building designs, interior fit‑outs, and functional spaces for residential, commercial, and banking environments.</p></div>
+                <div class="service-card reveal reveal-delay-3"><div class="service-icon"><i class="fas fa-hard-hat"></i></div><h3>Construction Management</h3><p>Turnkey project delivery, construction supervision, and on‑site coordination from concept to handover.</p></div>
+                <div class="service-card reveal reveal-delay-4"><div class="service-icon"><i class="fas fa-building"></i></div><h3>Structural & Civil Engineering</h3><p>Safe structural design, road rehabilitation, drainage, and infrastructure development.</p></div>
+                <div class="service-card reveal reveal-delay-1"><div class="service-icon"><i class="fas fa-clipboard-check"></i></div><h3>Project Supervision</h3><p>Quality control, schedule monitoring, and compliance enforcement on all construction sites.</p></div>
+                <div class="service-card reveal reveal-delay-2"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3>Quantity Surveying & Cost Estimation</h3><p>Accurate budgeting, material take‑offs, and financial management for cost‑effective delivery.</p></div>
+                <div class="service-card reveal reveal-delay-3"><div class="service-icon"><i class="fas fa-university"></i></div><h3>Bank Fit‑Out Specialisation</h3><p>End‑to‑end banking interiors, ATM implantation, and secure renovations for leading financial institutions.</p></div>
+                <div class="service-card reveal reveal-delay-4"><div class="service-icon"><i class="fas fa-hammer"></i></div><h3>Building Construction & Turnkey Projects</h3><p>Residential, commercial, and institutional buildings delivered with excellence and modern techniques.</p></div>
             </div>
             <div class="service-cta reveal">
                 <p>Need a custom solution? Let's discuss your project requirements today.</p>
-                <a href="#contact" class="btn-outline">
-                    <i class="fas fa-comments"></i>
-                    Request a Consultation
-                </a>
+                <a href="#contact" class="btn-outline"><i class="fas fa-comments"></i> Request a Consultation</a>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
     <section class="why-us" id="why-us">
         <div class="container">
             <div class="section-header reveal">
@@ -2363,221 +552,81 @@
                 <p class="section-subtitle">A decade‑plus of trust, regional capacity, and specialised expertise in engineering and construction.</p>
             </div>
             <div class="why-grid">
-                <div class="why-card reveal reveal-delay-1">
-                    <div class="why-icon"><i class="fas fa-users"></i></div>
-                    <h4>Experienced Multidisciplinary Team</h4>
-                </div>
-                <div class="why-card reveal reveal-delay-2">
-                    <div class="why-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h4>Innovative & Sustainable Solutions</h4>
-                </div>
-                <div class="why-card reveal reveal-delay-3">
-                    <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h4>Quality & Safety Assurance</h4>
-                </div>
-                <div class="why-card reveal reveal-delay-4">
-                    <div class="why-icon"><i class="fas fa-heart"></i></div>
-                    <h4>Client‑Focused Approach</h4>
-                </div>
-                <div class="why-card reveal reveal-delay-1">
-                    <div class="why-icon"><i class="fas fa-clock"></i></div>
-                    <h4>On‑Time Delivery</h4>
-                </div>
-                <div class="why-card reveal reveal-delay-2">
-                    <div class="why-icon"><i class="fas fa-tag"></i></div>
-                    <h4>Competitive Pricing</h4>
-                </div>
-                <div class="why-card reveal reveal-delay-3">
-                    <div class="why-icon"><i class="fas fa-globe-africa"></i></div>
-                    <h4>Regional Presence (SSD, ETH, KEN, UGA)</h4>
-                </div>
-                <div class="why-card reveal reveal-delay-4">
-                    <div class="why-icon"><i class="fas fa-landmark"></i></div>
-                    <h4>Bank Fit‑Out Specialists</h4>
-                </div>
+                <div class="why-card reveal reveal-delay-1"><div class="why-icon"><i class="fas fa-users"></i></div><h4>Experienced Multidisciplinary Team</h4></div>
+                <div class="why-card reveal reveal-delay-2"><div class="why-icon"><i class="fas fa-lightbulb"></i></div><h4>Innovative & Sustainable Solutions</h4></div>
+                <div class="why-card reveal reveal-delay-3"><div class="why-icon"><i class="fas fa-shield-alt"></i></div><h4>Quality & Safety Assurance</h4></div>
+                <div class="why-card reveal reveal-delay-4"><div class="why-icon"><i class="fas fa-heart"></i></div><h4>Client‑Focused Approach</h4></div>
+                <div class="why-card reveal reveal-delay-1"><div class="why-icon"><i class="fas fa-clock"></i></div><h4>On‑Time Delivery</h4></div>
+                <div class="why-card reveal reveal-delay-2"><div class="why-icon"><i class="fas fa-tag"></i></div><h4>Competitive Pricing</h4></div>
+                <div class="why-card reveal reveal-delay-3"><div class="why-icon"><i class="fas fa-globe-africa"></i></div><h4>Regional Presence (SSD, ETH, KEN, UGA)</h4></div>
+                <div class="why-card reveal reveal-delay-4"><div class="why-icon"><i class="fas fa-landmark"></i></div><h4>Bank Fit‑Out Specialists</h4></div>
             </div>
         </div>
     </section>
 
-  <!-- Projects Section -->
-<section class="projects" id="projects">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-badge"><i class="fas fa-briefcase"></i> Our Portfolio</span>
-            <h2 class="section-title">Our Projects</h2>
-            <p class="section-subtitle">A selection of engineering, construction, and fit‑out projects completed by our dedicated team.</p>
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fas fa-briefcase"></i> Our Portfolio</span>
+                <h2 class="section-title">Our Projects</h2>
+                <p class="section-subtitle">A selection of engineering, construction, and fit‑out projects completed by our dedicated team.</p>
+            </div>
+            <div class="project-filters reveal">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="banking">Banking</button>
+                <button class="filter-btn" data-filter="institutional">Institutional</button>
+                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card reveal reveal-delay-1" data-category="commercial">
+                    <div class="project-image"><img src="assets/unique1.jpeg" alt="Six-Storey Commercial Complex" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
+                    <div class="project-info"><span class="project-category">Commercial Buildings</span><h3>Six‑Storey Commercial Complex – Amarat, Juba</h3><p>A modern six‑storey commercial complex with premium office spaces and contemporary design.</p></div>
+                </div>
+                <div class="project-card reveal reveal-delay-2" data-category="residential">
+                    <div class="project-image"><img src="assets/unique2.jpeg" alt="Three-Storey Residential Building" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
+                    <div class="project-info"><span class="project-category">Residential Projects</span><h3>Three‑Storey Residential Building – Thong Ping, Juba</h3><p>Modern three‑storey residence offering comfortable living spaces and durable finishes.</p></div>
+                </div>
+                <div class="project-card reveal reveal-delay-3" data-category="commercial">
+                    <div class="project-image"><img src="assets/unique3.jpeg" alt="Four-Storey Shopping Complex" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
+                    <div class="project-info"><span class="project-category">Commercial Development</span><h3>Four‑Storey Shopping Complex – Custom Market, Juba</h3><p>Retail spaces and business outlets in a modern four‑storey shopping complex.</p></div>
+                </div>
+                <div class="project-card reveal reveal-delay-1" data-category="commercial">
+                    <div class="project-image"><img src="assets/unique4.jpeg" alt="Five-Storey Mixed-Use Complex" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
+                    <div class="project-info"><span class="project-category">Commercial & Residential</span><h3>Five‑Storey Mixed-Use Complex – Konyo Konyo, Juba</h3><p>Integrated development with retail and residential spaces in Konyo Konyo.</p></div>
+                </div>
+                <div class="project-card reveal reveal-delay-2" data-category="commercial">
+                    <div class="project-image"><img src="assets/unique5.jpeg" alt="Eight-Storey Commercial Building" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
+                    <div class="project-info"><span class="project-category">Commercial Development</span><h3>Eight‑Storey Commercial Building – Konyo Konyo, Juba</h3><p>Large‑scale commercial development accommodating retail, office, and business operations.</p></div>
+                </div>
+                <div class="project-card reveal reveal-delay-3" data-category="commercial">
+                    <div class="project-image"><img src="assets/unique6.jpeg" alt="Five-Storey Corporate Office" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
+                    <div class="project-info"><span class="project-category">Corporate Office</span><h3>Five‑Storey Corporate Office – Mia Saba Road, Juba</h3><p>Modern corporate office building meeting the demand for business facilities in Juba.</p></div>
+                </div>
+                <div class="project-card reveal reveal-delay-1" data-category="residential">
+                    <div class="project-image"><img src="assets/unique7.jpeg" alt="Six-Storey Apartment Building" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
+                    <div class="project-info"><span class="project-category">Residential Development</span><h3>Six‑Storey Apartment Building – Hai Cinema, Juba</h3><p>Contemporary six‑storey apartment with spacious urban living.</p></div>
+                </div>
+                <div class="project-card reveal reveal-delay-2" data-category="banking">
+                    <div class="project-image"><img src="assets/unique8.jpeg" alt="National Bank of Egypt Branch" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
+                    <div class="project-info"><span class="project-category">Banking & Commercial</span><h3>National Bank of Egypt (NBE) Branch Development</h3><p>Complete structural works and bank fit‑out for a secure, high‑quality banking facility.</p></div>
+                </div>
+                <div class="project-card reveal reveal-delay-3" data-category="residential">
+                    <div class="project-image"><img src="assets/unique9.jpeg" alt="Three-Storey Residential Nairobi" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
+                    <div class="project-info"><span class="project-category">Residential Development</span><h3>Three‑Storey Residential Building – Nairobi, Kenya</h3><p>Durable and sustainable residential project with contemporary Kenyan architecture.</p></div>
+                </div>
+                <div class="project-card reveal reveal-delay-1" data-category="residential">
+                    <div class="project-image"><img src="assets/unique91.png" alt="Nyakuron Residential Development" loading="lazy"><div class="project-overlay"><div class="project-overlay-btn"><i class="fas fa-expand"></i></div></div></div>
+                    <div class="project-info"><span class="project-category">Residential Development</span><h3>Three‑Storey Residential – Nyakuron, Juba</h3><p>Prestigious residential development with modern design and comfort in Nyakuron 1st Class.</p></div>
+                </div>
+            </div>
+            <div class="projects-cta reveal">
+                <a href="#contact" class="btn-view-all">Discuss Your Project <i class="fas fa-arrow-right"></i></a>
+            </div>
         </div>
-        <div class="project-filters reveal">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="commercial">Commercial</button>
-            <button class="filter-btn" data-filter="residential">Residential</button>
-            <button class="filter-btn" data-filter="banking">Banking</button>
-            <button class="filter-btn" data-filter="institutional">Institutional</button>
-            <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
-        </div>
-        <div class="projects-grid">
+    </section>
 
-            <!-- Project 1: Commercial -->
-            <div class="project-card reveal reveal-delay-1" data-category="commercial">
-                <div class="project-image">
-                    <img src="assets/unique1.jpeg" alt="Six-Storey Commercial Complex, Amarat" loading="lazy">
-                    <div class="project-overlay">
-                        <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Commercial Buildings</span>
-                    <h3>Six‑Storey Commercial Complex – Amarat, Juba</h3>
-                    <p>Landmark six-storey commercial building located in the Amarat area of Juba, South Sudan, featuring modern architecture, premium office spaces, and contemporary commercial facilities designed to support business growth and urban development.</p>
-                </div>
-            </div>
-
-            <!-- Project 2: Residential -->
-            <div class="project-card reveal reveal-delay-2" data-category="residential">
-                <div class="project-image">
-                    <img src="assets/unique2.jpeg" alt="Three-Storey Residential Building, Thong Ping" loading="lazy">
-                    <div class="project-overlay">
-                        <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Residential Projects</span>
-                    <h3>Three‑Storey Residential Building – Thong Ping, Juba</h3>
-                    <p>A modern three-storey residential development located in the Thong Ping area of Juba, South Sudan, designed to provide comfortable living spaces with quality construction, contemporary architecture, and durable finishes.</p>
-                </div>
-            </div>
-
-            <!-- Project 3: Commercial (Shopping Complex) -->
-            <div class="project-card reveal reveal-delay-3" data-category="commercial">
-                <div class="project-image">
-                    <img src="assets/unique3.jpeg" alt="Four-Storey Shopping Complex, Custom Market" loading="lazy">
-                    <div class="project-overlay">
-                        <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Commercial Development</span>
-                    <h3>Four-Storey Shopping Complex – Custom Market, Juba</h3>
-                    <p>A modern four-storey commercial shopping complex located in the Custom Market area of Juba, South Sudan, featuring retail spaces, business outlets, and contemporary architectural design that supports commercial growth and urban development.</p>
-                </div>
-            </div>
-
-            <!-- Project 4: Mixed-Use -->
-            <div class="project-card reveal reveal-delay-1" data-category="commercial">
-                <div class="project-image">
-                    <img src="assets/unique4.jpeg" alt="Five-Storey Mixed-Use Complex, Konyo Konyo" loading="lazy">
-                    <div class="project-overlay">
-                        <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Commercial & Residential Development</span>
-                    <h3>Five-Storey Mixed-Use Complex – Konyo Konyo, Juba</h3>
-                    <p>A landmark five-storey commercial and residential development in Konyo Konyo, Juba, featuring modern retail spaces and quality residential accommodation. The project demonstrates UECC's expertise in delivering integrated developments that combine functionality, durability, and contemporary architectural excellence.</p>
-                </div>
-            </div>
-
-            <!-- Project 5: Eight-Storey Commercial -->
-            <div class="project-card reveal reveal-delay-2" data-category="commercial">
-                <div class="project-image">
-                    <img src="assets/unique5.jpeg" alt="Eight-Storey Commercial Building, Konyo Konyo" loading="lazy">
-                    <div class="project-overlay">
-                        <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Commercial Development</span>
-                    <h3>Eight-Storey Commercial Building – Konyo Konyo, Juba</h3>
-                    <p>A prominent eight-storey commercial development located in Konyo Konyo, Juba, South Sudan, designed to accommodate retail, office, and business operations. The project showcases modern construction standards, functional design, and UECC's expertise in delivering large-scale commercial developments.</p>
-                </div>
-            </div>
-
-            <!-- Project 6: Corporate Office -->
-            <div class="project-card reveal reveal-delay-3" data-category="commercial">
-                <div class="project-image">
-                    <img src="assets/unique6.jpeg" alt="Five-Storey Corporate Office, Mia Saba Road" loading="lazy">
-                    <div class="project-overlay">
-                        <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Commercial Office Development</span>
-                    <h3>Five-Storey Corporate Office Building – Mia Saba Road, Juba</h3>
-                    <p>A landmark five-storey corporate office building situated on Mia Saba Road, Juba, South Sudan. Developed to meet the growing demand for modern business facilities, the project reflects UECC's commitment to engineering excellence, superior construction quality, and innovative commercial development.</p>
-                </div>
-            </div>
-
-            <!-- Project 7: Residential Apartment -->
-            <div class="project-card reveal reveal-delay-1" data-category="residential">
-                <div class="project-image">
-                    <img src="assets/unique7.jpeg" alt="Six-Storey Apartment Building, Hai Cinema" loading="lazy">
-                    <div class="project-overlay">
-                        <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Residential Development</span>
-                    <h3>Six-Storey Apartment Building – Hai Cinema, Juba</h3>
-                    <p>A modern six-storey apartment development located in Hai Cinema, Juba, South Sudan, designed to provide quality residential accommodation with contemporary architecture, spacious living environments, and durable construction standards that meet modern urban living requirements.</p>
-                </div>
-            </div>
-
-            <!-- Project 8: Banking (NBE) -->
-            <div class="project-card reveal reveal-delay-2" data-category="banking">
-                <div class="project-image">
-                    <img src="assets/unique8.jpeg" alt="National Bank of Egypt Branch Development" loading="lazy">
-                    <div class="project-overlay">
-                        <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Banking & Commercial Construction</span>
-                    <h3>National Bank of Egypt (NBE) Branch Development</h3>
-                    <p>Construction of a modern banking facility including complete structural works, architectural finishes, and specialized internal bank fit-out works for the National Bank of Egypt (NBE) in Juba, South Sudan. The project showcases UECC's expertise in delivering secure, high-quality banking environments built to international standards.</p>
-                </div>
-            </div>
-
-            <!-- Project 9: Residential (Nairobi) -->
-            <div class="project-card reveal reveal-delay-3" data-category="residential">
-                <div class="project-image">
-                    <img src="assets/unique9.jpeg" alt="Three-Storey Residential Building, Nairobi" loading="lazy">
-                    <div class="project-overlay">
-                        <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Residential Development</span>
-                    <h3>Three-Storey Residential Building – Nairobi, Kenya</h3>
-                    <p>A modern three-storey residential development in Nairobi, Kenya, designed to provide comfortable and functional living spaces through contemporary architectural design, quality construction materials, and superior workmanship. The project reflects UECC's commitment to delivering durable and sustainable residential developments across East Africa.</p>
-                </div>
-            </div>
-
-            <!-- Project 10: Residential Development -->
-            <div class="project-card reveal reveal-delay-1" data-category="infrastructure">
-                <div class="project-image">
-                    <img src="assets/unique91.png" alt="Road Rehabilitation" loading="lazy">
-                    <div class="project-overlay">
-                        <div class="project-overlay-btn"><i class="fas fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Residential Development</span>
-                    <h3></h3>
-                    <p> A modern three-storey residential development located in the prestigious Nyakuron 1st Class area of Juba, South Sudan. The project features contemporary architectural design, quality construction standards, and well-planned living spaces that provide comfort, functionality, and long-term value.</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="projects-cta reveal">
-            <a href="#contact" class="btn-view-all">
-                Discuss Your Project
-                <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-    <!-- Process Section -->
     <section class="process" id="process">
         <div class="container">
             <div class="section-header reveal">
@@ -2586,31 +635,15 @@
                 <p class="section-subtitle">A systematic approach to delivering excellence in every project we undertake.</p>
             </div>
             <div class="process-grid">
-                <div class="process-step reveal reveal-delay-1">
-                    <div class="process-number">01</div>
-                    <h4>Consultation & Requirement Analysis</h4>
-                </div>
-                <div class="process-step reveal reveal-delay-2">
-                    <div class="process-number">02</div>
-                    <h4>Planning & Design</h4>
-                </div>
-                <div class="process-step reveal reveal-delay-3">
-                    <div class="process-number">03</div>
-                    <h4>Engineering Review</h4>
-                </div>
-                <div class="process-step reveal reveal-delay-4">
-                    <div class="process-number">04</div>
-                    <h4>Construction & Implementation</h4>
-                </div>
-                <div class="process-step reveal reveal-delay-4">
-                    <div class="process-number">05</div>
-                    <h4>Project Delivery</h4>
-                </div>
+                <div class="process-step reveal reveal-delay-1"><div class="process-number">01</div><h4>Consultation & Requirement Analysis</h4></div>
+                <div class="process-step reveal reveal-delay-2"><div class="process-number">02</div><h4>Planning & Design</h4></div>
+                <div class="process-step reveal reveal-delay-3"><div class="process-number">03</div><h4>Engineering Review</h4></div>
+                <div class="process-step reveal reveal-delay-4"><div class="process-number">04</div><h4>Construction & Implementation</h4></div>
+                <div class="process-step reveal reveal-delay-4"><div class="process-number">05</div><h4>Project Delivery</h4></div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header reveal">
@@ -2620,70 +653,32 @@
             </div>
             <div class="testimonial-slider reveal">
                 <div class="testimonial-track" id="testimonialTrack">
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">UECC delivered our bank branch fit‑out on time and within budget. Their understanding of banking security and design requirements was outstanding.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">JM</div>
-                            <div class="testimonial-author-info">
-                                <h5>James Malual</h5>
-                                <span>Banking Executive, Juba</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">The team at Unique Engineering provided exceptional consultancy and construction management for our regional office complex. Their multi‑country experience is a real asset.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">SA</div>
-                            <div class="testimonial-author-info">
-                                <h5>Sarah Akol</h5>
-                                <span>Project Director, NGO</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">Working with UECC has been a pleasure. Their architectural designs are innovative and practical, perfectly suited to the local context in South Sudan.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">PD</div>
-                            <div class="testimonial-author-info">
-                                <h5>Peter Deng</h5>
-                                <span>Real Estate Developer</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="testimonial-card"><div class="testimonial-quote">"</div><p class="testimonial-text">UECC delivered our bank branch fit‑out on time and within budget. Their understanding of banking security and design requirements was outstanding.</p><div class="testimonial-author"><div class="testimonial-avatar">JM</div><div class="testimonial-author-info"><h5>James Malual</h5><span>Banking Executive, Juba</span></div></div></div>
+                    <div class="testimonial-card"><div class="testimonial-quote">"</div><p class="testimonial-text">The team at Unique Engineering provided exceptional consultancy and construction management for our regional office complex. Their multi‑country experience is a real asset.</p><div class="testimonial-author"><div class="testimonial-avatar">SA</div><div class="testimonial-author-info"><h5>Sarah Akol</h5><span>Project Director, NGO</span></div></div></div>
+                    <div class="testimonial-card"><div class="testimonial-quote">"</div><p class="testimonial-text">Working with UECC has been a pleasure. Their architectural designs are innovative and practical, perfectly suited to the local context in South Sudan.</p><div class="testimonial-author"><div class="testimonial-avatar">PD</div><div class="testimonial-author-info"><h5>Peter Deng</h5><span>Real Estate Developer</span></div></div></div>
                 </div>
                 <div class="testimonial-dots">
-                    <button class="dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
-                    <button class="dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
-                    <button class="dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+                    <button class="dot active" onclick="goToSlide(0)"></button>
+                    <button class="dot" onclick="goToSlide(1)"></button>
+                    <button class="dot" onclick="goToSlide(2)"></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Banner -->
     <section class="cta-banner">
         <div class="container">
             <div class="cta-content reveal">
                 <h2>Ready To Start Your Next Project?</h2>
                 <p>Partner with Unique Engineering & Consultancy Co. Ltd and bring your vision to life with professional engineering, construction, and consultancy expertise.</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn-white">
-                        <i class="fas fa-paper-plane"></i>
-                        Get Quote
-                    </a>
-                    <a href="tel:+211915667172" class="btn-outline-white">
-                        <i class="fas fa-phone-alt"></i>
-                        Call Now
-                    </a>
+                    <a href="#contact" class="btn-white"><i class="fas fa-paper-plane"></i> Get Quote</a>
+                    <a href="tel:+211915667172" class="btn-outline-white"><i class="fas fa-phone-alt"></i> Call Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header reveal">
@@ -2695,116 +690,48 @@
                 <div class="contact-info reveal">
                     <h3>Let's Talk</h3>
                     <p>Have a project in mind? We'd love to hear about it. Get in touch with our team in Juba or our regional offices.</p>
-                    <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="contact-item-text">
-                            <h5>Head Office</h5>
-                            <p>Nimra Talata, opposite Ministry of Mining, Juba, South Sudan</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
-                        <div class="contact-item-text">
-                            <h5>South Sudan</h5>
-                            <a href="tel:+211915667172">+211 915 667 172</a>
-                            <a href="tel:+211916805121" style="display:block; margin-top:2px;">+211 916 805 121</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div>
-                        <div class="contact-item-text">
-                            <h5>WhatsApp</h5>
-                            <a href="https://wa.me/211925618075" target="_blank">+211 925 618 075</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="contact-item-text">
-                            <h5>Email</h5>
-                            <a href="mailto:info@uniqueengineerscoltd.com">info@uniqueengineerscoltd.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fas fa-globe-africa"></i></div>
-                        <div class="contact-item-text">
-                            <h5>Regional Offices</h5>
-                            <p>Ethiopia: +251 920 162 793</p>
-                            <p>Uganda: +256 780 637 060</p>
-                            <p>Kenya: +254 712 349 237</p>
-                        </div>
-                    </div>
+                    <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-item-text"><h5>Head Office</h5><p>Nimra Talata, opposite Ministry of Mining, Juba, South Sudan</p></div></div>
+                    <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div><div class="contact-item-text"><h5>South Sudan</h5><a href="tel:+211915667172">+211 915 667 172</a><a href="tel:+211916805121" style="display:block; margin-top:2px;">+211 916 805 121</a></div></div>
+                    <div class="contact-item"><div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div><div class="contact-item-text"><h5>WhatsApp</h5><a href="https://wa.me/211925618075" target="_blank">+211 925 618 075</a></div></div>
+                    <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-envelope"></i></div><div class="contact-item-text"><h5>Email</h5><a href="mailto:info@uniqueengineerscoltd.com">info@uniqueengineerscoltd.com</a></div></div>
+                    <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-globe-africa"></i></div><div class="contact-item-text"><h5>Regional Offices</h5><p>Ethiopia: +251 920 162 793</p><p>Uganda: +256 780 637 060</p><p>Kenya: +254 712 349 237</p><p style="color: var(--accent-light);">Sierra Leone: Expanding Soon</p></div></div>
                     <div class="contact-social">
-                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="contact-form-wrapper reveal reveal-delay-2">
                     <h3>Send Us A Message</h3>
                     <form id="contactForm" onsubmit="handleSubmit(event)">
                         <div class="form-row">
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" placeholder="John Doe" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <input type="email" placeholder="john@example.com" required>
-                            </div>
+                            <div class="form-group"><label>Full Name</label><input type="text" placeholder="John Doe" required></div>
+                            <div class="form-group"><label>Email Address</label><input type="email" placeholder="john@example.com" required></div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="tel" placeholder="+211 xxx xxx xxx" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Service Needed</label>
-                                <select required>
-                                    <option value="">Select a service</option>
-                                    <option>Engineering Consultancy</option>
-                                    <option>Architectural & Interior Design</option>
-                                    <option>Construction Management</option>
-                                    <option>Structural & Civil Engineering</option>
-                                    <option>Project Supervision</option>
-                                    <option>Quantity Surveying</option>
-                                    <option>Bank Fit‑Out</option>
-                                    <option>Building Construction</option>
-                                </select>
-                            </div>
+                            <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+211 xxx xxx xxx" required></div>
+                            <div class="form-group"><label>Service Needed</label><select required><option value="">Select a service</option><option>Engineering Consultancy</option><option>Architectural & Interior Design</option><option>Construction Management</option><option>Structural & Civil Engineering</option><option>Project Supervision</option><option>Quantity Surveying</option><option>Bank Fit‑Out</option><option>Building Construction</option></select></div>
                         </div>
-                        <div class="form-group">
-                            <label>Message</label>
-                            <textarea placeholder="Tell us about your project..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
+                        <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your project..." required></textarea></div>
+                        <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#home" class="nav-logo">
-                        <div class="logo-icon">UECC</div>
-                        <div class="logo-text">
-                            <span class="name">Unique Engineering</span>
-                            <span class="tagline">& Consultancy Co. Ltd.</span>
-                        </div>
-                    </a>
-                    <p>UECC is a leading East African engineering, construction, and consultancy firm established in 2011, delivering innovative and sustainable solutions across South Sudan, Ethiopia, Kenya, and Uganda.</p>
+                    <a href="#home" class="nav-logo"><img src="assets/uniquelogo.jpeg" alt="UECC Logo" class="logo-img"></a>
+                    <p>UECC is a leading East African engineering, construction, and consultancy firm established in 2011, delivering innovative and sustainable solutions across South Sudan, Ethiopia, Kenya, Uganda, and soon Sierra Leone.</p>
                     <div class="contact-social" style="margin-top:22px;">
-                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -2813,6 +740,7 @@
                         <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#why-us"><i class="fas fa-chevron-right"></i> Why Us</a></li>
                         <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
@@ -2829,26 +757,11 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contact Info</h4>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Nimra Talata, opposite Ministry of Mining, Juba</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <a href="tel:+211915667172">+211 915 667 172</a>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/211925618075">+211 925 618 075</a>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:info@uniqueengineerscoltd.com">info@uniqueengineerscoltd.com</a>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-globe-africa"></i>
-                        <span>SSD · ETH · KEN · UGA</span>
-                    </div>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Nimra Talata, opposite Ministry of Mining, Juba</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+211915667172">+211 915 667 172</a></div>
+                    <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/211925618075">+211 925 618 075</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@uniqueengineerscoltd.com">info@uniqueengineerscoltd.com</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-globe-africa"></i><span>SSD · ETH · KEN · UGA · SLE (soon)</span></div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -2857,226 +770,133 @@
         </div>
     </footer>
 
-    <!-- Floating WhatsApp -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/211925618075" target="_blank" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="https://wa.me/211925618075" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <!-- Back to Top -->
-    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+        <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
         <img src="" alt="Project" id="lightboxImg">
     </div>
 
     <script>
-        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Mobile menu
         function openMobileMenu() {
             document.getElementById('mobileMenu').classList.add('active');
             document.getElementById('mobileOverlay').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-
         function closeMobileMenu() {
             document.getElementById('mobileMenu').classList.remove('active');
             document.getElementById('mobileOverlay').classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        // Scroll reveal
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // Counter animation
         function animateCounter(element) {
             const target = parseInt(element.getAttribute('data-target'));
             if (!target) return;
-            const duration = 2000;
-            const step = target / (duration / 16);
+            const duration = 2000, step = target / (duration / 16);
             let current = 0;
-
             const timer = setInterval(() => {
                 current += step;
-                if (current >= target) {
-                    element.textContent = target + '+';
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current) + '+';
-                }
+                if (current >= target) { element.textContent = target + '+'; clearInterval(timer); }
+                else element.textContent = Math.floor(current) + '+';
             }, 16);
         }
-
         const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    counterObserver.unobserve(entry.target);
-                }
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) { animateCounter(entry.target); counterObserver.unobserve(entry.target); } });
         }, { threshold: 0.5 });
+        document.querySelectorAll('.counter, .stat-number[data-target]').forEach(el => counterObserver.observe(el));
 
-        document.querySelectorAll('.counter, .stat-number[data-target]').forEach(el => {
-            counterObserver.observe(el);
-        });
-
-        // Project filters
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
                 const filter = btn.getAttribute('data-filter');
                 document.querySelectorAll('.project-card').forEach(card => {
                     if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = '';
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                        card.style.transition = 'all 0.35s ease';
+                        card.style.display = ''; card.style.opacity = '1'; card.style.transform = 'scale(1)';
                     } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'scale(0.9)';
+                        card.style.opacity = '0'; card.style.transform = 'scale(0.9)';
                         setTimeout(() => { card.style.display = 'none'; }, 350);
                     }
                 });
             });
         });
 
-        // Lightbox
-        document.querySelectorAll('.project-overlay-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const img = btn.closest('.project-card').querySelector('.project-image img');
-                document.getElementById('lightboxImg').src = img.src;
-                document.getElementById('lightbox').classList.add('active');
-                document.body.style.overflow = 'hidden';
+        document.querySelectorAll('.project-overlay-btn, .project-card').forEach(el => {
+            el.addEventListener('click', function(e) {
+                const img = this.closest('.project-card')?.querySelector('.project-image img') || this.querySelector('.project-image img');
+                if (img) {
+                    document.getElementById('lightboxImg').src = img.src;
+                    document.getElementById('lightbox').classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
             });
         });
-
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const img = card.querySelector('.project-image img');
-                document.getElementById('lightboxImg').src = img.src;
-                document.getElementById('lightbox').classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
         function closeLightbox() {
             document.getElementById('lightbox').classList.remove('active');
             document.body.style.overflow = '';
         }
+        document.getElementById('lightbox').addEventListener('click', (e) => { if (e.target === e.currentTarget) closeLightbox(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-        document.getElementById('lightbox').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('lightbox')) closeLightbox();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-
-        // Testimonial slider
-        let currentSlide = 0;
-        const totalSlides = 3;
-        let autoSlideInterval;
-
+        let currentSlide = 0, totalSlides = 3, autoSlideInterval;
         function goToSlide(index) {
             currentSlide = index;
             document.getElementById('testimonialTrack').style.transform = `translateX(-${index * 100}%)`;
-            document.querySelectorAll('.dot').forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
+            document.querySelectorAll('.dot').forEach((dot, i) => dot.classList.toggle('active', i === index));
             resetAutoSlide();
         }
-
         function resetAutoSlide() {
             clearInterval(autoSlideInterval);
-            autoSlideInterval = setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                goToSlide(currentSlide);
-            }, 5000);
+            autoSlideInterval = setInterval(() => { currentSlide = (currentSlide + 1) % totalSlides; goToSlide(currentSlide); }, 5000);
         }
-
         resetAutoSlide();
+        document.getElementById('testimonialTrack').addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        document.getElementById('testimonialTrack').addEventListener('mouseleave', resetAutoSlide);
 
-        const slider = document.getElementById('testimonialTrack');
-        slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-        slider.addEventListener('mouseleave', resetAutoSlide);
-
-        // Back to top
         const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
+        window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 500); });
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Contact form
         function handleSubmit(e) {
             e.preventDefault();
-            const btn = e.target.querySelector('.btn-submit');
-            const originalText = btn.innerHTML;
+            const btn = e.target.querySelector('.btn-submit'), originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent Successfully!';
             btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
             btn.style.pointerEvents = 'none';
-
             setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.background = '';
-                btn.style.pointerEvents = '';
+                btn.innerHTML = originalText; btn.style.background = ''; btn.style.pointerEvents = '';
                 e.target.reset();
             }, 3000);
         }
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
-                    const offset = 80;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    const offset = 80, targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
                     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
             });
         });
 
         window.addEventListener('load', () => {
-            revealElements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    el.classList.add('visible');
-                }
-            });
+            revealElements.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible'); });
         });
     </script>
 </body>
