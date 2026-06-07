@@ -161,3 +161,19 @@ window.addEventListener('load', () => {
         if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
     });
 });
+// Infinite smooth logo scroll
+(function() {
+    const track = document.getElementById('logoTrack');
+    if (!track) return;
+
+    // Clone the logo set to create a seamless loop
+    const originalSet = track.querySelector('.logo-set');
+    if (originalSet) {
+        const clone = originalSet.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true'); // hide from screen readers
+        track.appendChild(clone);
+    }
+
+    // Start animation
+    track.classList.add('animated');
+})();
