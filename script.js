@@ -62,23 +62,79 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Contact form (if present)
+// Contact Form + Netlify Submission
 const contactForm = document.getElementById('contactForm');
+
 if (contactForm) {
+
+    const popup = document.getElementById('successPopup');
+
+    function encode(data) {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+            .join('&');
+    }
+
     contactForm.addEventListener('submit', function(e) {
+
         e.preventDefault();
-        const btn = e.target.querySelector('.btn-submit');
+
+        const btn = contactForm.querySelector('.btn-submit');
         const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent Successfully!';
-        btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-        btn.style.pointerEvents = 'none';
-        setTimeout(() => {
+
+        const formData = new FormData(contactForm);
+        const data = {};
+
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        btn.disabled = true;
+
+        fetch('/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: encode(data)
+        })
+        .then(() => {
+
+            // Success Popup
+            popup.classList.add('show');
+
+            // Success Button
+            btn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+
+            // Reset Form
+            contactForm.reset();
+
+            // Restore after 5 seconds
+            setTimeout(() => {
+                popup.classList.remove('show');
+
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                btn.style.background = '';
+
+            }, 5000);
+
+        })
+        .catch((error) => {
+
+            console.error(error);
+
             btn.innerHTML = originalText;
-            btn.style.background = '';
-            btn.style.pointerEvents = '';
-            e.target.reset();
-        }, 3000);
+            btn.disabled = false;
+
+            alert('Failed to send message. Please try again.');
+
+        });
+
     });
+
 }
 
 // Smooth scroll for anchor links
