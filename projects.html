@@ -7,7 +7,7 @@
     <meta name="description" content="Explore UECC's portfolio of commercial, residential, banking, and infrastructure projects across East Africa.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Critical hero image preload with high priority -->
+    <!-- Critical hero preload -->
     <link rel="preload" as="image" href="assets/hero-projects.jpg" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -281,7 +281,6 @@
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
         }
-        /* Images show COMPLETELY - never cropped */
         .slider-slide img {
             width: 100%;
             height: 100%;
@@ -386,10 +385,7 @@
         .bank-fitout .section-title { color: white; }
         .bank-fitout .section-subtitle { color: rgba(255,255,255,0.8); }
 
-        /* Masonry grid - images show COMPLETELY */
-        .masonry-grid {
-            columns: 4; column-gap: 16px;
-        }
+        .masonry-grid { columns: 4; column-gap: 16px; }
         .masonry-item {
             break-inside: avoid; margin-bottom: 16px;
             border-radius: var(--radius); overflow: hidden;
@@ -432,7 +428,7 @@
         }
 
         /* ===== INFRASTRUCTURE SECTION ===== */
-        .infrastructure { background: var(--gray-50); position: relative; }
+        .infrastructure { background: var(--gray-50); }
         .infra-showcase {
             display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px;
             align-items: center; background: white;
@@ -814,7 +810,7 @@
         </div>
     </section>
 
-    <!-- Featured Projects (with the two specified cards removed) -->
+    <!-- Featured Projects (exact original filenames, minus Residential House 02 & 03) -->
     <section class="featured-projects" id="projects">
         <div class="container">
             <div class="section-header reveal">
@@ -824,15 +820,14 @@
             </div>
 
             <div class="projects-grid-featured">
-
-                <!-- Project 1 -->
+                <!-- Project 1: NBE -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project1-1.jpeg" alt="NBE Branch" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project1-2.jpeg" alt="NBE Branch" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project1-3.jpeg" alt="NBE Branch" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project1-4.jpeg" alt="NBE Branch" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/abel1.jpeg" alt="NBE Branch" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/abel2.jpeg" alt="NBE Branch" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/abel3.jpeg" alt="NBE Branch" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/abel4.jpeg" alt="NBE Branch" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -855,16 +850,16 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Project 2: Munuki -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project2-1.jpeg" alt="Residential Munuki" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project2-2.jpeg" alt="Residential Munuki" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project2-3.jpeg" alt="Residential Munuki" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project2-4.jpeg" alt="Residential Munuki" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project2-5.jpeg" alt="Residential Munuki" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project2-6.jpeg" alt="Residential Munuki" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/munuki-1.jpeg" alt="Munuki Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/munuki-2.jpeg" alt="Munuki Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/munuki-3.jpeg" alt="Munuki Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/munuki-4.jpeg" alt="Munuki Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/munuki-5.jpeg" alt="Munuki Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/munuki-6.jpeg" alt="Munuki Residential" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -887,15 +882,15 @@
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+                <!-- Project 3: Custom Market -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project3-1.jpeg" alt="Shopping Complex" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project3-2.jpeg" alt="Shopping Complex" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project3-3.jpeg" alt="Shopping Complex" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project3-4.jpeg" alt="Shopping Complex" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project3-5.jpeg" alt="Shopping Complex" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/custom-market-1.jpeg" alt="Shopping Complex" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/custom-market-2.jpeg" alt="Shopping Complex" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/custom-market-3.jpeg" alt="Shopping Complex" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/custom-market-4.jpeg" alt="Shopping Complex" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/custom-market-5.jpeg" alt="Shopping Complex" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -918,16 +913,16 @@
                     </div>
                 </div>
 
-                <!-- Project 4 -->
+                <!-- Project 4: Konyo Konyo 8-Storey -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project4-1.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project4-2.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project4-3.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project4-4.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project4-5.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project4-6.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/konyo-8st-1.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/konyo-8st-2.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/konyo-8st-3.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/konyo-8st-4.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/konyo-8st-5.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/konyo-8st-6.jpeg" alt="8-Storey Commercial" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -950,20 +945,20 @@
                     </div>
                 </div>
 
-                <!-- Project 5 -->
+                <!-- Project 5: Nyakuron -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project5-1.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project5-2.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project5-3.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project5-4.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project5-5.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project5-6.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project5-7.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project5-8.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project5-9.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project5-10.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nyakuron-2.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nyakuron-2.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nyakuron-3.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nyakuron-4.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nyakuron-5.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nyakuron-6.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nyakuron-7.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nyakuron-8.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nyakuron-9.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nyakuron-10.jpeg" alt="Nyakuron Residential" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -986,21 +981,20 @@
                     </div>
                 </div>
 
-                <!-- Project 6 -->
+                <!-- Project 6: Thong Ping -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project6-1.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project6-2.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project6-3.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project6-4.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project6-5.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project6-6.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project6-7.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/thong-ping-1.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/thong-ping-2.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/thong-ping-3.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/thong-ping-4.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/thong-ping-5.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/thong-ping-6.jpeg" alt="Thong Ping Residential" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-                        <div class="slider-counter"><span class="current">1</span> / <span class="total">7</span></div>
+                        <div class="slider-counter"><span class="current">1</span> / <span class="total">6</span></div>
                     </div>
                     <div class="project-info-featured">
                         <div class="project-meta-top">
@@ -1019,31 +1013,24 @@
                     </div>
                 </div>
 
-                <!-- Project 7 -->
+                <!-- Project 7: Hai Cinema -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project7-1.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-2.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-3.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-4.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-5.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-6.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-7.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-8.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-9.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-10.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-11.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-12.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-13.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-14.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-15.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-16.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project7-17.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/hai-cinema-1.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/hai-cinema-2.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/hai-cinema-3.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/hai-cinema-4.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/hai-cinema-5.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/hai-cinema-6.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/hai-cinema-7.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/hai-cinema-8.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/hai-cinema-9.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/hai-cinema-10.jpeg" alt="Hai Cinema Apartments" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-                        <div class="slider-counter"><span class="current">1</span> / <span class="total">17</span></div>
+                        <div class="slider-counter"><span class="current">1</span> / <span class="total">10</span></div>
                     </div>
                     <div class="project-info-featured">
                         <div class="project-meta-top">
@@ -1062,16 +1049,16 @@
                     </div>
                 </div>
 
-                <!-- Project 8 -->
+                <!-- Project 8: Nairobi -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project8-1.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project8-2.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project8-3.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project8-4.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project8-5.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project8-6.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nairobi-1.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nairobi-2.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nairobi-3.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nairobi-4.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nairobi-5.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/nairobi-6.jpeg" alt="Nairobi Residential" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -1094,15 +1081,15 @@
                     </div>
                 </div>
 
-                <!-- Project 9 -->
+                <!-- Project 9: Konyo Konyo Mixed-Use -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project9-1.jpeg" alt="Mixed-Use Complex" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project9-2.jpeg" alt="Mixed-Use Complex" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project9-3.jpeg" alt="Mixed-Use Complex" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project9-4.jpeg" alt="Mixed-Use Complex" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project9-5.jpeg" alt="Mixed-Use Complex" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/konyo-mixed-1.jpeg" alt="Mixed-Use Complex" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/konyo-mixed-2.jpeg" alt="Mixed-Use Complex" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/konyo-mixed-3.jpeg" alt="Mixed-Use Complex" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/konyo-mixed-4.jpeg" alt="Mixed-Use Complex" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/konyo-mixed-5.jpeg" alt="Mixed-Use Complex" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -1125,16 +1112,16 @@
                     </div>
                 </div>
 
-                <!-- Project 10 -->
+                <!-- Project 10: Addis Warehouse -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project10-1.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project10-2.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project10-3.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project10-4.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project10-5.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project10-6.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-warehouse-1.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-warehouse-2.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-warehouse-3.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-warehouse-4.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-warehouse-5.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-warehouse-6.jpeg" alt="Warehouse Addis" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -1157,15 +1144,15 @@
                     </div>
                 </div>
 
-                <!-- Project 11 (formerly 11, still here) -->
+                <!-- Project 11: Addis House 01 -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project11-1.jpeg" alt="Residential House 01" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project11-2.jpeg" alt="Residential House 01" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project11-3.jpeg" alt="Residential House 01" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project11-4.jpeg" alt="Residential House 01" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project11-5.jpeg" alt="Residential House 01" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-house1.jpeg" alt="Residential House 01" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-house2.jpeg" alt="Residential House 01" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-house3.jpeg" alt="Residential House 01" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-house4.jpeg" alt="Residential House 01" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-house5.jpeg" alt="Residential House 01" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -1188,17 +1175,17 @@
                     </div>
                 </div>
 
-                <!-- Project 14 (Estate Development) - last remaining -->
+                <!-- Project 14: Addis Estate -->
                 <div class="project-card-featured reveal">
                     <div class="project-slider" data-autoplay="4000">
                         <div class="slider-track">
-                            <div class="slider-slide"><img src="assets/project14-1.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project14-2.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project14-3.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project14-4.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project14-5.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project14-6.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
-                            <div class="slider-slide"><img src="assets/project14-7.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-estate-1.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-estate-2.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-estate-3.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-estate-4.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-estate-5.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-estate-6.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
+                            <div class="slider-slide"><img src="assets/addis-estate-7.jpeg" alt="Estate Development" loading="lazy" decoding="async" width="800" height="600"></div>
                         </div>
                         <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -1220,12 +1207,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Bank Fit-Out Portfolio (unchanged) -->
+    <!-- Bank Fit-Out Portfolio (exact original filenames) -->
     <section class="bank-fitout">
         <div class="container">
             <div class="section-header reveal">
@@ -1234,23 +1220,22 @@
                 <p class="section-subtitle">Specialized banking interior fit-outs, customer halls, executive offices, ATM areas, teller stations, vault facilities, and banking operational spaces.</p>
             </div>
             <div class="masonry-grid reveal">
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-1.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-2.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-3.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-4.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-5.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-6.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-7.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-8.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-9.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-10.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-11.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
-                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bankfitout-12.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
+                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bank-fitout-1.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
+                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bank-fitout-2.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
+                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bank-fitout-3.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
+                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bank-fitout-4.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
+                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bank-fitout-5.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
+                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bank-fitout-6.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
+                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bank-fitout-7.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
+                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bank-fitout-8.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
+                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bank-fitout-9.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
+                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bank-fitout-10.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
+                <div class="masonry-item" onclick="openLightbox(this)"><img src="assets/bank-fitout-11.jpeg" alt="Bank Fit-Out" loading="lazy" decoding="async" width="600" height="400"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div></div>
             </div>
         </div>
     </section>
 
-    <!-- Infrastructure / Road Construction (unchanged) -->
+    <!-- Infrastructure / Road Construction (exact original filenames) -->
     <section class="infrastructure">
         <div class="container">
             <div class="section-header reveal">
@@ -1261,13 +1246,13 @@
             <div class="infra-showcase reveal">
                 <div class="project-slider infra-slider" data-autoplay="4000">
                     <div class="slider-track">
-                        <div class="slider-slide"><img src="assets/road-1.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
-                        <div class="slider-slide"><img src="assets/road-2.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
-                        <div class="slider-slide"><img src="assets/road-3.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
-                        <div class="slider-slide"><img src="assets/road-4.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
-                        <div class="slider-slide"><img src="assets/road-5.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
-                        <div class="slider-slide"><img src="assets/road-6.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
-                        <div class="slider-slide"><img src="assets/road-7.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
+                        <div class="slider-slide"><img src="assets/road-construction-1.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
+                        <div class="slider-slide"><img src="assets/road-construction-2.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
+                        <div class="slider-slide"><img src="assets/road-construction-3.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
+                        <div class="slider-slide"><img src="assets/road-construction-4.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
+                        <div class="slider-slide"><img src="assets/road-construction-5.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
+                        <div class="slider-slide"><img src="assets/road-construction-6.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
+                        <div class="slider-slide"><img src="assets/road-construction-7.jpeg" alt="Road Construction" loading="lazy" decoding="async" width="800" height="600"></div>
                     </div>
                     <button class="slider-arrow prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                     <button class="slider-arrow next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -1291,7 +1276,7 @@
         </div>
     </section>
 
-    <!-- Impact Section (unchanged) -->
+    <!-- Impact Section -->
     <section class="impact-section">
         <div class="container">
             <div class="section-header reveal">
@@ -1309,7 +1294,7 @@
         </div>
     </section>
 
-    <!-- CTA Section (unchanged) -->
+    <!-- CTA Section -->
     <section class="cta-banner">
         <div class="cta-content reveal">
             <span class="section-badge" style="background:rgba(245,158,11,0.15);color:var(--accent);border:1px solid rgba(245,158,11,0.3);">
@@ -1324,7 +1309,7 @@
         </div>
     </section>
 
-    <!-- Footer (unchanged) -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1370,7 +1355,7 @@
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
         <button class="lightbox-close" onclick="closeLightbox(event)"><i class="fas fa-times"></i></button>
-        <img src="" alt="Bank Fit-Out" id="lightboxImg" decoding="async">
+        <img src="" alt="Project Image" id="lightboxImg" decoding="async">
     </div>
 
     <script>
@@ -1403,7 +1388,7 @@
             document.body.style.overflow = '';
         }
 
-        /* ===== UPGRADED PROJECT SLIDER - ULTRA SMOOTH, GPU ACCELERATED ===== */
+        /* ===== UPGRADED PROJECT SLIDER ===== */
         class ProjectSlider {
             constructor(sliderEl) {
                 this.slider = sliderEl;
@@ -1425,12 +1410,8 @@
             }
 
             init() {
-                this.prevBtn.addEventListener('click', (e) => {
-                    e.preventDefault(); e.stopPropagation(); this.prev();
-                });
-                this.nextBtn.addEventListener('click', (e) => {
-                    e.preventDefault(); e.stopPropagation(); this.next();
-                });
+                this.prevBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); this.prev(); });
+                this.nextBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); this.next(); });
                 this.slider.addEventListener('mouseenter', () => this.pause());
                 this.slider.addEventListener('mouseleave', () => this.resume());
                 this.slider.addEventListener('touchstart', (e) => {
@@ -1438,9 +1419,7 @@
                     this.touchStartTime = Date.now();
                     this.pause();
                 }, { passive: true });
-                this.slider.addEventListener('touchmove', (e) => {
-                    this.touchEndX = e.touches[0].clientX;
-                }, { passive: true });
+                this.slider.addEventListener('touchmove', (e) => { this.touchEndX = e.touches[0].clientX; }, { passive: true });
                 this.slider.addEventListener('touchend', () => {
                     const diff = this.touchStartX - this.touchEndX;
                     const timeDiff = Date.now() - this.touchStartTime;
@@ -1450,9 +1429,7 @@
                     }
                     this.resume();
                 });
-                this.track.addEventListener('transitionend', () => {
-                    this.isTransitioning = false;
-                });
+                this.track.addEventListener('transitionend', () => { this.isTransitioning = false; });
                 this.preloadAdjacentImages();
                 this.startAutoplay();
             }
@@ -1477,38 +1454,21 @@
                 setTimeout(() => this.preloadAdjacentImages(), 400);
             }
 
-            next() {
-                this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
-                this.updateSlide();
-            }
-            prev() {
-                this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
-                this.updateSlide();
-            }
-            startAutoplay() {
-                this.autoplayTimer = setInterval(() => {
-                    if (!this.isPaused && !this.isTransitioning) this.next();
-                }, this.autoplayInterval);
-            }
+            next() { this.currentIndex = (this.currentIndex + 1) % this.totalSlides; this.updateSlide(); }
+            prev() { this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides; this.updateSlide(); }
+            startAutoplay() { this.autoplayTimer = setInterval(() => { if (!this.isPaused && !this.isTransitioning) this.next(); }, this.autoplayInterval); }
             pause() { this.isPaused = true; }
             resume() { this.isPaused = false; }
         }
 
         window.addEventListener('load', () => {
-            document.querySelectorAll('.project-slider').forEach(slider => {
-                new ProjectSlider(slider);
-            });
+            document.querySelectorAll('.project-slider').forEach(slider => new ProjectSlider(slider));
         });
 
-        /* ===== SCROLL REVEAL ANIMATION ===== */
+        /* ===== SCROLL REVEAL ===== */
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); revealObserver.unobserve(entry.target); } });
         }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
         revealElements.forEach(el => revealObserver.observe(el));
 
@@ -1525,13 +1485,9 @@
                         const elapsed = currentTime - startTime;
                         const progress = Math.min(elapsed / duration, 1);
                         const easeProgress = 1 - Math.pow(1 - progress, 3);
-                        const currentValue = Math.floor(easeProgress * target);
-                        counter.textContent = currentValue;
-                        if (progress < 1) {
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.textContent = target;
-                        }
+                        counter.textContent = Math.floor(easeProgress * target);
+                        if (progress < 1) requestAnimationFrame(updateCounter);
+                        else counter.textContent = target;
                     }
                     requestAnimationFrame(updateCounter);
                     counterObserver.unobserve(counter);
@@ -1540,7 +1496,6 @@
         }, { threshold: 0.5 });
         counters.forEach(counter => counterObserver.observe(counter));
 
-        // Hero stat counters
         const heroCounters = document.querySelectorAll('.hero-stat .num');
         const heroObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1587,7 +1542,7 @@
             }
         });
 
-        /* ===== IMAGE LAZY LOADING FALLBACK ===== */
+        /* ===== LAZY LOADING FALLBACK ===== */
         if ('loading' in HTMLImageElement.prototype) {
             const images = document.querySelectorAll('img[loading="lazy"]');
             images.forEach(img => { if (img.dataset.src) img.src = img.dataset.src; });
@@ -1607,6 +1562,3 @@
     </script>
 </body>
 </html>
-
-
-
