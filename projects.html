@@ -597,6 +597,13 @@
             background: rgba(255,255,255,0.08); color: white;
             display: flex; align-items: center; justify-content: center;
             transition: var(--transition);
+
+            .footer-brand .logo-img {
+    filter: none;            /* Removes the problematic white-out filter */
+    background: #fff;        /* Adds a white background behind the logo for contrast on dark footer */
+    border-radius: 6px;      /* Optional: softens the edges to match site style */
+    padding: 4px;            /* Optional: gives a tiny breathing space */
+}
         }
         .social-link:hover { background: var(--accent); transform: translateY(-3px); }
         .footer-bottom { padding: 24px 0; text-align: center; font-size: 13px; }
