@@ -369,7 +369,7 @@
 
     /* ===== BANK FIT-OUT SECTION ===== */
 .bank-fitout {
-    background: #f8fafc;                /* light, identical to the infrastructure section */
+    background: #f8fafc;
     color: #1f2937;
     position: relative;
     overflow: hidden;
@@ -393,7 +393,7 @@
 .bank-fitout .section-title { color: #0b1424; }
 .bank-fitout .section-subtitle { color: #4b5563; }
 
-/* ----- MASONRY GRID (desktop: columns, mobile: flex) ----- */
+/* ----- MASONRY GRID (desktop: columns, mobile: safe flex) ----- */
 .masonry-grid {
     columns: 4;
     column-gap: 16px;
@@ -411,6 +411,8 @@
     padding: 12px;
     border: 1px solid #e5e7eb;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    /* ensure minimum height even if image hasn't loaded */
+    min-height: 100px;
 }
 .masonry-item img {
     width: 100%;
@@ -421,10 +423,12 @@
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     background: #ffffff;
     display: block;
+    /* hardware acceleration for smooth rendering */
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     will-change: transform;
-    min-height: 50px;                /* ensures fallback height */
+    /* fallback minimum height – guarantees visibility */
+    min-height: 80px;
 }
 .masonry-item::after {
     content: '';
@@ -463,14 +467,14 @@
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* ----- RESPONSIVE (no columns bug) ----- */
+/* ----- RESPONSIVE BREAKPOINTS ----- */
 @media (max-width: 1200px) {
     .masonry-grid { columns: 3; }
 }
 @media (max-width: 992px) {
     .masonry-grid { columns: 2; }
 }
-/* Mobile – kill columns completely */
+/* Mobile – kill columns completely and use flex column (100% visible) */
 @media (max-width: 768px) {
     .masonry-grid {
         columns: unset;
@@ -483,9 +487,11 @@
         -webkit-column-break-inside: unset;
         margin-bottom: 0;
         width: 100%;
+        /* bigger minimum height on small screens */
+        min-height: 220px;
     }
     .masonry-item img {
-        min-height: 200px;           /* large enough to avoid zero height */
+        min-height: 200px;
         background: #fff;
     }
 }
