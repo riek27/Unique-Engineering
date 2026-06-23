@@ -384,7 +384,6 @@
 }
 .bank-fitout .section-title { color: white; }
 .bank-fitout .section-subtitle { color: rgba(255,255,255,0.8); }
-
 /* ===== MASONRY GRID ===== */
 /* Desktop: true masonry with CSS columns */
 .masonry-grid {
@@ -413,7 +412,7 @@
     background: rgba(255,255,255,0.95);
     image-rendering: -webkit-optimize-contrast;
     display: block;
-    /* Mobile fix (only needed when columns are used; harmless otherwise) */
+    /* Hardware acceleration – prevents column‑reflow glitches on desktop */
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     will-change: transform;
@@ -447,7 +446,7 @@
 @media (max-width: 992px) {
     .masonry-grid { columns: 2; }
 }
-/* Mobile: switch to single column – NO columns bug */
+/* Mobile – kill columns completely (avoids WebKit zero‑height bug) */
 @media (max-width: 768px) {
     .masonry-grid {
         columns: unset;
@@ -460,7 +459,7 @@
         margin-bottom: 0;
         width: 100%;
     }
-    /* Remove GPU trick as it’s no longer needed, but keeping is fine */
+    /* The GPU trick is harmless here and doesn’t need to be removed */
 }
         /* ===== INFRASTRUCTURE SECTION ===== */
         .infrastructure { background: var(--gray-50); }
@@ -605,50 +604,42 @@
         }
         .btn-outline-white:hover { background: white; color: var(--primary); border-color: white; transform: translateY(-3px); }
 
-        /* ===== FOOTER ===== */
-        footer { background: var(--navy); color: rgba(255,255,255,0.75); padding: 80px 0 0; }
-        .footer-grid {
-            display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 40px;
-            padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; }
-        .footer-brand .logo-img {
-    height: 56px;
-    filter: none;                /* removes the white‑out filter */
-    background: #fff;            /* white background so the logo pops on dark footer */
-    border-radius: 6px;          /* optional – soft corners */
-    padding: 4px;                /* optional – breathing space */
+       /* ===== FOOTER ===== */
+footer { background: var(--navy); color: rgba(255,255,255,0.75); padding: 80px 0 0; }
+.footer-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 40px;
+    padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-        .footer-col h4 {
-            color: white; font-size: 15px; font-weight: 700;
-            margin-bottom: 20px; letter-spacing: 0.3px;
-        }
-        .footer-links li { margin-bottom: 10px; }
-        .footer-links a { font-size: 14px; transition: var(--transition); }
-        .footer-links a:hover { color: var(--accent); padding-left: 4px; }
-        .footer-contact-item {
-            display: flex; gap: 12px; margin-bottom: 14px;
-            font-size: 14px; align-items: flex-start;
-        }
-        .footer-contact-item i { color: var(--accent); margin-top: 4px; min-width: 16px; }
-        .footer-contact-item a:hover { color: var(--accent); }
-        .contact-social { display: flex; gap: 10px; }
-        .social-link {
+.footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; }
+.footer-brand .logo-img {
+    height: 56px;
+    filter: none;
+    background: #fff;
+    border-radius: 6px;
+    padding: 4px;
+}
+.footer-col h4 {
+    color: white; font-size: 15px; font-weight: 700;
+    margin-bottom: 20px; letter-spacing: 0.3px;
+}
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { font-size: 14px; transition: var(--transition); }
+.footer-links a:hover { color: var(--accent); padding-left: 4px; }
+.footer-contact-item {
+    display: flex; gap: 12px; margin-bottom: 14px;
+    font-size: 14px; align-items: flex-start;
+}
+.footer-contact-item i { color: var(--accent); margin-top: 4px; min-width: 16px; }
+.footer-contact-item a:hover { color: var(--accent); }
+.contact-social { display: flex; gap: 10px; }
+.social-link {
     width: 38px; height: 38px; border-radius: 50%;
     background: rgba(255,255,255,0.08); color: white;
     display: flex; align-items: center; justify-content: center;
     transition: var(--transition);
 }
-            .footer-brand .logo-img {
-    filter: none;            /* Removes the problematic white-out filter */
-    background: #fff;        /* Adds a white background behind the logo for contrast on dark footer */
-    border-radius: 6px;      /* Optional: softens the edges to match site style */
-    padding: 4px;            /* Optional: gives a tiny breathing space */
-}
-        }
-        .social-link:hover { background: var(--accent); transform: translateY(-3px); }
-        .footer-bottom { padding: 24px 0; text-align: center; font-size: 13px; }
-
+.social-link:hover { background: var(--accent); transform: translateY(-3px); }
+.footer-bottom { padding: 24px 0; text-align: center; font-size: 13px; }
         /* ===== FLOATING ELEMENTS ===== */
         .whatsapp-float {
             position: fixed; bottom: 24px; right: 24px; z-index: 900;
