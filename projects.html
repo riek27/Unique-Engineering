@@ -427,6 +427,14 @@
             opacity: 1; transform: translate(-50%, -50%) scale(1);
         }
 
+        /* Fix invisible masonry images on mobile (WebKit columns bug) */
+.masonry-item img {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+    min-height: 1px;
+}
+
         /* ===== INFRASTRUCTURE SECTION ===== */
         .infrastructure { background: var(--gray-50); }
         .infra-showcase {
