@@ -577,7 +577,13 @@
             padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         .footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; }
-        .footer-brand .logo-img { height: 56px; filter: brightness(0) invert(1); }
+        .footer-brand .logo-img {
+    height: 56px;
+    filter: none;                /* removes the white‑out filter */
+    background: #fff;            /* white background so the logo pops on dark footer */
+    border-radius: 6px;          /* optional – soft corners */
+    padding: 4px;                /* optional – breathing space */
+}
         .footer-col h4 {
             color: white; font-size: 15px; font-weight: 700;
             margin-bottom: 20px; letter-spacing: 0.3px;
