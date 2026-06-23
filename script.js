@@ -233,3 +233,94 @@ window.addEventListener('load', () => {
     // Start animation
     track.classList.add('animated');
 })();
+
+/* ===== UPGRADED PROJECT SLIDER (GPU accelerated, smooth) ===== */
+class ProjectSlider {
+    constructor(sliderEl) {
+        this.slider = sliderEl;
+        this.track = sliderEl.querySelector('.slider-track');
+        this.slides = sliderEl.querySelectorAll('.slider-slide');
+        this.prevBtn = sliderEl.querySelector('.prev');
+        this.nextBtn = sliderEl.querySelector('.next');
+        this.counterCurrent = sliderEl.querySelector('.current');
+        this.currentIndex = 0;
+        this.totalSlides = this.slides.length;
+        this.autoplayInterval = parseInt(sliderEl.dataset.autoplay) || 4000;
+        this.autoplayTimer = null;
+        this.isPaused = false;
+        this.isTransitioning = false;
+        this.touchStartX = 0;
+        this.touchEndX = 0;
+        this.touchStartTime = 0;
+        this.init();
+    }
+
+    init() {
+        this.prevBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); this.prev(); });
+        this.nextBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); this.next(); });
+        this.slider.addEventListener('mouseenter', () => this.pause());
+        this.slider.addEventListener('mouseleave', () => this.resume());
+        this.slider.addEventListener('touchstart', (e) => {
+            this.touchStartX = e.touches[0].clientX;
+            this.touchStartTime = Date.now();
+            this.pause();
+        }, { passive: true });
+        this.slider.addEventListener('touchmove', (e) => { this.touchEndX = e.touches[0].clientX; }, { passive: true });
+        this.slider.addEventListener('touchend', () => {
+            const diff = this.touchStartX - this.touchEndX;
+            const timeDiff = Date.now() - this.touchStartTime;
+            const velocity = Math.abs(diff) / timeDiff;
+            if (Math.abs(diff) > 50 || velocity > 0.3) {
+                if (diff > 0) this.next(); else this.prev();
+            }
+            this.resume();
+        });
+        this.track.addEventListener('transitionend', () => { this.isTransitioning = false; });
+        this.preloadAdjacentImages();
+        this.startAutoplay();
+    }
+
+    preloadAdjacentImages() {
+        const nextIndex = (this.currentIndex + 1) % this.totalSlides;
+        const prevIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+        [nextIndex, prevIndex].forEach(idx => {
+            const img = this.slides[idx]?.querySelector('img');
+            if (img && !img.complete) {
+                const preload = new Image();
+                preload.src = img.src;
+            }
+        });
+    }
+
+    updateSlide() {
+        if (this.isTransitioning) return;
+        this.isTransitioning = true;
+        this.track.style.transform = `translate3d(-${this.currentIndex * 100}%, 0, 0)`;
+        this.counterCurrent.textContent = this.currentIndex + 1;
+        setTimeout(() => this.preloadAdjacentImages(), 400);
+    }
+
+    next() { this.currentIndex = (this.currentIndex + 1) % this.totalSlides; this.updateSlide(); }
+    prev() { this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides; this.updateSlide(); }
+    startAutoplay() { this.autoplayTimer = setInterval(() => { if (!this.isPaused && !this.isTransitioning) this.next(); }, this.autoplayInterval); }
+    pause() { this.isPaused = true; }
+    resume() { this.isPaused = false; }
+}
+
+/* Initialize all sliders on page load */
+window.addEventListener('load', () => {
+    document.querySelectorAll('.project-slider').forEach(slider => new ProjectSlider(slider));
+});
+
+/* ===== SCROLL REVEAL (add only if not already present in scripts.js) ===== */
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+revealElements.forEach(el => revealObserver.observe(el));
